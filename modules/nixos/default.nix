@@ -1,6 +1,8 @@
 { pkgs, lib, ... }: {
   imports = [
   ./services/nh.nix
+  ./services/screenshot.nix
+  ./programs/steam.nix
   ];
 
 #  module2.enable = lib.mkDefault true;
