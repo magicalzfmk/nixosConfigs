@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs.ddnet.enable = true;
+#  programs.ddnet.enable = true;
 
   environment.systemPackages = with pkgs; [
     ddnet

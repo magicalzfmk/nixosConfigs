@@ -94,9 +94,9 @@
   #gtk
   gtk = {
     enable = true;
-    theme.name = "Dracula";
-    cursorTheme.name = "Bibata-Modern-Ice";
-    iconTheme.name = "GruvboxPlus";
+    theme.name = "dracula";
+    cursorTheme.name = "posy-cursor";
+    iconTheme.name = "dracula";
   };
 
   

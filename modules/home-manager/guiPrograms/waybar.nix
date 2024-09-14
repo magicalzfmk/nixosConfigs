@@ -1,10 +1,13 @@
 { pkgs, ... }:
-
+#let
+#  jsonContent = builtins.readFile "/home/zfmk/Configs/modules/home-manager/guiPrograms/waybar.jsonc";
+#  cssContent = builtins.readFile "/home/zfmk/Configs/modules/home-manager/guiPrograms/waybar.css";
+#in
 {
   programs.waybar = {
     enable = true;
-    settings = builtins.fromJSON  builtins.readFile ./waybar.jsonc;
-    style = builtins.readFile ./waybar.css;
+#    settings = jsonContent;
+#    style = cssContent;
   };
 
   environment.systemPackages = with pkgs; [

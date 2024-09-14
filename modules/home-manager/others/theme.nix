@@ -2,7 +2,7 @@
 
 {
   # Enable Theme
-  environment.variables.GTK_THEME = "dracula";
+  environment.variables.GTK_THEME = "theme-dracula";
   environment.variables.XCURSOR_THEME = "posy-cursor";
   environment.variables.XCURSOR_SIZE = "12";
 #  environment.variables.HYPRCURSOR_THEME = "Catppuccin-Macchiato-Teal";

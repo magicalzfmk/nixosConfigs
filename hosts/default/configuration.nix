@@ -124,11 +124,6 @@
     lf
     wget
     freetube
-    waybar
-    (waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      })
-    )
     mako
     dunst
     libnotify
@@ -139,11 +134,11 @@
     obsidian
     ags
     syncthing
-    dracula-theme
     git
     nh
     nvd
     nix-output-monitor
+    steam
   ];
 
   environment.sessionVariables = {
