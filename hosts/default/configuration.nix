@@ -135,9 +135,6 @@
     ags
     syncthing
     git
-    nh
-    nvd
-    nix-output-monitor
     steam
   ];
 

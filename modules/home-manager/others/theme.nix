@@ -2,11 +2,11 @@
 
 {
   # Enable Theme
-  environment.variables.GTK_THEME = "theme-dracula";
-  environment.variables.XCURSOR_THEME = "posy-cursor";
+  environment.variables.GTK_THEME = "dracula-theme";
+  environment.variables.XCURSOR_THEME = "nordzy-cursor-theme";
   environment.variables.XCURSOR_SIZE = "12";
-#  environment.variables.HYPRCURSOR_THEME = "Catppuccin-Macchiato-Teal";
-#  environment.variables.HYPRCURSOR_SIZE = "24";
+  environment.variables.HYPRCURSOR_THEME = "nordzy-cursor-theme";
+  environment.variables.HYPRCURSOR_SIZE = "12";
 #  qt.enable = true;
 #  qt.platformTheme = "gtk2";
 #  qt.style = "gtk2";
@@ -49,7 +49,7 @@
   environment.systemPackages = with pkgs; [
 #    numix-icon-theme-circle
     dracula-icon-theme
-    posy-cursors
+    nordzy-cursor-theme
 #    catppuccin-cursors.macchiatoTeal
     dracula-theme
 
