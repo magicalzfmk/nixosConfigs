@@ -1,7 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
 
 let
-
   flutter = pkgs.flutter;
   androidStudio = pkgs.android-studio;
   androidEnv = pkgs.androidenv.override {
@@ -13,16 +12,10 @@ let
     platformVersions = [ "28" "31" "32" "33" "34" ];
     includeEmulator = true;
     systemImageTypes = [ "google_apis" "google_apis_playstore" ];
-  };
-
+  }; 
 in
 
 pkgs.mkShell {
-  
-#  packages = [];
-#  inputsFrom = [];
-
-  
   buildInputs = [
     flutter
     androidStudio
