@@ -136,6 +136,10 @@
     syncthing
     git
     steam
+    thunderbird
+    chromium
+    neofetch
+    pandoc
   ];
 
   environment.sessionVariables = {

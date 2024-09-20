@@ -10,7 +10,11 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: 
+  let
+    pkgs = nixpkgs.legacyPackages."x86_64-linux";
+  in
+  {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
@@ -21,13 +25,8 @@
       ];
     };
 
-#    nixosConfigurations.test = nixpkgs.lib.nixosSystem {
-#      specialArgs = {inherit inputs;};
-#      modules = [
-#        ./hosts/test/configuration.nix
-#        inputs.home-manager.nixosModules.test
-#      ];
-#    };
+    devShells."x86_64-linux".android =
+      import ./shells/androidDev.nix { inherit pkgs; };
   };
 }
 
