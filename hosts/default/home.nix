@@ -99,5 +99,5 @@
     iconTheme.name = "dracula";
   };
 
-  
+  nixpkgs.config.allowUnfree = true;
 }

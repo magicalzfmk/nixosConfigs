@@ -2,7 +2,7 @@
 
 pkgs.mkShell {
   buildInputs = [
-    pkgs.jdk11
+    
   ];
 
   shellHook = ''

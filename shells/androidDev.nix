@@ -1,32 +1,28 @@
+
 { pkgs ? import <nixpkgs> {} }:
+with pkgs;
+mkShell {
 
-let
-  flutter = pkgs.flutter;
-  androidStudio = pkgs.android-studio;
-  androidEnv = pkgs.androidenv.override {
-    licenseAccepted = true;
-  };
-  androidSdk = androidEnv.composeAndroidPackages {
-    platformToolsVersion = "34.0.4";
-    buildToolsVersions = [ "30.0.3" "33.0.2" "34.0.0" ];
-    platformVersions = [ "28" "31" "32" "33" "34" ];
-    includeEmulator = true;
-    systemImageTypes = [ "google_apis" "google_apis_playstore" ];
-  }; 
-in
+  nativeBuildInputs = [
+    clang
+    cmake
+    ninja
+    pkg-config
 
-pkgs.mkShell {
-  buildInputs = [
+    gtk3  # Curiously `nix-env -i` can't handle this one adequately.
+          # But `nix-shell` on this shell.nix does fine.
+    pcre
+    epoxy
+
+    jdk11
+    dart
     flutter
-    androidStudio
-    androidSdk.androidsdk
-    pkgs.jdk11
+    android-studio
+    android-tools
   ];
 
-  shellHook = ''
-    export ANDROID_HOME="${androidSdk}/libexec/android-sdk"
-    export ANDROID_SDK_ROOT="${androidSdk}/libexec/android-sdk"
-    export JAVA_HOME="${pkgs.jdk11.home}"
-    export FLUTTER_ROOT="${flutter}/bin"
-  '';
+  LD_LIBRARY_PATH = lib.makeLibraryPath [
+    fontconfig.lib
+    sqlite.out
+  ];
 }

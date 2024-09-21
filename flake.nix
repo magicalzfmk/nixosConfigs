@@ -12,7 +12,7 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
   let
-    pkgs = nixpkgs.legacyPackages."x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in
   {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
@@ -25,8 +25,11 @@
       ];
     };
 
-    devShells."x86_64-linux".android =
+    devShells.x86_64-linux.android =
       import ./shells/androidDev.nix { inherit pkgs; };
+
+    devShells.x86_64-linux.test =
+      import ./shells/test.nix { inherit pkgs; };
   };
 }
 
