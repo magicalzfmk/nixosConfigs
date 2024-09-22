@@ -1,6 +1,6 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./others/theme.nix
+    ./others/stylix.nix
     ./guiPrograms/waybar.nix
   ];
 

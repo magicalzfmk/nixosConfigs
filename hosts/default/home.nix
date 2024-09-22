@@ -91,13 +91,7 @@
     };
   };
 
-  #gtk
-  gtk = {
-    enable = true;
-    theme.name = "dracula";
-    cursorTheme.name = "posy-cursor";
-    iconTheme.name = "dracula";
-  };
+  gtk.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 }
