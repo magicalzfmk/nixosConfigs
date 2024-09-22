@@ -9,11 +9,12 @@
   };
   # hardware.opengl has beed changed to hardware.graphics
 
-  
-
   environment.systemPackages = with pkgs; [
     protonup
-    lutris  
+    mangohud
+    bottles
+    lutris
+    wine
   ];
 
   #protonup settings
