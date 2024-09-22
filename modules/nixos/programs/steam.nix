@@ -8,6 +8,10 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  programs.steam.gamescopeSession.enable = true;
+
+  programs.gamemode.enable = true;
+
   # Unfree Packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
@@ -25,6 +29,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     steam
-    
+    gamescope
+    gamemode    
   ];
 }
