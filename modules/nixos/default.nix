@@ -6,6 +6,8 @@
   ./programs/steam.nix
   ./programs/games.nix
   ./programs/development.nix
+  ./programs/piracy.nix
+  ./programs/audio.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

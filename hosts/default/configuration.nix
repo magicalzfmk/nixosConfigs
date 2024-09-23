@@ -134,7 +134,6 @@
     gnome-software
     lf
     wget
-    freetube
     mako
     dunst
     libnotify
@@ -142,15 +141,20 @@
     alacritty
     rofi-wayland
     networkmanagerapplet
-    obsidian
     ags
+
+    # Mine
+    freetube
+    obsidian
     syncthing
-    git
-    steam
     thunderbird
     chromium
-    neofetch
+
+    # Others
+    git
     pandoc
+    neofetch
+    celluloid
   ];
 
   environment.sessionVariables = {

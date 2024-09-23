@@ -10,7 +10,7 @@
   # hardware.opengl has beed changed to hardware.graphics
 
   environment.systemPackages = with pkgs; [
-    protonup
+    protonup-qt
     mangohud
     bottles
     lutris

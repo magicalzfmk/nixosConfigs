@@ -3,6 +3,7 @@
 # Error Control
 error_exit() {
     echo "Error: $1"
+    zenity --info --text="Error$1" --title="Command Output" --no-wrap
     exit 1
 }
 
