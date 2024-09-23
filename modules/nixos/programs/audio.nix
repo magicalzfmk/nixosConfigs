@@ -1,12 +1,18 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
+let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+in
 {
-#  programs.nicotine-plus.enable = true;
+  imports = [
+    inputs.spicetify-nix.nixosModules.default
+  ];
+  
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "spotify"
+  ];
+
   # Spicetify
-  programs.spicetify =
-  let
-    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-  in
-  {
+  programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.dracula;
     

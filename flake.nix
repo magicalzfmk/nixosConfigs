@@ -28,7 +28,6 @@
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
-        inputs.spicetify-nix.nixosModules.default
         ./modules/nixos
         ./modules/home-manager
       ];
