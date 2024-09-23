@@ -2,6 +2,7 @@
   imports = [
   ./services/nh.nix
   ./services/screenshot.nix
+  ./services/others.nix
   ./programs/steam.nix
   ./programs/games.nix
   ./programs/development.nix
