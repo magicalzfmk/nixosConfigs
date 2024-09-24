@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./others/stylix.nix
-    ./guiPrograms/waybar.nix
+   # ./guiPrograms/waybar.nix
+   # ./guiPrograms/hyprland.nix
   ];
 
 #  module2.enable = lib.mkDefault true;
