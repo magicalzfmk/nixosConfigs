@@ -6,6 +6,10 @@
   ./services/nh.nix
   ./services/screenshot.nix
   ./services/others.nix
+  ./services/utilities.nix
+  ./services/hyprland.nix
+  
+  ./programs/utilities.nix
   ./programs/steam.nix
   ./programs/games.nix
   ./programs/development.nix
