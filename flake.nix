@@ -7,6 +7,10 @@
     stylix.url = "github:danth/stylix";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -31,9 +35,10 @@
         inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
         ./modules/nixos
-        ./modules/home-manager
       ];
     };
+    
+    homeManagerModules.default = ./modules/home-manager;
 
     devShells.x86_64-linux.android =
       import ./shells/androidDev.nix { inherit pkgs; };

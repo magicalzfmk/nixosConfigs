@@ -1,8 +1,11 @@
-{ pkgs, ... }:
-{
-  
+{ config, pkgs, ... }:
 
-  environment.systemPackages = with pkgs; [
-    
-  ];
+{
+  wayland.windowManager.hyprland = {
+    enable = true;
+    settings = {
+      
+    };
+  };
+  
 }

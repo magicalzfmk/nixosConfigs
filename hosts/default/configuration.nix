@@ -61,8 +61,12 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
   services.xserver.desktopManager.gnome.enable = true;
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -133,6 +137,8 @@
 
   environment.sessionVariables = {
     FLAKE = "/home/zfmk/Configs";
+    
+    NIXPKGS_ALLOW_UNFREE=1;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -149,8 +155,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 443 ];
+  networking.firewall.allowedUDPPorts = [ 443 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

@@ -1,8 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 {
   # Hyprland
   programs.hyprland = {
     enable = true;
+    xwayland.enable = true;
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
   
@@ -15,5 +16,6 @@
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       })
     )
+    font-awesome
   ];
 }

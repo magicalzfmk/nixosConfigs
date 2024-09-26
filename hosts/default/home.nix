@@ -6,7 +6,9 @@
   home.username = "zfmk";
   home.homeDirectory = "/home/zfmk";
   
-#  imports = ["/home/zfmk/Configs/themes/dracula.toml"];
+  #xdg.configFile."hypr.hyprland.conf".source = ./hypr/hyprland.conf;
+  
+  #imports = ["./../../modules/home-manager/default.nix"];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -70,7 +72,7 @@
   #  /etc/profiles/per-user/zfmk/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -85,7 +87,7 @@
       init.defaultBranch = "main";
     };
     aliases = {
-      pu = "push";
+      pm = "push github main";
       co = "checkout";
       cm = "commit";
     };
@@ -94,8 +96,8 @@
   gtk.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-
-#  wayland.windowManager.hyprland = {
-#    enable = true;
-#  };
+  
+  #wayland.windowManager.hyprland = {
+  #  enable = true;
+  #};
 }

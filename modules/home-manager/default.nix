@@ -1,10 +1,8 @@
-{ pkgs, lib, ... }: {
+{ config, pkgs, ... }:
+
+{
   imports = [
-   # ./guiPrograms/waybar.nix
-   # ./guiPrograms/hyprland.nix
+    #"./guiPrograms/hyprland.nix"
   ];
-
-#  module2.enable = lib.mkDefault true;
-#  module3.enable = false;
-
+  
 }

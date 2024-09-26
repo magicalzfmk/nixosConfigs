@@ -3,6 +3,7 @@
   
   ./others/stylix.nix
   
+  ./services/os.nix
   ./services/nh.nix
   ./services/screenshot.nix
   ./services/others.nix
