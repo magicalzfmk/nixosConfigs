@@ -1,13 +1,13 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = ",preferred,auto,1.0";
-      "$terminal" = "alacritty";
-      "$fileManager" = "nautilus";
-      "$menu" = "rofi -show drun -show-icons";
+      monitor = lib.mkForce ",preferred,auto,1.0";
+      "$terminal" = lib.mkForce "alacritty";
+      "$fileManager" = lib.mkForce "nautilus";
+      "$menu" = lib.mkForce "rofi -show drun -show-icons";
       
       exec-once = ''bash ~/Configs/scripts/start.sh'';
       
@@ -21,12 +21,12 @@
         gaps_out = 2;
         border_size = 1;
         
-        "col.active_border" = "rgb(bd93f9)";
-        "col.inactive_border" = "rgba(44475aaa)";
-        "col.nogroup_border" = "rgba(282a36dd)";
-        "col.nogroup_border_active" = "rgb(bd93f9)";
+        "col.active_border" = lib.mkForce "rgb(bd93f9)";
+        "col.inactive_border" = lib.mkForce "rgba(44475aaa)";
+        "col.nogroup_border" = lib.mkForce "rgba(282a36dd)";
+        "col.nogroup_border_active" = lib.mkForce "rgb(bd93f9)";
          
-         layout = "dwindle";
+         layout = lib.mkForce "dwindle";
       };
       
       decoration = {

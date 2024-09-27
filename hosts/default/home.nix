@@ -8,6 +8,9 @@
   
   #home-manager.useBackup = true;
   #home-manager.backupFileExtension = ".old";
+  imports = [
+    ../../modules/home-manager/default.nix
+  ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

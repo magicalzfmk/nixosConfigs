@@ -39,17 +39,18 @@
       modules = [
         ./hosts/default/configuration.nix
         inputs.stylix.nixosModules.stylix
+        inputs.home-manager.nixosModules.default
         ./modules/nixos
       ];
     };
     
-    homeConfigurations.zfmk = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-        ./hosts/default/home.nix
-        ./modules/home-manager
-      ];
-    };
+    #homeConfigurations.zfmk = home-manager.lib.homeManagerConfiguration {
+    #  inherit pkgs;
+    #  modules = [
+    #    ./hosts/default/home.nix
+    #    ./modules/home-manager
+    #  ];
+    #};
 
     devShells.x86_64-linux.android =
       import ./shells/androidDev.nix { inherit pkgs; };

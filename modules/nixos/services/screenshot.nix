@@ -5,5 +5,6 @@
     grim
     slurp
     wl-clipboard
+    textsnatcher
   ];
 }

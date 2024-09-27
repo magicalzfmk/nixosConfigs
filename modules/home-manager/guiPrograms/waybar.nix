@@ -240,10 +240,15 @@
     	margin-right: 0;
       }
       #power-profiles-daemon {
-    	padding-right: 15px;
+    	padding-right: 5px;
+    	padding-left: 5px;
       }
       #custom-media {
     	min-width: 100px;
+      }
+      #network {
+        padding-right: 10px;
+    	padding-left: 5px;
       }
     '';
                
