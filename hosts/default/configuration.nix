@@ -9,7 +9,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -107,13 +106,6 @@
     ];
   };
 
-  home-manager = {
-    # also pass inputs to home-manager modules
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "zfmk" = import ./home.nix;
-    };
-  };
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = false;
@@ -132,7 +124,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    
+    home-manager
   ];
 
   environment.sessionVariables = {
@@ -155,8 +147,8 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 443 ];
-  networking.firewall.allowedUDPPorts = [ 443 ];
+  # networking.firewall.allowedTCPPorts = [ 443 ];
+  # networking.firewall.allowedUDPPorts = [ 443 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

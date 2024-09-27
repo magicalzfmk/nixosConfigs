@@ -3,9 +3,20 @@
 #  programs.ddnet.enable = true;
   
   # Enable Opengl
-   hardware.graphics = {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
+  };
+  
+  # Bluetooth
+  hardware.bluetooth= {
+    enable = true;
+    package = pkgs.bluez;
+    input = {
+      General = {
+        #ClassicBondedOnly = false;
+      };
+    };
   };
   # hardware.opengl has beed changed to hardware.graphics
 

@@ -1,6 +1,7 @@
 
 { pkgs ? import <nixpkgs> {} }:
 with pkgs;
+
 mkShell {
 
   nativeBuildInputs = [
@@ -18,11 +19,25 @@ mkShell {
     dart
     flutter
     android-studio
-    android-tools
+    
+    libuuid  # for mount.pc
+    xorg.libXdmcp.dev
+    libsepol.dev
+    libthai.dev
+    libdatrie.dev
+    libxkbcommon.dev
+    dbus.dev
+    at-spi2-core.dev
+    xorg.libXtst.out
+    pcre2.dev
   ];
 
   LD_LIBRARY_PATH = lib.makeLibraryPath [
     fontconfig.lib
     sqlite.out
   ];
+  
+  shellHook = ''
+    echo "ready"
+  '';
 }

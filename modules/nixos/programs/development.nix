@@ -8,6 +8,9 @@
       "adbusers"
     ];
   };
+  
+  networking.firewall.allowedTCPPorts = [ 5037 ];
+  networking.firewall.allowedUDPPorts = [ 5037 ];
 
   environment.systemPackages = with pkgs; [
     vscode

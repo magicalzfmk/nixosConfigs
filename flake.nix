@@ -23,22 +23,30 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
   let
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    system = "x86_64-linux";
+    pkgs = import nixpkgs{
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
+    };
   in
   {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs pkgs;};
       modules = [
         ./hosts/default/configuration.nix
-        inputs.home-manager.nixosModules.default
         inputs.stylix.nixosModules.stylix
         ./modules/nixos
       ];
     };
     
-    homeManagerModules.default = ./modules/home-manager;
+    homeConfigurations.zfmk = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [./hosts/default/home.nix];
+    };
 
     devShells.x86_64-linux.android =
       import ./shells/androidDev.nix { inherit pkgs; };
