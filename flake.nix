@@ -45,7 +45,10 @@
     
     homeConfigurations.zfmk = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [./hosts/default/home.nix];
+      modules = [
+        ./hosts/default/home.nix
+        ./modules/home-manager
+      ];
     };
 
     devShells.x86_64-linux.android =

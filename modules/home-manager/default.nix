@@ -2,7 +2,8 @@
 
 {
   imports = [
-    #"./guiPrograms/hyprland.nix"
+    ./guiPrograms/hyprland.nix
+    ./guiPrograms/waybar.nix
   ];
   
 }

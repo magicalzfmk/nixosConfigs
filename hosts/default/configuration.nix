@@ -125,6 +125,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
+    brightnessctl
   ];
 
   environment.sessionVariables = {
