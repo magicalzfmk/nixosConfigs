@@ -6,6 +6,6 @@ swww img ~/Wallpapers/current.png &
 
 nm-applet --indicator &
 
-waybar &
+hyprctl dispatch exec waybar &
 
 mako

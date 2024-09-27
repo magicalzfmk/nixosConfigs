@@ -48,7 +48,6 @@
     #  inherit pkgs;
     #  modules = [
     #    ./hosts/default/home.nix
-    #    ./modules/home-manager
     #  ];
     #};
 

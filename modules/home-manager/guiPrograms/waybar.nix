@@ -11,7 +11,7 @@
         layer = "top";
         position = "top";
         height = 10;
-        spacing = 4;
+        spacing = 5;
         output = [   "eDP-1"   "HDMI-A-1" ];
         modules-left = [ 
           "hyprland/workspaces"
