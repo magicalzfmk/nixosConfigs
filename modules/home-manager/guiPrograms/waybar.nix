@@ -190,12 +190,13 @@
         border: 0px;
         border-radius: 0;
         font-family: Source Code Pro;
-        font-size: 13px;
+        font-size: 10px;
         padding: 0px;
+        color: #6272a4;
       }
       window#waybar {
         background-color: #282a36;
-        border-bottom: 1px solid #6272a4;
+        border-bottom: 1px solid #44475a;
         color: #6272a4;
         transition-property: background-color;
         transition-duration: .5s;
@@ -205,26 +206,16 @@
       }
       button {
     	box-shadow: inset 0 -3px transparent;
-    	border: none;
-    	border-radius: 0;
       }
       #workspaces button {
         padding: 0 5px;
-        background-color: transparent;
     	color: #6272a4;
-      }
-      #workspaces button:hover {
-    	background: rgba(0, 0, 0, 0.2);
       }
       #workspaces button.active {
     	color: #bd93f9;
       }
       #workspaces button.urgent {
     	background-color: #ff5555;
-      }
-      button:hover {
-    	background: inherit;
-    	box-shadow: inset 0 -3px #ffffff;
       }
       
       #mpd {
@@ -247,8 +238,8 @@
     	min-width: 100px;
       }
       #network {
-        padding-right: 10px;
-    	padding-left: 5px;
+        padding-right: 20px;
+    	padding-left: 20px;
       }
     '';
                

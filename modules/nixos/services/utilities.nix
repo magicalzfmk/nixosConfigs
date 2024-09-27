@@ -6,5 +6,6 @@
     neofetch
     lf
     neovim
+    brightnessctl
   ];
 }
