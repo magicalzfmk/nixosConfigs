@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
-  buildToolsVersion = "30.0.3";
-  cmakeVersion = "3.10.2";
+  #buildToolsVersion = "30.0.3";
+  #cmakeVersion = "3.10.2";
   
-  ANDROID_HOME = "${androidComposition.androidsdk}/libexec/android-sdk";
+  #ANDROID_HOME = "${androidComposition.androidsdk}/libexec/android-sdk";
   
   androidComposition = pkgs.androidenv.composeAndroidPackages {
     cmdLineToolsVersion = "8.0";
@@ -32,10 +32,9 @@ in
   
   environment.sessionVariables = {
     #PATH = "~/development/flutter/bin:$PATH";
-    ANDROID_HOME = "${ANDROID_HOME}";
-    ANDROID_SDK_ROOT = "/home/zfmk/.android}";
-    ANDROID_NDK_ROOT = "${ANDROID_HOME}/ndk-bundle";
-    GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${ANDROID_HOME}/build-tools/${buildToolsVersion}/aapt2";
+    #ANDROID_SDK_ROOT = "${ANDROID_HOME}";
+    #ANDROID_NDK_ROOT = "${ANDROID_HOME}/ndk-bundle";
+    #GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${ANDROID_HOME}/build-tools/${buildToolsVersion}/aapt2";
   };
   
   #networking.firewall.allowedTCPPorts = [ 5037 ];
@@ -43,7 +42,7 @@ in
 
   environment.systemPackages = with pkgs; [
     android-studio
-    androidComposition.androidsdk
+    #androidComposition.androidsdk
     flutter
   ];
 

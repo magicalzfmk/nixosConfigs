@@ -105,12 +105,12 @@
         };
         
         "cpu" = {
-          format = "{usage}% ;";
+          format = "{usage}% ";
           tooltip = true;
         };
         
         "memory" = {
-          format = "{}%  ";
+          format = "{}% ";
         };
         
         "temperature" = {

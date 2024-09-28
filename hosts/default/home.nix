@@ -95,7 +95,7 @@
     };
   };
 
-  gtk.enable = true;
+  #gtk.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 }
