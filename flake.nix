@@ -16,6 +16,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    android-nixpkgs = {
+      url = "github:tadfisher/android-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -23,7 +28,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, android-nixpkgs, ... }@inputs: 
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs{

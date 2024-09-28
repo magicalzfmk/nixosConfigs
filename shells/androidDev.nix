@@ -14,11 +14,6 @@ mkShell {
           # But `nix-shell` on this shell.nix does fine.
     pcre
     epoxy
-
-    jdk11
-    dart
-    flutter
-    android-studio
     
     libuuid  # for mount.pc
     xorg.libXdmcp.dev
@@ -38,6 +33,10 @@ mkShell {
   ];
   
   shellHook = ''
-    echo "ready"
+    echo "android dev env preparing!"
+    export JAVA_HOME=${pkgs.jdk.home}
+    export FLUTTER_ROOT=${pkgs.flutter}/bin
+    export PATH="$PATH:$FLUTTER_ROOT/bin"
+    echo "Development environment is set up."
   '';
 }
