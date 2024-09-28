@@ -44,10 +44,11 @@
           format = "{icon}";
           format-icons = {
             default = "";
-            active = "";
-            urgent = "";
+            active = "";
+            urgent = "";
           };
         };
+        #  
         
         "keyboard-state" = {
           numlock = true;
@@ -105,7 +106,7 @@
         
         "cpu" = {
           format = "{usage}% ;";
-          tooltip = false;
+          tooltip = true;
         };
         
         "memory" = {
@@ -190,14 +191,18 @@
         border: 0px;
         border-radius: 0;
         font-family: Source Code Pro;
-        font-size: 10px;
+        font-size: 12px;
         padding: 0px;
-        color: #6272a4;
+      }
+      .modules-center{
+      	color: #6272a4;
+      }
+      .modules-right{
+      	color: #6272a4;
       }
       window#waybar {
         background-color: #282a36;
         border-bottom: 1px solid #44475a;
-        color: #6272a4;
         transition-property: background-color;
         transition-duration: .5s;
       }
@@ -209,13 +214,13 @@
       }
       #workspaces button {
         padding: 0 5px;
-    	color: #6272a4;
+    	color: #44475a;
       }
       #workspaces button.active {
     	color: #bd93f9;
       }
       #workspaces button.urgent {
-    	background-color: #ff5555;
+    	color: #ff5555;
       }
       
       #mpd {
@@ -238,8 +243,12 @@
     	min-width: 100px;
       }
       #network {
-        padding-right: 20px;
-    	padding-left: 20px;
+        padding-right: 10px;
+    	padding-left: 10px;
+      }
+      #battery {
+        padding-right: 10px;
+    	padding-left: 10px;
       }
     '';
                

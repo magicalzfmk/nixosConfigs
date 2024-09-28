@@ -1,5 +1,4 @@
 { pkgs, ... }: 
-
 {
   stylix.enable = true;
   stylix.autoEnable = true;
@@ -14,6 +13,9 @@
   stylix.cursor.package = pkgs.nordzy-cursor-theme;
   stylix.cursor.name = "Nordzy-cursors";
   stylix.cursor.size = 12;
+  
+  #stylix.targets.pkgs.waybar.enable = false;
+  #stylix.targets.rofi.enable = true;
 
   stylix.fonts = {
     sizes = {

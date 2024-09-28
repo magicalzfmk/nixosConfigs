@@ -33,6 +33,11 @@
   
   # Home Manager
   home-manager = {
+    sharedModules = [{
+      stylix.enable = true;
+      stylix.autoEnable = true;
+      stylix.targets.waybar.enable = false;
+    }];
     extraSpecialArgs = { inherit inputs; };
     users = {
       "zfmk" = import ./home.nix;
