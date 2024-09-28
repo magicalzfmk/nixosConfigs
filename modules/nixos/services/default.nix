@@ -1,10 +1,11 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./others/stylix.nix
-    
-    ./services/default.nix
-    ./programs/default.nix
-    ./devEnv/default.nix
+    ./os.nix
+    ./nh.nix
+    ./screenshot.nix
+    ./others.nix
+    ./utilities.nix
+    ./hyprland.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

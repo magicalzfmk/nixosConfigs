@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 #let
 #  jsonContent = builtins.readFile "/home/zfmk/Configs/modules/home-manager/guiPrograms/waybar.jsonc";
 #  cssContent = builtins.readFile "/home/zfmk/Configs/modules/home-manager/guiPrograms/waybar.css";
@@ -186,7 +186,7 @@
       };
     };
     
-    style = ''
+    style = lib.mkForce ''
       * {
         border: 0px;
         border-radius: 0;

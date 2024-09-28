@@ -1,10 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./others/stylix.nix
-    
-    ./services/default.nix
-    ./programs/default.nix
-    ./devEnv/default.nix
+    ./android.nix
+    ./development.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

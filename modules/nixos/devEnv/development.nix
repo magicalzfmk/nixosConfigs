@@ -10,6 +10,7 @@
   };
   
   environment.sessionVariables = {
+    #PATH = "~/development/flutter/bin:$PATH";
     #ANDROID_HOME = "~/Android/Sdk";
     #ANDROID_AVD_HOME = "~/.android/avd";
   };

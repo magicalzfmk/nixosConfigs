@@ -33,9 +33,15 @@
   
   # Home Manager
   home-manager = {
+    sharedModules = [
+      inputs.self.outputs.homeManagerModules.default
+    ];
+    backupFileExtension = "old";
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users = {
-      "zfmk" = import ./home.nix;
+      zfmk = import ./home.nix;
     };
   };
 

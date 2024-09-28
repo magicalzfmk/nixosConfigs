@@ -28,12 +28,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, android-nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, ... }@inputs: 
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs{
       inherit system;
       config = {
+        android_sdk.accept_license = true;
         allowUnfree = true;
       };
     };
@@ -48,6 +49,8 @@
         ./modules/nixos
       ];
     };
+    
+    homeManagerModules.default = ./modules/home-manager;
     
     #homeConfigurations.zfmk = home-manager.lib.homeManagerConfiguration {
     #  inherit pkgs;

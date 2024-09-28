@@ -1,24 +1,20 @@
-{ pkgs, lib, ... }: 
+{ pkgs, lib, inputs, ... }: 
 {
+  
   stylix.enable = lib.mkDefault true;
   stylix.autoEnable = lib.mkDefault true;
   
-  stylix.base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+  stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+  #config.stylix.base16Scheme.base0E  To use somewhere
   
   stylix.image = lib.mkDefault /home/zfmk/Wallpapers/current.png;
 
-  stylix.cursor.package = lib.mkDefault pkgs.nordzy-cursor-theme;
-  stylix.cursor.name = lib.mkDefault "Nordzy-cursors";
-  stylix.cursor.size = lib.mkDefault 12;
+  stylix.cursor.package = lib.mkForce pkgs.nordzy-cursor-theme;
+  stylix.cursor.name = lib.mkForce "Nordzy-cursors";
+  stylix.cursor.size = lib.mkForce 12;
   
   #stylix.targets.pkgs.waybar.enable = false;
   #stylix.targets.rofi.enable = true;
-  
-  home-manager = {
-    sharedModules = [{
-      stylix.targets.waybar.enable = false;
-    }];
-  };
 
   stylix.fonts = {
     sizes = {
