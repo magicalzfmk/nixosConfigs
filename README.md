@@ -4,9 +4,9 @@ The No Nonsense dotFiles for NixOs
     
 ---  
 
-<img src="https://img.shields.io/github/stars/magicalzfmk/Taskder?style=for-the-badge&logo=powerpages&color=cba6f7&logoColor=D9E0EE&labelColor=302D41"/>  
-<img src="https://img.shields.io/github/last-commit/magicalzfmk/Taskder?style=for-the-badge&logo=github&color=a6da95&logoColor=D9E0EE&labelColor=302D41"/>  
-<img src="https://img.shields.io/github/repo-size/magicalzfmk/Taskder?style=for-the-badge&logo=dropbox&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>  
+<img src="https://img.shields.io/github/stars/magicalzfmk/nixosConfigs?style=for-the-badge&logo=powerpages&color=cba6f7&logoColor=D9E0EE&labelColor=302D41"/>  
+<img src="https://img.shields.io/github/last-commit/magicalzfmk/nixosConfigs?style=for-the-badge&logo=github&color=a6da95&logoColor=D9E0EE&labelColor=302D41"/>  
+<img src="https://img.shields.io/github/repo-size/magicalzfmk/nixosConfigs?style=for-the-badge&logo=dropbox&color=7dc4e4&logoColor=D9E0EE&labelColor=302D41"/>  
 
 ## Features
 - Home-Manager as a module
