@@ -1,9 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./others/default.nix
-    ./services/default.nix
-    ./programs/default.nix
-    ./devEnv/default.nix
+    ./stylix.nix
+    ./theme.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

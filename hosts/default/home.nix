@@ -1,4 +1,4 @@
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, home-manager, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -74,7 +74,7 @@
   #  /etc/profiles/per-user/zfmk/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
+      EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -94,8 +94,11 @@
       cm = "commit";
     };
   };
-
-  #gtk.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
+  
+  gtk = {
+    enable = true;
+    theme.name = lib.mkForce "Dracula";
+    cursorTheme.name = lib.mkForce "Nordzy-cursors";
+    iconTheme.name = lib.mkForce "Dracula";
+  };
 }

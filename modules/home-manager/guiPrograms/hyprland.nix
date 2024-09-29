@@ -25,10 +25,10 @@ in
       #${startupScript}/bin/start
       exec-once = ''bash ~/Configs/scripts/start.sh'';
       
-      env = [
-        "XCURSOR_SIZE,12"
-        "HYPRCURSOR_SIZE,12"
-      ];
+      #env = [
+      #  "XCURSOR_SIZE,12"
+      #  "HYPRCURSOR_SIZE,12"
+      #];
       
       general = { 
         gaps_in = 1;

@@ -16,11 +16,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
-    android-nixpkgs = {
-      url = "github:tadfisher/android-nixpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -41,7 +36,7 @@
   in
   {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs pkgs;};
+      specialArgs = {inherit inputs pkgs system;};
       modules = [
         ./hosts/default/configuration.nix
         inputs.stylix.nixosModules.stylix

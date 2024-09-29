@@ -26,7 +26,6 @@
           "temperature"
           "idle_inhibitor"
           "pipewire"
-          "network"
           "power-profiles-daemon"
           "cpu"
           "memory"
@@ -34,6 +33,7 @@
           "keyboard-state"
           "battery"
           "clock"
+          "network"
           "tray"
           "custom/power"
         ];
@@ -149,10 +149,10 @@
           };
         };
         "network" = {
-            format-wifi = "{essid} ({signalStrength}%) ";
-            format-ethernet = "{ipaddr}/{cidr} ";
-            tooltip-format = "{ifname} via {gwaddr} ";
-            format-linked = "{ifname} (No IP) ";
+            format-wifi = "{essid} ({signalStrength}%)";
+            format-ethernet = "{ipaddr}/{cidr}";
+            tooltip-format = "{ifname} via {gwaddr}";
+            format-linked = "{ifname} (No IP)";
             format-disconnected = "Disconnected ⚠";
             format-alt = "{ifname} = {ipaddr}/{cidr}";
         };
@@ -243,8 +243,8 @@
     	min-width: 100px;
       }
       #network {
-        padding-right: 10px;
-    	padding-left: 10px;
+        padding-right: 0px;
+    	padding-left: 0px;
       }
       #battery {
         padding-right: 10px;

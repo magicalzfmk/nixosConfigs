@@ -1,11 +1,8 @@
 { config, pkgs, ... }:
 {
-
   environment.systemPackages = with pkgs; [
-    grim
-    slurp
-    wl-clipboard
-    textsnatcher
-    flameshot
+    dracula-theme
+    nordzy-cursor-theme
+    dracula-icon-theme
   ];
 }
