@@ -6,6 +6,7 @@
     ./piracy.nix
     ./audio.nix
     ./ui.nix
+    ./office.nix
   ];
 
 #  module2.enable = lib.mkDefault true;
