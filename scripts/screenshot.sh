@@ -1,3 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-grim -l 0 -g "$(slurp)" - | wl-copy
+FILENAME="screenshot_$(date +%Y%m%d_%H%M%S)"
+
+flameshot screen -p ~/Pictures/Screenshots/"$FILENAME"
+
+sleep 1
+
+pkill flameshot

@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
-{
-
+{  
   environment.systemPackages = with pkgs; [
     grim
     slurp
     wl-clipboard
     textsnatcher
-    flameshot
+    (flameshot.override { enableWlrSupport = true; })
+    wlroots
   ];
 }

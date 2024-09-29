@@ -117,7 +117,8 @@ in
         #Custom Binds
         "$mainMod and CTRL, P, exec, bash ~/Configs/scripts/relaunchTopBar.sh"
         "$mainMod and CTRL, E, exec, bash ~/Configs/scripts/evaluatePkgs.sh"
-        "SHIFT, Print, exec, bash ~/Configs/scripts/screenshot.sh"
+        "SHIFT, Print, exec, bash ~/Configs/scripts/screenshotPart.sh"
+        ", Print, exec, bash ~/Configs/scripts/screenshot.sh"
         
         #Example binds
         "$mainMod, Q, exec, $terminal"
