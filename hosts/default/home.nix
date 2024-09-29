@@ -101,4 +101,12 @@
     cursorTheme.name = lib.mkForce "Nordzy-cursors";
     iconTheme.name = lib.mkForce "Dracula";
   };
+  
+  services.flameshot = {
+    enable = true;
+    settings.General = {
+      disabledTrayIcon = true;
+      showStartupLaunchMessage = false;
+    };
+  };
 }
