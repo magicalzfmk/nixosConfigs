@@ -2,12 +2,6 @@
 {
 #  programs.ddnet.enable = true;
   
-  # Enable Opengl
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-  
   # Bluetooth
   hardware.bluetooth= {
     enable = true;

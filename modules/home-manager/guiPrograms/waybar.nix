@@ -26,7 +26,7 @@
           "temperature"
           "idle_inhibitor"
           "pipewire"
-          "power-profiles-daemon"
+          #"power-profiles-daemon"
           "cpu"
           "memory"
           "backlight"
