@@ -17,6 +17,12 @@
   
   #stylix.targets.pkgs.waybar.enable = false;
   #stylix.targets.rofi.enable = true;
+  
+  stylix.homeManagerIntegration.autoImport = true;
+  stylix.homeManagerIntegration.followSystem = true;
+  
+  stylix.targets.gtk.enable = true;
+  stylix.targets.gnome.enable = true;
 
   stylix.fonts = {
     sizes = {
