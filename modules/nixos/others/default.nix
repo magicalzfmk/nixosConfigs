@@ -1,8 +1,8 @@
 { pkgs, lib, ... }: {
   imports = [
+    ./laptop.nix
     ./stylix.nix
     ./theme.nix
-    ./laptop.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

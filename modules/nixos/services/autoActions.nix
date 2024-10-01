@@ -1,10 +1,11 @@
 { config, pkgs, inputs, ... }:
 {
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
+  # nh clean enabled
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "weekly";
+  #  options = "--delete-older-than 1w";
+  #}; 
   
   nix.settings.auto-optimise-store = true;
   

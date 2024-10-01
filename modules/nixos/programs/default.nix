@@ -1,12 +1,13 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./utilities.nix
-    ./steam.nix
-    ./games.nix
-    ./piracy.nix
     ./audio.nix
-    ./ui.nix
+    ./calibre.nix
+    ./games.nix
     ./office.nix
+    ./piracy.nix
+    ./steam.nix
+    ./ui.nix
+    ./utilities.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

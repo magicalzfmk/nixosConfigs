@@ -1,11 +1,12 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./os.nix
-    ./nh.nix
-    ./screenshot.nix
-    ./others.nix
-    ./utilities.nix
+    ./autoActions.nix
     ./hyprland.nix
+    ./nh.nix
+    ./os.nix
+    ./others.nix
+    ./screenshot.nix
+    ./utilities.nix
   ];
 
 #  module2.enable = lib.mkDefault true;
