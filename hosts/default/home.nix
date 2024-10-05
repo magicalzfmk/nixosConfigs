@@ -91,7 +91,7 @@
     aliases = {
       pm = "push github main";
       co = "checkout";
-      cm = "commit";
+      cm = "commit -a";
     };
   };
   
