@@ -39,11 +39,23 @@ in
   
   #networking.firewall.allowedTCPPorts = [ 5037 ];
   #networking.firewall.allowedUDPPorts = [ 5037 ];
+  
+  environment.sessionVariables = rec {
+    PATH = [
+      "~/development/flutter/bin"
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     android-studio
     #androidComposition.androidsdk
-    flutter
+    #flutter
+    clang
+    ninja
+    pkg-config
+    gtk3
+    pcre
+    epoxy
   ];
 
 }

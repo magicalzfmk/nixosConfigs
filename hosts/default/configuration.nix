@@ -18,7 +18,7 @@
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
   nix.settings.experimental-features = ["nix-command" "flakes"];
   
   # Enable Flatpak
@@ -38,8 +38,8 @@
     ];
     backupFileExtension = "old";
     extraSpecialArgs = { inherit inputs; };
-    #useGlobalPkgs = true;
-    #useUserPackages = true;
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users = {
       zfmk = import ./home.nix;
     };

@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     # System
     celluloid
+    stremio
     gnome-software
 
     # Others
