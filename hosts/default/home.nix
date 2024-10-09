@@ -83,7 +83,7 @@
   #git
   programs.git = {
     enable = true;
-    userName = "zfmk";
+    userName = "magicalzfmk";
     userEmail = "mitanshkataria73@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
