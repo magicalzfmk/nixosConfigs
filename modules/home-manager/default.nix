@@ -4,5 +4,6 @@
   imports = [
     ./guiPrograms/hyprland.nix
     ./guiPrograms/waybar.nix
+    ./guiPrograms/alacritty.nix
   ];
 }
