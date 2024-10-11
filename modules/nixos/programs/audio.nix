@@ -14,7 +14,7 @@ in
   # Spicetify
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.dracula;
+    theme = lib.mkForce spicePkgs.themes.dracula;
     
     enabledExtensions = with spicePkgs.extensions; [
       adblock
