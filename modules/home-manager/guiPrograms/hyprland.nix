@@ -23,7 +23,7 @@ in
       "$menu" = lib.mkForce "rofi -show drun -show-icons";
       
       #${startupScript}/bin/start
-      exec-once = ''bash ~/Configs/scripts/start.sh'';
+      exec-once = ''bash $FLAKE/scripts/start.sh'';
       
       #env = [
       #  "XCURSOR_SIZE,12"
@@ -41,6 +41,8 @@ in
         "col.nogroup_border_active" = lib.mkForce "rgb(bd93f9)";
          
          layout = lib.mkForce "dwindle";
+         
+         resize_on_border = true;
       };
       
       decoration = {

@@ -192,6 +192,7 @@
         border-radius: 0;
         font-family: Source Code Pro;
         font-size: 12px;
+        font-weight: bold;
         padding: 0px;
       }
       .modules-center{
@@ -226,6 +227,46 @@
       #mpd {
     	padding: 0 10px;
       }
+      #temperature {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #idle_inhibitor {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #power-profiles-daemon {
+    	padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #cpu {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #memory{
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #backlight {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #battery {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #clock {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #network {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
+      #tray {
+        padding-right: 5px;
+    	padding-left: 5px;
+      }
       #workspaces {
     	margin: 0 4px;
       }
@@ -235,21 +276,11 @@
       .modules-right > widget:last-child > #workspaces {
     	margin-right: 0;
       }
-      #power-profiles-daemon {
-    	padding-right: 5px;
-    	padding-left: 5px;
-      }
       #custom-media {
     	min-width: 100px;
       }
-      #network {
-        padding-right: 0px;
-    	padding-left: 0px;
-      }
-      #battery {
-        padding-right: 10px;
-    	padding-left: 10px;
-      }
+      
+      
     '';
                
   };

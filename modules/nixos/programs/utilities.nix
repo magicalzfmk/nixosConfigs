@@ -10,6 +10,7 @@
     freetube
     obsidian
     syncthing
+    anki
     thunderbird
     chromium
   ];
