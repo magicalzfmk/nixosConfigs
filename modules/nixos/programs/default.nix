@@ -9,6 +9,7 @@
     ./ui.nix
     ./utilities.nix
     ./vm.nix
+    ./localsend.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

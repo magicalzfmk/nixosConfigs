@@ -6,9 +6,8 @@ in
     enable = true;
     settings = {
       import = [
-        "../../other configs/alacritty/dracula.toml"
+        "$FLAKE/other configs/alacritty/dracula.toml"
       ];
-      
       
     };
   };

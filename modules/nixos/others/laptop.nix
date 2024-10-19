@@ -30,6 +30,7 @@
   #};
   
   # Enable Opengl
+  # hardware.opengl has beed changed to hardware.graphics
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -38,6 +39,17 @@
       vaapiVdpau
       libvdpau-va-gl
     ];
+  };
+  
+  # Bluetooth
+  hardware.bluetooth= {
+    enable = true;
+    package = pkgs.bluez;
+    input = {
+      General = {
+        #ClassicBondedOnly = false;
+      };
+    };
   };
   
   environment.sessionVariables = {

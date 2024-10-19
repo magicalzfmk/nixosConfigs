@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   xdg.portal.enable = true;
@@ -141,8 +141,8 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  environment.sessionVariables = {
-    FLAKE = "/home/zfmk/Configs";
+  environment.sessionVariables = lib.mkForce {
+    FLAKE = "$HOME/Configs";
     
     NIXPKGS_ALLOW_UNFREE=1;
   };

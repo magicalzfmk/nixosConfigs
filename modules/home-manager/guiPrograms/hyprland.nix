@@ -1,17 +1,13 @@
 { config, pkgs, lib, ... }:
 let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      ${pkgs.waybar}/bin/waybar &
-      ${pkgs.swww}/bin/swww init &
-  
-      sleep 1
-  
-      ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
-      
-      nm-applet --indicator &
-      
-      ${pkgs.mako}/bin/mako
-    '';
+    #startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    #  ${pkgs.waybar}/bin/waybar &
+    #  ${pkgs.swww}/bin/swww init &
+    #  sleep 1
+    #  ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
+    #  nm-applet --indicator &
+    #  ${pkgs.mako}/bin/mako
+    #'';
 in
 {
   wayland.windowManager.hyprland = {
@@ -117,10 +113,11 @@ in
       
       bind = [
         #Custom Binds
-        "$mainMod and CTRL, P, exec, bash ~/Configs/scripts/relaunchTopBar.sh"
-        "$mainMod and CTRL, E, exec, bash ~/Configs/scripts/evaluatePkgs.sh"
-        "SHIFT, Print, exec, bash ~/Configs/scripts/screenshotPart.sh"
-        ", Print, exec, bash ~/Configs/scripts/screenshot.sh"
+        "$mainMod and CTRL, P, exec, bash $FLAKE/scripts/relaunchTopBar.sh"
+        "$mainMod and CTRL, E, exec, bash $FLAKE/scripts/evaluatePkgs.sh"
+        "SHIFT, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
+        #"CTRL, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
+        ", Print, exec, bash $FLAKE/scripts/screenshot.sh"
         
         #Example binds
         "$mainMod, Q, exec, $terminal"
@@ -128,7 +125,7 @@ in
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
+        "$mainMod, space, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         

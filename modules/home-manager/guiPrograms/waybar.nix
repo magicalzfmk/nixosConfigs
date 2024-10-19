@@ -1,8 +1,4 @@
 { pkgs, lib, ... }:
-#let
-#  jsonContent = builtins.readFile "/home/zfmk/Configs/modules/home-manager/guiPrograms/waybar.jsonc";
-#  cssContent = builtins.readFile "/home/zfmk/Configs/modules/home-manager/guiPrograms/waybar.css";
-#in
 {
   programs.waybar = {
     enable = true;
@@ -173,7 +169,7 @@
           format  = "⏻ ";
           tooltip = false;
 	  menu = "on-click";
-	  menu-file = "$HOME/.config/waybar/power_menu.xml"; # Menu file in resources folder
+	  #menu-file = "$HOME/.config/waybar/power_menu.xml"; # Menu file in resources folder
           menu-actions = {
             shutdown = "shutdown";
             reboot = "reboot";
