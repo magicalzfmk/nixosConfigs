@@ -23,7 +23,7 @@
     pkg-config
     gtk3
     pcre
-    epoxy
+    libepoxy
   ];
 
 }

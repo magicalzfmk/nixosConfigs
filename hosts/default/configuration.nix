@@ -9,7 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+      #inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -32,18 +32,18 @@
   };
   
   # Home Manager
-  home-manager = {
-    sharedModules = [
-      inputs.self.outputs.homeManagerModules.default
-    ];
-    backupFileExtension = "old";
-    extraSpecialArgs = { inherit inputs; };
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users = {
-      zfmk = import ./home.nix;
-    };
-  };
+  #home-manager = {
+  #  sharedModules = [
+  #    inputs.self.outputs.homeManagerModules.default
+  #  ];
+  #  backupFileExtension = lib.mkForce "old";
+  #  extraSpecialArgs = { inherit inputs; };
+  #  useGlobalPkgs = true;
+  #  useUserPackages = true;
+  #  users = {
+  #    zfmk = import ./home.nix;
+  #  };
+  #};
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

@@ -6,10 +6,11 @@
   home.username = "zfmk";
   home.homeDirectory = "/home/zfmk";
   
+  
   #home-manager.useBackup = true;
   #home-manager.backupFileExtension = ".old";
   imports = [
-    #../../modules/home-manager/default.nix
+    ../../modules/home-manager/default.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -79,35 +80,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  #git
-  programs.git = {
-    enable = true;
-    userName = "magicalzfmk";
-    userEmail = "mitanshkataria73@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
-    aliases = {
-      pm = "push github main";
-      co = "checkout";
-      cm = "commit -a";
-    };
-  };
-  
-  gtk = {
-    enable = true;
-    theme.name = lib.mkForce "Dracula";
-    cursorTheme.name = lib.mkForce "Nordzy-cursors";
-    iconTheme.name = lib.mkForce "Dracula";
-  };
-  
-  services.flameshot = {
-    enable = true;
-    settings.General = {
-      disabledTrayIcon = true;
-      showStartupLaunchMessage = false;
-      showDesktopNotification = false;
-    };
-  };
 }
