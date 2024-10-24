@@ -9,7 +9,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -30,20 +29,6 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-  
-  # Home Manager
-  #home-manager = {
-  #  sharedModules = [
-  #    inputs.self.outputs.homeManagerModules.default
-  #  ];
-  #  backupFileExtension = lib.mkForce "old";
-  #  extraSpecialArgs = { inherit inputs; };
-  #  useGlobalPkgs = true;
-  #  useUserPackages = true;
-  #  users = {
-  #    zfmk = import ./home.nix;
-  #  };
-  #};
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -72,15 +57,31 @@
   
   
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm = {
+  services.xserver = {
     enable = true;
-    wayland = true;
+    # Enable the GNOME Desktop Environment.
+    #displayManager.gdm = {
+    #  enable = true;
+    #  wayland = true;
+    #};
+    #desktopManager.gnome.enable = true;
   };
-  services.xserver.desktopManager.gnome.enable = true;
-
+  
+  # Enable KDE
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "plasma";
+    sddm.wayland.enable = true;
+  };
+  services.desktopManager.plasma6.enable = true;
+  programs.dconf.enable = true;
+  
+  # Excluding some KDE Plasma applications from the default install
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    plasma-browser-integration
+    konsole
+    oxygen
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {

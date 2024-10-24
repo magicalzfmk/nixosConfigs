@@ -1,6 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
     ./autoActions.nix
+    #./homeManager.nix
     ./hyprland.nix
     ./nh.nix
     ./os.nix

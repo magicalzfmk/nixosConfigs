@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   imports = [
     ./laptop.nix
-    ./stylix.nix
+    #./stylix.nix
     ./theme.nix
   ];
 

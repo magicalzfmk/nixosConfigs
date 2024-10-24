@@ -24,7 +24,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, pkgs_stable, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, pkgs_stable, home-manager, stylix, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs{
@@ -46,7 +46,7 @@
       specialArgs = {inherit inputs pkgs stablePkgs system;};
       modules = [
         ./hosts/default/configuration.nix
-        inputs.stylix.nixosModules.stylix
+        #inputs.stylix.nixosModules.stylix
         #inputs.home-manager.nixosModules.default
         ./modules/nixos
       ];
@@ -59,6 +59,7 @@
       modules = [
         ./hosts/default/home.nix
         ./modules/home-manager/default.nix
+        stylix.homeManagerModules.stylix
       ];
     };
 

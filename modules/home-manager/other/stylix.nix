@@ -10,7 +10,6 @@
   #config.stylix.base16Scheme.base0E  To use somewhere
   
   stylix.image = /home/zfmk/Wallpapers/current.png;
-/home/zfmk/Wallpapers
   stylix.cursor.package = lib.mkForce pkgs.nordzy-cursor-theme;
   stylix.cursor.name = lib.mkForce "Nordzy-cursors";
   stylix.cursor.size = lib.mkForce 12;
