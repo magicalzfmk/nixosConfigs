@@ -58,7 +58,7 @@
       inherit pkgs;
       modules = [
         ./hosts/default/home.nix
-        #./modules/home-manager/default.nix
+        ./modules/home-manager/default.nix
       ];
     };
 

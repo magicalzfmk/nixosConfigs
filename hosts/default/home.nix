@@ -10,7 +10,7 @@
   #home-manager.useBackup = true;
   #home-manager.backupFileExtension = ".old";
   imports = [
-    ../../modules/home-manager/default.nix
+    #../../modules/home-manager/default.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
