@@ -60,28 +60,28 @@
   services.xserver = {
     enable = true;
     # Enable the GNOME Desktop Environment.
-    #displayManager.gdm = {
-    #  enable = true;
-    #  wayland = true;
-    #};
-    #desktopManager.gnome.enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome.enable = true;
   };
   
   # Enable KDE
-  services.displayManager = {
-    sddm.enable = true;
-    defaultSession = "plasma";
-    sddm.wayland.enable = true;
-  };
-  services.desktopManager.plasma6.enable = true;
-  programs.dconf.enable = true;
+  #services.displayManager = {
+  #  sddm.enable = true;
+  #  defaultSession = "plasma";
+  #  sddm.wayland.enable = true;
+  #};
+  #services.desktopManager.plasma6.enable = true;
+  #programs.dconf.enable = true;
   
   # Excluding some KDE Plasma applications from the default install
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    konsole
-    oxygen
-  ];
+  #environment.plasma6.excludePackages = with pkgs.kdePackages; [
+  #  plasma-browser-integration
+  #  konsole
+  #  oxygen
+  #];
 
   # Configure keymap in X11
   services.xserver.xkb = {

@@ -15,7 +15,7 @@ in
     settings = {
       monitor = lib.mkForce ",preferred,auto,1.0";
       "$terminal" = lib.mkForce "alacritty";
-      "$fileManager" = lib.mkForce "dolphin";
+      "$fileManager" = lib.mkForce "nautilus";
       "$menu" = lib.mkForce "rofi -show drun -show-icons";
       
       #${startupScript}/bin/start
