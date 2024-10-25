@@ -23,6 +23,11 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+    
+  #fileSystems."/run/media/zfmk/Backup" = {
+  #  device = "/dev/disk/by-uuid/40E9EB7562A3E3EB";
+  #  fsType = "ntfs";
+  #};
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/f17e08bb-85ef-4b7d-bdaa-ceb030a47afe"; }

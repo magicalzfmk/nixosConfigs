@@ -17,18 +17,18 @@ in
     };
   };
   
-  gtk = {
-    enable = true;
-    theme.name = lib.mkForce "Dracula";
-    cursorTheme.name = lib.mkForce "Nordzy-cursors";
-    iconTheme.name = lib.mkForce "Dracula";
-  };
+  #gtk = {
+  #  enable = true;
+  #  theme.name = lib.mkForce "Dracula";
+  #  cursorTheme.name = lib.mkForce "Nordzy-cursors";
+  #  iconTheme.name = lib.mkForce "Dracula";
+  #};
   
   services.flameshot = {
     enable = true;
     settings.General = {
-      disabledTrayIcon = true;
-      showStartupLaunchMessage = false;
+      #disabledTrayIcon = true;
+      #showStartupLaunchMessage = false;
       showDesktopNotification = false;
     };
   };

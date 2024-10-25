@@ -3,6 +3,7 @@
     ./laptop.nix
     #./stylix.nix
     ./theme.nix
+    ./gnome.nix
   ];
 
 #  module2.enable = lib.mkDefault true;

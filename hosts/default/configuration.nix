@@ -116,7 +116,7 @@
   users.users.zfmk = {
     isNormalUser = true;
     description = "Mitansh";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "storage"];
     packages = with pkgs; [
     #  thunderbird
     ];

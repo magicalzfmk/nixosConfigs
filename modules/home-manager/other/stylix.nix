@@ -28,10 +28,10 @@
       popups = 10;
       terminal = 10;
     };
-    #monospace = {
-    #  package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-    #  name = "JetBrainsMono Nerd Font Mono";
-    #};
+    monospace = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans Mono";
+    };
     sansSerif = {
       package = pkgs.dejavu_fonts;
       name = "DejaVu Sans";

@@ -14,6 +14,7 @@
     obsidian
     syncthing
     anki
+    krita
     thunderbird
     chromium
   ];
