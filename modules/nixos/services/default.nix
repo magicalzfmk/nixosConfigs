@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ ... }: {
   imports = [
     ./autoActions.nix
     #./homeManager.nix
