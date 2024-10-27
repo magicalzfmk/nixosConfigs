@@ -9,6 +9,7 @@
     };
     aliases = {
       pm = "push github main";
+      po = "push origin main";
       co = "checkout";
       cm = "commit -a";
     };
