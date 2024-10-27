@@ -4,5 +4,6 @@
     ./waybar.nix
     ./alacritty.nix
     ./others.nix
+    ./vscode.nix
   ];
 }
