@@ -22,6 +22,11 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    plugin-dracula = {
+      url = "github:Mofiqul/dracula.nvim";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, pkgs_stable, home-manager, stylix, ... }@inputs:
@@ -46,9 +51,11 @@
       specialArgs = {inherit inputs pkgs stablePkgs system;};
       modules = [
         ./hosts/default/configuration.nix
+        ./modules/nixos
+        
+        # Home-Manager Modules
         #inputs.stylix.nixosModules.stylix
         #inputs.home-manager.nixosModules.default
-        ./modules/nixos
       ];
     };
     

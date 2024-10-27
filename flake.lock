@@ -536,6 +536,22 @@
         "type": "github"
       }
     },
+    "plugin-dracula": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729038981,
+        "narHash": "sha256-3jFOaFtH+EIx4mUKV0U/cFkUo8By0JgorTYgFUKEs/s=",
+        "owner": "Mofiqul",
+        "repo": "dracula.nvim",
+        "rev": "94fa7885a06a67f0a8bfa03e064619d05d1ba496",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mofiqul",
+        "repo": "dracula.nvim",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -567,6 +583,7 @@
         "hyprland-plugins": "hyprland-plugins",
         "nixpkgs": "nixpkgs_2",
         "pkgs_stable": "pkgs_stable",
+        "plugin-dracula": "plugin-dracula",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"
       }

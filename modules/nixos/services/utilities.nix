@@ -7,12 +7,15 @@
   
   hardware.opentabletdriver.enable = true;
   
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  
   environment.systemPackages = with pkgs; [
     git
     pandoc
     neofetch
     lf
     neovim
+    nixd
     brightnessctl
   ];
 }

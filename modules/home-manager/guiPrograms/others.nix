@@ -24,12 +24,12 @@ in
   #  iconTheme.name = lib.mkForce "Dracula";
   #};
   
-  services.flameshot = {
-    enable = true;
-    settings.General = {
-      #disabledTrayIcon = true;
-      #showStartupLaunchMessage = false;
-      showDesktopNotification = false;
-    };
-  };
+  #services.flameshot = {
+  #  enable = true;
+  #  settings.General = {
+  #    disabledTrayIcon = true;
+  #    showStartupLaunchMessage = false;
+  #    showDesktopNotification = false;
+  #  };
+  #};
 }
