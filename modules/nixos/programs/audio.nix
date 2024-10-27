@@ -1,21 +1,25 @@
-{ config, pkgs, inputs, lib, ... }:
-let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in
 {
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+in {
   imports = [
     inputs.spicetify-nix.nixosModules.default
   ];
-  
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "spotify"
-  ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "spotify"
+    ];
 
   # Spicetify
   programs.spicetify = {
     enable = true;
     theme = lib.mkForce spicePkgs.themes.dracula;
-    
+
     enabledExtensions = with spicePkgs.extensions; [
       adblock
       autoSkipVideo
@@ -43,14 +47,14 @@ in
       ncsVisualizer
       #betterLibrary
     ];
-#    enabledSnippets = with spicePkgs.snippets; [
-#      rotating-coverart
-#      pointer
-#    ];
+    #    enabledSnippets = with spicePkgs.snippets; [
+    #      rotating-coverart
+    #      pointer
+    #    ];
   };
-  
-  networking.firewall.allowedUDPPorts = [ 2234 2242 ];
-  networking.firewall.allowedTCPPorts = [ 2234 2242 ];
+
+  networking.firewall.allowedUDPPorts = [2234 2242];
+  networking.firewall.allowedTCPPorts = [2234 2242];
 
   environment.systemPackages = with pkgs; [
     spotify

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./autoActions.nix
     #./homeManager.nix
@@ -10,7 +10,6 @@
     ./utilities.nix
   ];
 
-#  module2.enable = lib.mkDefault true;
-#  module3.enable = false;
-
+  #  module2.enable = lib.mkDefault true;
+  #  module3.enable = false;
 }

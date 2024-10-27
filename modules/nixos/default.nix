@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{...}: {
   imports = [
     ./others/default.nix
     ./services/default.nix
@@ -6,7 +6,6 @@
     ./devEnv/default.nix
   ];
 
-#  module2.enable = lib.mkDefault true;
-#  module3.enable = false;
-
+  #  module2.enable = lib.mkDefault true;
+  #  module3.enable = false;
 }

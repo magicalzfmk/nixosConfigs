@@ -1,15 +1,14 @@
-{ config, pkgs, ... }:
-{
-  users.users.zfmk.extraGroups = [ "kvm" ];
-  
+{pkgs, ...}: {
+  users.users.zfmk.extraGroups = ["kvm"];
+
   #environment.sessionVariables = {
   #  #PATH = "~/development/flutter/bin:$PATH";
   #};
-  
+
   #networking.firewall.allowedTCPPorts = [ 5037 ];
   #networking.firewall.allowedUDPPorts = [ 5037 ];
-  
-  environment.sessionVariables = rec {
+
+  environment.sessionVariables = {
     PATH = [
       "~/development/flutter/bin"
     ];
@@ -25,5 +24,4 @@
     pcre
     libepoxy
   ];
-
 }

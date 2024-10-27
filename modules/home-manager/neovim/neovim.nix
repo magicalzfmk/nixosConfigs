@@ -1,33 +1,37 @@
-{ pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   toLua = str: "lua << EOF\n${str}\nEOF\n";
   toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-in
-{
+in {
   nixpkgs = {
     overlays = [
       (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          own-dracula-nvim = prev.vimUtils.buildVimPlugin {
-            name = "dracula";
-            src = inputs.plugin-dracula;
+        vimPlugins =
+          prev.vimPlugins
+          // {
+            own-dracula-nvim = prev.vimUtils.buildVimPlugin {
+              name = "dracula";
+              src = inputs.plugin-dracula;
+            };
           };
-        };
       })
     ];
   };
-  
+
   programs.neovim = {
     enable = true;
-    
+
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    
+
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/options.lua}
     '';
-    
+
     plugins = with pkgs.vimPlugins; [
       {
         plugin = nvim-lspconfig;
@@ -46,7 +50,7 @@ in
 
       neodev-nvim
 
-      nvim-cmp 
+      nvim-cmp
       {
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugin/cmp.lua;
@@ -65,19 +69,18 @@ in
       luasnip
       friendly-snippets
 
-
       lualine-nvim
       nvim-web-devicons
 
       {
-        plugin = (nvim-treesitter.withPlugins (p: [
+        plugin = nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
           p.tree-sitter-vim
           p.tree-sitter-bash
           p.tree-sitter-lua
           p.tree-sitter-python
           p.tree-sitter-json
-        ]));
+        ]);
         config = toLuaFile ./nvim/plugin/treesitter.lua;
       }
 
@@ -88,7 +91,7 @@ in
       #  config = "colorscheme dracula";
       #}
     ];
-    
+
     extraPackages = with pkgs; [
       lua-language-server
       #rnix-lsp

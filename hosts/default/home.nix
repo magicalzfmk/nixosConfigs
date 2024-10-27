@@ -1,12 +1,9 @@
-{ config, pkgs, home-manager, lib, ... }:
-
-{
+{...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "zfmk";
   home.homeDirectory = "/home/zfmk";
-  
-  
+
   #home-manager.useBackup = true;
   #home-manager.backupFileExtension = ".old";
   imports = [
@@ -75,7 +72,7 @@
   #  /etc/profiles/per-user/zfmk/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-      EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

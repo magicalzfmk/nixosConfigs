@@ -1,15 +1,13 @@
-{ config, pkgs, lib, ... }:
-let
-    #startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    #  ${pkgs.waybar}/bin/waybar &
-    #  ${pkgs.swww}/bin/swww init &
-    #  sleep 1
-    #  ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
-    #  nm-applet --indicator &
-    #  ${pkgs.mako}/bin/mako
-    #'';
-in
-{
+{lib, ...}: let
+  #startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+  #  ${pkgs.waybar}/bin/waybar &
+  #  ${pkgs.swww}/bin/swww init &
+  #  sleep 1
+  #  ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
+  #  nm-applet --indicator &
+  #  ${pkgs.mako}/bin/mako
+  #'';
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -17,30 +15,30 @@ in
       "$terminal" = lib.mkForce "alacritty";
       "$fileManager" = lib.mkForce "nautilus";
       "$menu" = lib.mkForce "rofi -show drun -show-icons";
-      
+
       #${startupScript}/bin/start
       exec-once = ''bash $FLAKE/scripts/start.sh'';
-      
+
       #env = [
       #  "XCURSOR_SIZE,12"
       #  "HYPRCURSOR_SIZE,12"
       #];
-      
-      general = { 
+
+      general = {
         gaps_in = 1;
         gaps_out = 2;
         border_size = 1;
-        
+
         "col.active_border" = lib.mkForce "rgb(bd93f9)";
         "col.inactive_border" = lib.mkForce "rgba(44475aaa)";
         "col.nogroup_border" = lib.mkForce "rgba(282a36dd)";
         "col.nogroup_border_active" = lib.mkForce "rgb(bd93f9)";
-         
-         layout = lib.mkForce "dwindle";
-         
-         resize_on_border = true;
+
+        layout = lib.mkForce "dwindle";
+
+        resize_on_border = true;
       };
-      
+
       decoration = {
         rounding = 10;
 
@@ -50,10 +48,10 @@ in
         drop_shadow = false;
 
         blur = {
-            enabled = false;
+          enabled = false;
         };
       };
-      
+
       animations = {
         enabled = true;
 
@@ -68,7 +66,7 @@ in
           "workspaces, 1, 6, default"
         ];
       };
-      
+
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -77,8 +75,8 @@ in
       master = {
         new_status = "master";
       };
-      
-      misc = { 
+
+      misc = {
         force_default_wallpaper = 1;
         disable_hyprland_logo = true;
       };
@@ -89,28 +87,28 @@ in
           #col.inactive = "rgba(282a36dd)";
         };
       };
-      
+
       windowrulev2 = [
         "bordercolor rgb(ffb86c),xwayland:1"
         "suppressevent maximize, class:.*"
       ];
-      
+
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0;
-        
+
         touchpad = {
           natural_scroll = true;
         };
       };
-      
+
       gestures = {
         workspace_swipe = true;
       };
-      
-      "$mainMod" = "SUPER"; 
-      
+
+      "$mainMod" = "SUPER";
+
       bind = [
         #Custom Binds
         "$mainMod and CTRL, P, exec, bash $FLAKE/scripts/relaunchTopBar.sh"
@@ -118,7 +116,7 @@ in
         "SHIFT, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
         #"CTRL, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
         ", Print, exec, bash $FLAKE/scripts/screenshot.sh"
-        
+
         #Example binds
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
@@ -128,13 +126,13 @@ in
         "$mainMod, space, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        
+
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        
+
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -146,7 +144,7 @@ in
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-        
+
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -158,22 +156,22 @@ in
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-        
+
         # Example special workspace (scratchpad)
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
-        
+
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
-      
+
       # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
-      
+
       # Laptop multimedia keys for volume and LCD brightness
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
@@ -183,6 +181,6 @@ in
         ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
         ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
       ];
-    };  
+    };
   };
 }

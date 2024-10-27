@@ -1,10 +1,13 @@
-{ config, pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   services.thermald.enable = true;
   powerManagement.powertop.enable = true;
   services.system76-scheduler.settings.cfsProfiles.enable = true;
   services.power-profiles-daemon.enable = lib.mkForce false;
-  
+
   services.tlp = {
     enable = true;
     settings = {
@@ -14,7 +17,7 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
     };
   };
-  
+
   #services.auto-cpufreq = {
   #  enable = true;
   #  settings = {
@@ -28,7 +31,7 @@
   #    };
   #  };
   #};
-  
+
   # Enable Opengl
   # hardware.opengl has beed changed to hardware.graphics
   hardware.graphics = {
@@ -40,9 +43,9 @@
       libvdpau-va-gl
     ];
   };
-  
+
   # Bluetooth
-  hardware.bluetooth= {
+  hardware.bluetooth = {
     enable = true;
     package = pkgs.bluez;
     input = {
@@ -51,12 +54,8 @@
       };
     };
   };
-  
+
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
   };
-  
-  environment.systemPackages = with pkgs; [
-    
-  ];
 }

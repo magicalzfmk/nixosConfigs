@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{...}: {
   imports = [
     ./audio.nix
     ./calibre.nix
@@ -12,7 +12,6 @@
     ./localsend.nix
   ];
 
-#  module2.enable = lib.mkDefault true;
-#  module3.enable = false;
-
+  #  module2.enable = lib.mkDefault true;
+  #  module3.enable = false;
 }

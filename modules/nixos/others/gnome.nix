@@ -1,11 +1,6 @@
-{ config, pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    
-  ];
-  
+{pkgs, ...}: {
   services.gvfs.enable = true;
-  
+
   #nixpkgs.overlays = [(self: super: {
   #  gnome = super.gnome.overrideScope' (gself: gsuper: {
   #    nautilus = gsuper.nautilus.overrideAttrs (nsuper: {
@@ -16,15 +11,15 @@
   #    });
   #  });
   #})];
-  
+
   #nixpkgs.config.allowAliases = false;
-  
+
   nixpkgs.overlays = [
     # GNOME 46: triple-buffering-v4-46
     (final: prev: {
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
         mutter = gnomePrev.mutter.overrideAttrs (old: {
-          src = pkgs.fetchFromGitLab  {
+          src = pkgs.fetchFromGitLab {
             domain = "gitlab.gnome.org";
             owner = "vanvugt";
             repo = "mutter";

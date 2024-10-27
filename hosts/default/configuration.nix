@@ -1,15 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   xdg.portal.enable = true;
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,14 +18,14 @@
 
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  
+
   # Enable Flatpak
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
+    wantedBy = ["multi-user.target"];
+    path = [pkgs.flatpak];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
@@ -54,8 +55,7 @@
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
   };
-  
-  
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -66,7 +66,7 @@
     };
     desktopManager.gnome.enable = true;
   };
-  
+
   # Enable KDE
   #services.displayManager = {
   #  sddm.enable = true;
@@ -75,7 +75,7 @@
   #};
   #services.desktopManager.plasma6.enable = true;
   #programs.dconf.enable = true;
-  
+
   # Excluding some KDE Plasma applications from the default install
   #environment.plasma6.excludePackages = with pkgs.kdePackages; [
   #  plasma-browser-integration
@@ -108,7 +108,6 @@
     #media-session.enable = true;
   };
 
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -116,12 +115,9 @@
   users.users.zfmk = {
     isNormalUser = true;
     description = "Mitansh";
-    extraGroups = [ "networkmanager" "wheel" "storage"];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    extraGroups = ["networkmanager" "wheel" "storage"];
+    packages = [];
   };
-
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = false;
@@ -139,13 +135,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  ];
+  environment.systemPackages = [];
 
   environment.sessionVariables = lib.mkForce {
     FLAKE = "$HOME/Configs";
-    
-    NIXPKGS_ALLOW_UNFREE=1;
+
+    NIXPKGS_ALLOW_UNFREE = 1;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -174,9 +169,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-  
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
 
-  ];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [];
 }
