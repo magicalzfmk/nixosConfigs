@@ -8,6 +8,7 @@
 
     extensions = with pkgs; [
       vscode-extensions.jnoortheen.nix-ide
+      vscode-extensions.dracula-theme.theme-dracula
     ];
 
     userSettings = {

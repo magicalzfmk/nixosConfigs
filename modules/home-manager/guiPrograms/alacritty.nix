@@ -2,7 +2,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [
+      general.import = [
         "$FLAKE/otherConfigs/alacritty/dracula.toml"
       ];
     };
