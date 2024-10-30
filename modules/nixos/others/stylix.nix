@@ -12,7 +12,7 @@
   stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
   #config.stylix.base16Scheme.base0E  To use somewhere
 
-  stylix.image = /home/zfmk/Wallpapers/current.png;
+  stylix.image = "$FLAKE/images/current.png";
   stylix.cursor.package = lib.mkForce pkgs.nordzy-cursor-theme;
   stylix.cursor.name = lib.mkForce "Nordzy-cursors";
   stylix.cursor.size = lib.mkForce 12;
@@ -34,16 +34,16 @@
       terminal = 10;
     };
     monospace = {
-      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
-      name = "JetBrainsMono Nerd Font Mono";
+      package = pkgs.cascadia-code;
+      name = "Caskaydia Cove Nerd Font";
     };
     sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
+      package = pkgs.cascadia-code;
+      name = "Caskaydia Sans";
     };
     serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
+      package = pkgs.cascadia-code;
+      name = "Caskaydia Serif";
     };
   };
 

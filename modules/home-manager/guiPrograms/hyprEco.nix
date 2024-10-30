@@ -12,8 +12,8 @@
       background = [
         {
           path = "$FLAKE/images/current.png";
-          blur_passes = 3;
-          blur_size = 8;
+          blur_passes = 1;
+          blur_size = 2;
         }
       ];
 
@@ -41,7 +41,7 @@
     enable = true;
     settings = {
       general = {
-        before_sleep_cmd = "loginctl lock-session";
+        before_sleep_cmd = "pidof hyprlock || hyprlock";
         after_sleep_cmd = "hyprctl dispatch dpms on";
         lock_cmd = "pidof hyprlock || hyprlock";
       };
@@ -53,7 +53,7 @@
         }
         {
           timeout = 330; #5.5
-          on-timeout = "loginctl lock-session"; 
+          on-timeout = "pidof hyprlock || hyprlock"; 
           on-resume = "hyprctl dispatch dpms on";
         }
         {
