@@ -53,7 +53,7 @@
         }
         {
           timeout = 330; #5.5
-          on-timeout = "pidof hyprlock || hyprlock"; 
+          on-timeout = "pidof hyprlock || hyprlock";
           on-resume = "hyprctl dispatch dpms on";
         }
         {

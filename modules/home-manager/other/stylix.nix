@@ -12,7 +12,7 @@
   stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
   #config.stylix.base16Scheme.base0E  To use somewhere
 
-  stylix.image = ./current.png;
+  stylix.image = ../../../images/current.png;
 
   stylix.cursor.package = lib.mkForce pkgs.nordzy-cursor-theme;
   stylix.cursor.name = lib.mkForce "Nordzy-cursors";

@@ -23,6 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nvim Dracula Plugin
     plugin-dracula = {
       url = "github:Mofiqul/dracula.nvim";
       flake = false;
@@ -30,7 +31,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     pkgs_stable,
     home-manager,
