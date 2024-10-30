@@ -32,8 +32,8 @@
       terminal = 10;
     };
     monospace = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans Mono";
+      package = pkgs.cascadia-code;
+      name = "Cascadia Mono";
     };
     sansSerif = {
       package = pkgs.dejavu_fonts;
