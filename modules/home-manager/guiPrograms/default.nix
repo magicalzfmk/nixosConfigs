@@ -5,5 +5,6 @@
     ./alacritty.nix
     ./others.nix
     ./vscode.nix
+    ./hyprEco.nix
   ];
 }

@@ -116,6 +116,7 @@ in {
         "SHIFT, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
         #"CTRL, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
         ", Print, exec, bash $FLAKE/scripts/screenshot.sh"
+        "$mainMod and SHIFT, L, exec, hyprlock"
 
         #Example binds
         "$mainMod, Q, exec, $terminal"
@@ -128,10 +129,10 @@ in {
         "$mainMod, J, togglesplit,"
 
         # Move focus with mainMod + arrow keys
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "$mainMod, H, movefocus, l"
+        "$mainMod, J, movefocus, d"
+        "$mainMod, K, movefocus, u"
+        "$mainMod, L, movefocus, r"
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"

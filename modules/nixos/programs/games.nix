@@ -6,7 +6,9 @@
     mangohud
     bottles
     lutris
-    wine
+    
+    wineWowPackages.waylandFull
+    winetricks
   ];
 
   #protonup settings

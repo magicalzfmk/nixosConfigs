@@ -5,4 +5,6 @@ swww img ~/Wallpapers/current.png &
 
 nm-applet --indicator &
 
-mako
+mako &
+
+hypridle

@@ -14,6 +14,8 @@
 
   environment.systemPackages = with pkgs; [
     git
+    alacritty
+    starship
     pandoc
     neofetch
     lf

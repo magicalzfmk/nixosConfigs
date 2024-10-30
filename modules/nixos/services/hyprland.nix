@@ -5,9 +5,13 @@
     dunst
     libnotify
     swww
-    alacritty
     rofi-wayland
     networkmanagerapplet
     ags
+
+    # Hyprland Ecosystem
+    hyprlock
+    hypridle
+    hyprpaper
   ];
 }

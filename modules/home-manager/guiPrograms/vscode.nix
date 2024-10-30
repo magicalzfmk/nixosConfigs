@@ -25,10 +25,10 @@
           };
           "options" = {
             "nixos" = {
-              "expr" = "(builtins.getFlake \"/home/zfmk/Configs\").nixosConfigurations.laptop.options";
+              "expr" = "(builtins.getFlake \"$FLAKE\").nixosConfigurations.laptop.options";
             };
             "home_manager" = {
-              "expr" = "(builtins.getFlake \"/home/zfmk/Configs\").homeConfigurations.laptop.options";
+              "expr" = "(builtins.getFlake \"$FLAKE\").homeConfigurations.laptop.options";
             };
           };
         };
