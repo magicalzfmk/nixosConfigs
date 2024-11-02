@@ -145,29 +145,30 @@
 }
 
 /* Workspaces stuff */
-
 #workspaces {
   color: @dracula_light;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
+}
+
+button {
+  box-shadow: none;
 }
 
 #workspaces button {
   font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
   padding: 0;
+  color: @mode;
   /*color: #999;*/
 }
 
 #workspaces button.focused {
   background: @purple;
-  border-color: @purple;
   color: @purple;
-  opacity: 1;
 }
 
 #workspaces button.urgent {
   border-color: @red;
   color: @red;
-  opacity: 1;
 }
 
 #window {
