@@ -11,9 +11,11 @@
         modules-left = [
           "clock"
           "hyprland/language"
+          "backlight"
           "custom/scratchpad-indicator"
           "hyprland/mode"
           "idle_inhibitor"
+          "bluetooth"
           "custom/media"
         ];
         modules-center = [
@@ -22,10 +24,10 @@
         modules-right = [
           "custom/cpugovernor"
           "cpu"
+          "memory"
           "temperature"
           "custom/gpu"
-          #"pulseaudio"
-          "bluetooth"
+          "battery"
           "network"
           "tray"
         ];
@@ -48,7 +50,7 @@
 
         "bluetooth" = {
           interval = 30;
-          format = "{icon}";
+          format = "<big>{icon}</big>";
           #format-alt = "{status}";
           format-icons = {
             enabled = "";
@@ -58,7 +60,7 @@
         };
 
         "hyprland/language" = {
-          format = "<big></big> {}";
+          format = " {}";
           max-length = 5;
           min-length = 5;
         };
@@ -101,7 +103,7 @@
         };
 
         "idle_inhibitor" = {
-          format = "{icon}";
+          format = "<big>{icon}</big>";
           format-icons = {
             activated = "";
             deactivated = "";
@@ -201,8 +203,9 @@
             power-saver = "";
           };
         };
+
         "network" = {
-          format-wifi = "  {essid}";
+          format-wifi = "<big></big>  {essid}";
           format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "";

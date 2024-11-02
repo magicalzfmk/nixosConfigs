@@ -20,7 +20,9 @@
     neofetch
     lf
     brightnessctl
+    blueberry
 
+    # Neovim and modules
     neovim
     nixd
     alejandra
