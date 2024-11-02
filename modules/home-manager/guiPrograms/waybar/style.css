@@ -178,6 +178,8 @@
 #bluetooth {
   background: @dracula_bg_blue;
   font-weight: bold;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
 }
 #custom-gpu {
   background: @dracula_bg;

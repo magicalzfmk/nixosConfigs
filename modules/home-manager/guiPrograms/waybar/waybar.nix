@@ -9,28 +9,25 @@
         spacing = 5;
         output = ["eDP-1" "HDMI-A-1"];
         modules-left = [
-          "hyprland/workspaces"
+          "clock"
+          "hyprland/language"
+          "custom/scratchpad-indicator"
           "hyprland/mode"
+          "idle_inhibitor"
           "custom/media"
         ];
         modules-center = [
-          "hyprland/window"
+          "hyprland/workspaces"
         ];
         modules-right = [
-          "mpd"
-          "temperature"
-          "idle_inhibitor"
-          "pipewire"
-          #"power-profiles-daemon"
+          "custom/cpugovernor"
           "cpu"
-          "memory"
-          "backlight"
-          "keyboard-state"
-          "battery"
-          "clock"
+          "temperature"
+          "custom/gpu"
+          #"pulseaudio"
+          "bluetooth"
           "network"
           "tray"
-          "custom/power"
         ];
 
         "hyprland/workspaces" = {
@@ -38,12 +35,33 @@
           all-outputs = true;
           format = "{icon}";
           format-icons = {
-            default = "";
-            active = "";
-            urgent = "";
+            default = "";
+            active = "";
+            urgent = "";
           };
         };
-        #  
+        #   
+
+        "hyprland/mode" = {
+          format = "<span style=\"italic\">{}</span>";
+        };
+
+        "bluetooth" = {
+          interval = 30;
+          format = "{icon}";
+          #format-alt = "{status}";
+          format-icons = {
+            enabled = "";
+            disabled = "";
+          };
+          on-click = "blueberry";
+        };
+
+        "hyprland/language" = {
+          format = "<big></big> {}";
+          max-length = 5;
+          min-length = 5;
+        };
 
         "keyboard-state" = {
           numlock = true;
@@ -88,6 +106,7 @@
             activated = "";
             deactivated = "";
           };
+          tooltip = "true";
         };
 
         "tray" = {
@@ -95,12 +114,17 @@
         };
 
         "clock" = {
-          tooltip-format = "<big>{ =%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{=%Y-%m-%d}";
+          format = "  {:%H:%M   %e %b}";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          today-format = "<b>{}</b>";
+          on-click = "gnome-calendar";
         };
 
         "cpu" = {
-          format = "{usage}% ";
+          interval = "1";
+          format = "  {max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>";
+          max-length = 13;
+          min-length = 13;
           tooltip = true;
         };
 
@@ -109,9 +133,43 @@
         };
 
         "temperature" = {
-          critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
-          format-icons = [""];
+          interval = "4";
+          hwmon-path = "/sys/class/hwmon/hwmon3/temp1_input";
+          critical-threshold = 74;
+          format-critical = "  {temperatureC}°C";
+          format = "{icon}  {temperatureC}°C";
+          format-icons = ["" "" ""];
+          max-length = 7;
+          min-length = 7;
+        };
+
+        "custom/weather" = {
+          exec = "curl 'https://wttr.in/?format=1'";
+          interval = 3600;
+        };
+
+        "custom/gpu" = {
+          exec = "$HOME/.config/waybar/custom_modules/custom-gpu.sh";
+          return-type = "json";
+          format = "  {}";
+          interval = 2;
+          tooltip = "{tooltip}";
+          max-length = 19;
+          min-length = 19;
+          on-click = "powerupp";
+        };
+
+        "custom/cpugovernor" = {
+          format = "{icon}";
+          interval = "30";
+          return-type = "json";
+          exec = "$HOME/.config/waybar/custom_modules/cpugovernor.sh";
+          min-length = 2;
+          max-length = 2;
+          format-icons = {
+            perf = "";
+            sched = "";
+          };
         };
 
         "backlight" = {
@@ -144,12 +202,14 @@
           };
         };
         "network" = {
-          format-wifi = "{essid} ({signalStrength}%)";
-          format-ethernet = "{ipaddr}/{cidr}";
-          tooltip-format = "{ifname} via {gwaddr}";
-          format-linked = "{ifname} (No IP)";
-          format-disconnected = "Disconnected ⚠";
-          format-alt = "{ifname} = {ipaddr}/{cidr}";
+          format-wifi = "  {essid}";
+          format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
+          format-linked = "{ifname} (No IP) ";
+          format-disconnected = "";
+          format-alt = "{ifname}: {ipaddr}/{cidr}";
+          family = "ipv4";
+          tooltip-format-wifi = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}";
+          tooltip-format-ethernet = " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}";
         };
 
         "custom/media" = {
@@ -162,6 +222,15 @@
           };
           escape = true;
           exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+        };
+
+        "custom/scratchpad-indicator" = {
+          interval = 3;
+          return-type = "json";
+          exec = "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'";
+          format = "{} 􏠜";
+          on-click = "exec swaymsg 'scratchpad show'";
+          on-click-right = "exec swaymsg 'move scratchpad'";
         };
 
         "custom/power" = {
