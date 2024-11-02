@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hyprland.nix
-    ./waybar.nix
+    ./waybar/waybar.nix
     ./alacritty.nix
     ./others.nix
     ./vscode.nix

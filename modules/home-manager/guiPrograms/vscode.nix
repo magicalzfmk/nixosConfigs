@@ -9,6 +9,7 @@
     extensions = with pkgs; [
       vscode-extensions.jnoortheen.nix-ide
       vscode-extensions.dracula-theme.theme-dracula
+      #vscode-extensions.csstools.postcss
     ];
 
     userSettings = {
