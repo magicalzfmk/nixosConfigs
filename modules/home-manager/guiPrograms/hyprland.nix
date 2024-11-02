@@ -1,13 +1,15 @@
-{lib, ...}: let
-  #startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-  #  ${pkgs.waybar}/bin/waybar &
-  #  ${pkgs.swww}/bin/swww init &
-  #  sleep 1
-  #  ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
-  #  nm-applet --indicator &
-  #  ${pkgs.mako}/bin/mako
-  #'';
-in {
+{lib, ...}:
+#let
+#startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+#  ${pkgs.waybar}/bin/waybar &
+#  ${pkgs.swww}/bin/swww init &
+#  sleep 1
+#  ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
+#  nm-applet --indicator &
+#  ${pkgs.mako}/bin/mako
+#'';
+#in
+{
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

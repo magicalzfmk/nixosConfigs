@@ -6,44 +6,48 @@
   #lib.mkDefault
   #lib.mkForce
 
-  stylix.enable = true;
-  stylix.autoEnable = true;
+  stylix = {
+    enable = true;
+    autoEnable = true;
 
-  stylix.base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
-  #config.stylix.base16Scheme.base0E  To use somewhere
+    base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+    #config.base16Scheme.base0E  To use somewhere
 
-  stylix.image = ../../../images/current.png;
+    image = ../../../images/current.png;
 
-  stylix.cursor.package = lib.mkForce pkgs.nordzy-cursor-theme;
-  stylix.cursor.name = lib.mkForce "Nordzy-cursors";
-  stylix.cursor.size = lib.mkForce 12;
-
-  #stylix.targets.pkgs.waybar.enable = false;
-  #stylix.targets.rofi.enable = true;
-
-  #stylix.targets.gtk.enable = true;
-  #stylix.targets.gnome.enable = true;
-
-  stylix.fonts = {
-    sizes = {
-      applications = 10;
-      desktop = 10;
-      popups = 10;
-      terminal = 10;
+    cursor = {
+      package = lib.mkForce pkgs.nordzy-cursor-theme;
+      name = lib.mkForce "Nordzy-cursors";
+      size = lib.mkForce 12;
     };
-    monospace = {
-      package = pkgs.cascadia-code;
-      name = "Cascadia Mono";
+
+    #targets.pkgs.waybar.enable = false;
+    #targets.rofi.enable = true;
+
+    #targets.gtk.enable = true;
+    #targets.gnome.enable = true;
+
+    fonts = {
+      sizes = {
+        applications = 10;
+        desktop = 10;
+        popups = 10;
+        terminal = 10;
+      };
+      monospace = {
+        package = pkgs.cascadia-code;
+        name = "Cascadia Mono";
+      };
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
     };
-    sansSerif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Sans";
-    };
-    serif = {
-      package = pkgs.dejavu_fonts;
-      name = "DejaVu Serif";
-    };
+
+    polarity = "dark";
   };
-
-  stylix.polarity = "dark";
 }

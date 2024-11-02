@@ -11,26 +11,33 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
+      kernelModules = [];
+    };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f9958a91-d493-493e-b2ba-6829b91968ef";
-    fsType = "ext4";
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/43BE-1618";
-    fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
-  };
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/f9958a91-d493-493e-b2ba-6829b91968ef";
+      fsType = "ext4";
+    };
 
-  #fileSystems."/run/media/zfmk/Backup" = {
-  #  device = "/dev/disk/by-uuid/40E9EB7562A3E3EB";
-  #  fsType = "ntfs";
-  #};
+    "/boot" = {
+      device = "/dev/disk/by-uuid/43BE-1618";
+      fsType = "vfat";
+      options = ["fmask=0077" "dmask=0077"];
+    };
+    
+    #"/run/media/zfmk/Backup" = {
+    #  device = "/dev/disk/by-uuid/40E9EB7562A3E3EB";
+    #  fsType = "ntfs";
+    #};
+  };
 
   swapDevices = [
     {device = "/dev/disk/by-uuid/f17e08bb-85ef-4b7d-bdaa-ceb030a47afe";}

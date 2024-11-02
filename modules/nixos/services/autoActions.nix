@@ -1,4 +1,4 @@
-{...}: {
+{
   # nh clean enabled
   #nix.gc = {
   #  automatic = true;

@@ -21,6 +21,7 @@
     lf
     brightnessctl
     blueberry
+    statix
 
     # Neovim and modules
     neovim

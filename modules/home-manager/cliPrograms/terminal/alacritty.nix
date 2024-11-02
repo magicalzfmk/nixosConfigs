@@ -1,25 +1,26 @@
-{...}: {
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      general.import = [
-        "$FLAKE/otherConfigs/alacritty/dracula.toml"
-      ];
+{
+  programs = {
+    alacritty = {
+      enable = true;
+      settings = {
+        general.import = [
+          "$FLAKE/otherConfigs/alacritty/dracula.toml"
+        ];
+      };
+    };
+
+    starship = {
+      enable = true;
+      settings = builtins.fromTOML (builtins.readFile ./starship.toml);
+    };
+
+    # Enable Starship for bash
+    bash = {
+      enable = true;
+      bashrcExtra = ''eval "$(starship init bash)"'';
     };
   };
-
-  programs.starship = {
-    enable = true;
-    settings = builtins.fromTOML (builtins.readFile ./starship.toml);
-  };
-
-  # Enable Starship for bash
-  programs.bash = {
-    enable = true;
-    bashrcExtra = ''eval "$(starship init bash)"'';
-  };
 }
-
 # {
 #       add_newline = true;
 #       command_timeout = 1300;
@@ -30,3 +31,4 @@
 #         error_symbol = "[✗](bold red) ";
 #       };
 #     };
+
