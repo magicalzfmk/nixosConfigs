@@ -26,12 +26,13 @@
     starship
 
     brightnessctl # Brightness Control for waybar
+    gvfs # Virtual Filesystem support library
     blueberry # Bluetooth GUI App
     statix # Check antipattern in code
     zenity # Window Prompt Input Creator
 
     # Neovim and modules
-    neovim
+    neovim # Best? Based AF
     nixd # Nix context clue and suggestion provider
     alejandra # Code formatter
 
