@@ -1,9 +1,10 @@
 {...}: {
   imports = [
     ./laptop.nix
-    #./stylix.nix
+    # ./stylix.nix
     ./theme.nix
     ./gnome.nix
+    # ./kde.nix # Use PLASMA desktop
   ];
 
   #  module2.enable = lib.mkDefault true;
