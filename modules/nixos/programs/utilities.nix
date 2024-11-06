@@ -1,11 +1,13 @@
 {pkgs, ...}: {
-  networking.firewall.allowedUDPPorts = [53317];
-  networking.firewall.allowedTCPPorts = [53317];
+  networking.firewall.allowedUDPPorts = [53317 8080];
+  networking.firewall.allowedTCPPorts = [53317 8080];
 
   programs.localsend = {
     enable = true;
     openFirewall = true;
   };
+
+  services.udisks2.enable = true;
 
   environment.systemPackages = with pkgs; [
     # System
@@ -25,5 +27,10 @@
 
     # Office
     libreoffice
+
+    # Calibre
+    (calibre.override {
+      unrarSupport = true;
+    })
   ];
 }

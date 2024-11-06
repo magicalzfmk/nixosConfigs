@@ -1,10 +1,6 @@
 {pkgs, ...}: {
   users.users.zfmk.extraGroups = ["kvm"];
 
-  #environment.sessionVariables = {
-  #  #PATH = "~/development/flutter/bin:$PATH";
-  #};
-
   #networking.firewall.allowedTCPPorts = [ 5037 ];
   #networking.firewall.allowedUDPPorts = [ 5037 ];
 

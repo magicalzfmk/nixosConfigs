@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./audio.nix
-    ./calibre.nix
     ./games.nix
     ./ui.nix
     ./utilities.nix

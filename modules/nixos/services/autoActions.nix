@@ -1,5 +1,5 @@
 {
-  # nh clean enabled
+  # nh clean already enabled
   #nix.gc = {
   #  automatic = true;
   #  dates = "weekly";
