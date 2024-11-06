@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -10,7 +6,7 @@
 
   hardware.opentabletdriver.enable = true;
 
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  # nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   environment.systemPackages = with pkgs; [
     git
@@ -22,6 +18,7 @@
     brightnessctl
     blueberry
     statix
+    ffmpeg_6
 
     # Neovim and modules
     neovim

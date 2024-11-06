@@ -47,18 +47,12 @@
   };
 
   # Flatpak repo
-  systemd.services = {
-    # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-    "getty@tty1".enable = false;
-    "autovt@tty1".enable = false;
-
-    flatpak-repo = {
-      wantedBy = ["multi-user.target"];
-      path = [pkgs.flatpak];
-      script = ''
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      '';
-    };
+  systemd.services.flatpak-repo = {
+    wantedBy = ["multi-user.target"];
+    path = [pkgs.flatpak];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
   };
 
   services = {
@@ -68,12 +62,6 @@
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
-      # Enable the GNOME Desktop Environment.
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
-      desktopManager.gnome.enable = true;
 
       # Configure keymap in X11
       xkb = {
@@ -90,7 +78,7 @@
   #  sddm.wayland.enable = true;
   #};
   #services.desktopManager.plasma6.enable = true;
-  #programs.dconf.enable = true;
+  programs.dconf.enable = true;
 
   # Excluding some KDE Plasma applications from the default install
   #environment.plasma6.excludePackages = with pkgs.kdePackages; [

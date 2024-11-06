@@ -5,5 +5,6 @@
     ./others.nix
     ./vscode.nix
     ./hyprEco.nix
+    ./gnome.nix
   ];
 }
