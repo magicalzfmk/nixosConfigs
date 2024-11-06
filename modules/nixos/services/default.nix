@@ -1,12 +1,9 @@
 {...}: {
   imports = [
     ./autoActions.nix
-    #./homeManager.nix
+    #./homeManager.nix # Used for home-manager as a module
     ./hyprland.nix
     ./nh.nix
-    ./os.nix
-    ./others.nix
-    ./screenshot.nix
     ./utilities.nix
   ];
 

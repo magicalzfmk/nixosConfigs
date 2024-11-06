@@ -9,9 +9,7 @@
   };
 
   environment.sessionVariables = {
-    #PATH = "~/development/flutter/bin:$PATH";
-    #ANDROID_HOME = "~/Android/Sdk";
-    #ANDROID_AVD_HOME = "~/.android/avd";
+    # nixpkgs = "";
   };
 
   networking.firewall.allowedTCPPorts = [5037];

@@ -9,20 +9,38 @@
   # nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   environment.systemPackages = with pkgs; [
+    # CLI Stuff
     git
-    alacritty
-    starship
-    pandoc
     neofetch
     lf
-    brightnessctl
-    blueberry
-    statix
+
+    # OS
+    cmake
+    clang-tools
+
+    pandoc # Cool File Type Converter (Using with Obsidian)
     ffmpeg_6
+
+    # Terminal Stuff
+    alacritty
+    starship
+
+    brightnessctl # Brightness Control for waybar
+    blueberry # Bluetooth GUI App
+    statix # Check antipattern in code
+    zenity # Window Prompt Input Creator
 
     # Neovim and modules
     neovim
-    nixd
-    alejandra
+    nixd # Nix context clue and suggestion provider
+    alejandra # Code formatter
+
+    # Screenshot
+    grim
+    slurp
+    wl-clipboard
+    textsnatcher
+    (flameshot.override {enableWlrSupport = true;})
+    wlroots
   ];
 }

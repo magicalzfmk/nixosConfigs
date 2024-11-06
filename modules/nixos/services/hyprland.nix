@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    # Most of stuff is from vimjoyer's video
     wget
     mako
     dunst

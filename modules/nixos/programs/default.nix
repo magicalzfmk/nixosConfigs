@@ -3,13 +3,9 @@
     ./audio.nix
     ./calibre.nix
     ./games.nix
-    ./office.nix
-    ./piracy.nix
-    ./steam.nix
     ./ui.nix
     ./utilities.nix
     ./vm.nix
-    ./localsend.nix
   ];
 
   #  module2.enable = lib.mkDefault true;
