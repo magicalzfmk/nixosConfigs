@@ -13,6 +13,7 @@
           "clock"
           "hyprland/language"
           "backlight"
+          "pulseaudio"
           "custom/scratchpad-indicator"
           "hyprland/mode"
           "idle_inhibitor"
@@ -47,6 +48,26 @@
 
         "hyprland/mode" = {
           format = "<span style=\"italic\">{}</span>";
+        };
+
+        "pulseaudio" = {
+          # "scroll-step= 1, // %, can be a float
+          format = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-muted = " {format_source}";
+          format-source = "{volume}% ";
+          format-source-muted = "";
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = ["" "" ""];
+          };
+          # on-click = "pavucontrol";
         };
 
         "bluetooth" = {
@@ -231,7 +252,7 @@
         "custom/scratchpad-indicator" = {
           interval = 3;
           return-type = "json";
-          exec = "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'";
+          exec = "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\"; tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'";
           format = "{} 􏠜";
           on-click = "exec swaymsg 'scratchpad show'";
           on-click-right = "exec swaymsg 'move scratchpad'";
