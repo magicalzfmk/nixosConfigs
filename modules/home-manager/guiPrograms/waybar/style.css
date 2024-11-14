@@ -272,7 +272,7 @@ button {
 
 #pulseaudio.muted {
   background: #BF616A;
-  color: #BF616A;
+  color: @dracula_light;
   /* No styles */
 }
 #pulseaudio.source-muted {

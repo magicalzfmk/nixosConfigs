@@ -1,7 +1,7 @@
-{
+{lib, ...}: {
   programs.hyprlock = {
     enable = true;
-    settings = {
+    settings = lib.mkForce {
       #general = {
       #  disable_loading_bar = true;
       #  grace = 300;

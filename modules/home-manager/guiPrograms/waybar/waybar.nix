@@ -11,7 +11,7 @@
         modules-left = [
           "hyprland/workspaces"
           "clock"
-          "hyprland/language"
+          # "hyprland/language"
           "backlight"
           "pulseaudio"
           "custom/scratchpad-indicator"
