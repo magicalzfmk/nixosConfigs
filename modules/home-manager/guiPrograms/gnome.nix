@@ -1,10 +1,10 @@
 {pkgs, ...}: {
-  gtk = {
-    enable = true;
+  # gtk = {
+    # enable = true;
     # theme.name = lib.mkForce "Dracula";
     # cursorTheme.name = lib.mkForce "Nordzy-cursors";
     # iconTheme.name = lib.mkForce "Dracula";
-  };
+  # };
 
   dconf = {
     enable = true;
