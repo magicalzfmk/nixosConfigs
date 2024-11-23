@@ -2,7 +2,7 @@
   pkgs,
   lib,
   ...
-}: {
+}:{
   programs.vscode = {
     enable = true;
 
@@ -25,14 +25,14 @@
           "formatting" = {
             "command" = ["alejandra"]; # or nixfmt or nixpkgs-fmt
           };
-          # "options" = {
-          #   "nixos" = {
-          #     "expr" = ''(builtins.getFlake "$FLAKE").nixosConfigurations.laptop.options'';
-          #   };
-          #   "home_manager" = {
-          #     "expr" = ''(builtins.getFlake "$FLAKE").homeConfigurations.laptop.options'';
-          #   };
-          # };
+          "options" = {
+            "nixos" = {
+              "expr" = "(builtins.getFlake \"$FLAKE\").nixosConfigurations.laptop.options";
+            };
+            "home_manager" = {
+              "expr" = "(builtins.getFlake \"$FLAKE\").homeConfigurations.laptop.options";
+            };
+          };
         };
       };
     };
