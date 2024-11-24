@@ -1,6 +1,6 @@
 {
   pkgs,
-  stablePkgs,
+  oldPkgs,
   ...
 }: {
   networking.firewall.allowedUDPPorts = [53317 8080];
@@ -33,7 +33,7 @@
     libreoffice
 
     # Calibre
-    (stablePkgs.calibre.override {
+    (oldPkgs.calibre.override {
       unrarSupport = true;
     })
   ];

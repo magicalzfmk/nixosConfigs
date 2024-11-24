@@ -2,8 +2,9 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    pkgs_stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    pkgs_unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    pkgs_old.url = "github:nixos/nixpkgs/nixos-24.05";
 
     stylix.url = "github:danth/stylix";
 
@@ -32,7 +33,8 @@
 
   outputs = {
     nixpkgs,
-    pkgs_stable,
+    pkgs_unstable,
+    pkgs_old,
     home-manager,
     stylix,
     ...
@@ -45,7 +47,15 @@
         allowUnfree = true;
       };
     };
-    stablePkgs = import pkgs_stable {
+
+    unstablePkgs = import pkgs_unstable {
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
+    };
+
+    oldPkgs = import pkgs_old {
       inherit system;
       config = {
         allowUnfree = true;
@@ -53,7 +63,7 @@
     };
   in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs pkgs stablePkgs system;};
+      specialArgs = {inherit inputs pkgs unstablePkgs oldPkgs system;};
       modules = [
         ./hosts/default/configuration.nix
         ./modules/nixos
