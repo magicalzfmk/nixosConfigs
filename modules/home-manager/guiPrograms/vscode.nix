@@ -2,7 +2,7 @@
   pkgs,
   lib,
   ...
-}:{
+}: {
   programs.vscode = {
     enable = true;
 
@@ -18,21 +18,18 @@
       "nix.serverPath" = "nixd";
       "nix.enableLanguageServer" = true;
       "nix.serverSettings" = {
-        "nixpkgs" = {
-          "expr" = "import <nixpkgs> { }";
-        };
         "nixd" = {
           "formatting" = {
             "command" = ["alejandra"]; # or nixfmt or nixpkgs-fmt
           };
-          "options" = {
-            "nixos" = {
-              "expr" = "(builtins.getFlake \"$FLAKE\").nixosConfigurations.laptop.options";
-            };
-            "home_manager" = {
-              "expr" = "(builtins.getFlake \"$FLAKE\").homeConfigurations.laptop.options";
-            };
-          };
+          # "options" = {
+          #   "nixos" = {
+          #     "expr" = "(builtins.getFlake \"/home/zfmk/Configs\").nixosConfigurations.laptop.options";
+          #   };
+          #   "home_manager" = {
+          #     "expr" = "(builtins.getFlake \"/home/zfmk/Configs\").homeConfigurations.laptop.options";
+          #   };
+          # };
         };
       };
     };

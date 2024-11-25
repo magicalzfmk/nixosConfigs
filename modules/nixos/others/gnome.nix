@@ -17,8 +17,8 @@
   };
 
   environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    gnome-connections
+    # gnome-tour
+    # gnome-connections
     epiphany # web browser
     geary # email reader. Up to 24.05. Starting from 24.11 the package name is just geary.
   ];

@@ -8,10 +8,6 @@
     ];
   };
 
-  environment.sessionVariables = {
-    # nixpkgs = "";
-  };
-
   networking.firewall.allowedTCPPorts = [5037];
   networking.firewall.allowedUDPPorts = [5037];
 

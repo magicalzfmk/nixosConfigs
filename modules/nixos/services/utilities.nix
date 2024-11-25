@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -6,7 +10,11 @@
 
   hardware.opentabletdriver.enable = true;
 
-  # nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
+  # environment.sessionVariables = {
+  #   nixpkgs = "${inputs.nixpkgs}";
+  # };
 
   environment.systemPackages = with pkgs; [
     # CLI Stuff
