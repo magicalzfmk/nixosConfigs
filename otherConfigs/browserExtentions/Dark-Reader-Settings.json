@@ -97,7 +97,7 @@
                 "textStroke": 0,
                 "engine": "cssFilter",
                 "stylesheet": "",
-                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeBackgroundColor": "#545057",
                 "darkSchemeTextColor": "#e8e6e3",
                 "lightSchemeBackgroundColor": "#dcdad7",
                 "lightSchemeTextColor": "#181a1b",
@@ -141,10 +141,19 @@
     ],
     "enabledByDefault": true,
     "enabledFor": [
-        "darkreader.org"
+        "darkreader.org",
+        "www.freecodecamp.org"
     ],
     "disabledFor": [
-        "web.whatsapp.com"
+        "web.whatsapp.com",
+        "smallpdf.com",
+        "archive.org",
+        "www.scribbr.com",
+        "www.onlinegdb.com",
+        "docs.google.com",
+        "www.canva.com",
+        "www.programiz.com",
+        "angusnicneven.com"
     ],
     "changeBrowserTheme": false,
     "syncSettings": true,
