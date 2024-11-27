@@ -100,7 +100,7 @@
     pulse.enable = true;
     audio.enable = true;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true;
+    # jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -119,8 +119,8 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = false;
-  services.displayManager.autoLogin.user = "zfmk";
+  # services.displayManager.autoLogin.enable = false;
+  # services.displayManager.autoLogin.user = "zfmk";
 
   # Install firefox.
   programs = {
@@ -143,7 +143,7 @@
   environment.sessionVariables = lib.mkForce {
     FLAKE = "$HOME/Configs";
 
-    NIXPKGS_ALLOW_UNFREE = 1;
+    # NIXPKGS_ALLOW_UNFREE = 1;
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -10,10 +6,14 @@
 
   hardware.opentabletdriver.enable = true;
 
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+  # $NIX_PATH fix
+  # nix.registry.nixpkgs.flake = nixpkgs;
+  # nix.channel.enable = false;
+  # environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}";
+  # nix.nixPath = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
 
   # environment.sessionVariables = {
-  #   nixpkgs = "${inputs.nixpkgs}";
+  #   NIX_PATH = "nixpkgs=${inputs.nixpkgs}";
   # };
 
   environment.systemPackages = with pkgs; [
