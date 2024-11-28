@@ -3,11 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    pkgs_old.url = "github:nixos/nixpkgs/nixos-24.05";
 
     stylix.url = "github:danth/stylix";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland";
+    hyprland.url = "github:/hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -32,7 +31,6 @@
 
   outputs = {
     nixpkgs,
-    pkgs_old,
     home-manager,
     stylix,
     ...
@@ -45,16 +43,9 @@
         allowUnfree = true;
       };
     };
-
-    oldPkgs = import pkgs_old {
-      inherit system;
-      config = {
-        allowUnfree = true;
-      };
-    };
   in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs pkgs oldPkgs system;};
+      specialArgs = {inherit inputs pkgs system;};
       modules = [
         ./hosts/default/configuration.nix
         ./modules/nixos

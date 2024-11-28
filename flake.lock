@@ -309,15 +309,15 @@
       "locked": {
         "lastModified": 1732629163,
         "narHash": "sha256-IUNhY9+sf7zysRntzP2ZxbIipL3IuI6MgOb3gB33X6o=",
-        "ref": "refs/heads/main",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
         "rev": "1fb720b62aeb474873ba43426ddc53afde1e6cdd",
-        "revCount": 5498,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "type": "github"
       }
     },
     "hyprland-plugins": {
@@ -518,22 +518,6 @@
         "type": "github"
       }
     },
-    "pkgs_old": {
-      "locked": {
-        "lastModified": 1731797254,
-        "narHash": "sha256-df3dJApLPhd11AlueuoN0Q4fHo/hagP75LlM5K1sz9g=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e8c38b73aeb218e27163376a2d617e61a2ad9b59",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "plugin-dracula": {
       "flake": false,
       "locked": {
@@ -580,7 +564,6 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "nixpkgs": "nixpkgs_2",
-        "pkgs_old": "pkgs_old",
         "plugin-dracula": "plugin-dracula",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"

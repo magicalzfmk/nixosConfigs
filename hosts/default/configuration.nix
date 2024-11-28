@@ -1,12 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  pkgs,
-  lib,
-  ...
-}: {
-  xdg.portal.enable = true;
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -69,6 +64,17 @@
         variant = "";
       };
     };
+  };
+
+  # Enable extra Wayland support (found in tutorial about screen sharing)
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
   };
 
   # Enable KDE
@@ -140,10 +146,12 @@
   # $ nix search wget
   environment.systemPackages = [];
 
-  environment.sessionVariables = lib.mkForce {
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     FLAKE = "$HOME/Configs";
 
-    # NIXPKGS_ALLOW_UNFREE = 1;
+    NIXPKGS_ALLOW_UNFREE = 1;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
