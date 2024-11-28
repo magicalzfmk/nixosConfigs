@@ -1,17 +1,13 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   programs.vscode = {
     enable = true;
 
-    extensions = with pkgs; [
-      vscode-extensions.jnoortheen.nix-ide
-      vscode-extensions.dracula-theme.theme-dracula
-      #vscode-extensions.csstools.postcss
-      vscode-extensions.tamasfe.even-better-toml
-    ];
+    # extensions = with pkgs; [
+    #   vscode-extensions.jnoortheen.nix-ide
+    #   vscode-extensions.dracula-theme.theme-dracula
+    #   # vscode-extensions.csstools.postcss
+    #   vscode-extensions.tamasfe.even-better-toml
+    # ];
 
     userSettings = {
       "workbench.colorTheme" = lib.mkForce "Dracula Theme";
