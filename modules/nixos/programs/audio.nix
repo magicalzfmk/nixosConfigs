@@ -60,5 +60,6 @@ in {
     spotify
     spicetify-cli
     nicotine-plus
+    lrcget
   ];
 }

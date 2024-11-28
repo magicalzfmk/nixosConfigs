@@ -1,6 +1,7 @@
 {pkgs, ...}: {
-  networking.firewall.allowedUDPPorts = [53317 8080];
-  networking.firewall.allowedTCPPorts = [53317 8080];
+  # ports: localsend ? syncthing
+  networking.firewall.allowedUDPPorts = [53317 8080 8384];
+  networking.firewall.allowedTCPPorts = [53317 8080 8384];
 
   programs.localsend = {
     enable = true;
