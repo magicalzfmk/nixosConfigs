@@ -15,12 +15,22 @@
     };
   };
 
-  #services.flameshot = {
-  #  enable = true;
-  #  settings.General = {
-  #    disabledTrayIcon = true;
-  #    showStartupLaunchMessage = false;
-  #    showDesktopNotification = false;
-  #  };
-  #};
+  services = {
+    flameshot = {
+      enable = true;
+      settings.General = {
+        disabledTrayIcon = true;
+        showStartupLaunchMessage = false;
+        showDesktopNotification = false;
+      };
+    };
+
+    mako = {
+      enable = true;
+      anchor = "top-right";
+      # backgroundColor = "#285577FF";
+      # borderColor = "#4C7899FF";
+      defaultTimeout = 600;
+    };
+  };
 }

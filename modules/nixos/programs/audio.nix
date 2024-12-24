@@ -61,5 +61,6 @@ in {
     spicetify-cli
     nicotine-plus
     lrcget
+    youtube-music
   ];
 }

@@ -1,14 +1,18 @@
-{lib, ...}:
-#let
-#startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-#  ${pkgs.waybar}/bin/waybar &
-#  ${pkgs.swww}/bin/swww init &
-#  sleep 1
-#  ${pkgs.swww}/bin/swww img ${/home/zfmk/Wallpapers/current.png} &
-#  nm-applet --indicator &
-#  ${pkgs.mako}/bin/mako
-#'';
-#in
+{
+  lib,
+  # pkgs,
+  ...
+}:
+# let
+#   startScript = pkgs.pkgs.writeShellScriptBin "start" ''
+#     ${pkgs.swww}/bin/swww init &
+#     sleep 1
+#     ${pkgs.swww}/bin/swww img ~/Wallpapers/current.png &
+#     nm-applet --indicator &
+#     ${pkgs.mako}/bin/mako
+#     ${pkgs.hypridle}/bin/hypridle &
+#   '';
+# in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -18,8 +22,8 @@
       "$fileManager" = lib.mkForce "nautilus";
       "$menu" = lib.mkForce "rofi -show drun -show-icons";
 
-      #${startupScript}/bin/start
       exec-once = ''bash $FLAKE/scripts/start.sh'';
+      # exec-once = ''${startScript}/bin/start'';
 
       #env = [
       #  "XCURSOR_SIZE,12"
@@ -126,7 +130,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, space, exec, $menu"
         "$mainMod, P, pseudo,"
-        "$mainMod, J, togglesplit,"
+        "$mainMod, T, togglesplit,"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, H, movefocus, l"

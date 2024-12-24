@@ -2,17 +2,19 @@
   users.users.zfmk.extraGroups = ["kvm"];
 
   #networking.firewall.allowedTCPPorts = [ 5037 ];
-  #networking.firewall.allowedUDPPorts = [ 5037 ];
+  #networking.firewall.allowedUDPPortCHROME_EXECUTABLEs = [ 5037 ];
 
   environment.variables = {
     PATH = [
-      "~/development/flutter/bin"
+      "~/Development/flutter/bin"
     ];
+    CHROME_EXECUTABLE = "${pkgs.chromium}";
   };
 
   environment.systemPackages = with pkgs; [
-    android-studio
-    #flutter
+    # android-studio
+    # flutter
+    # dart
     clang
     ninja
     pkg-config

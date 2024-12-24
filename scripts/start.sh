@@ -7,4 +7,4 @@ nm-applet --indicator &
 
 mako &
 
-hypridle
+hypridle &
