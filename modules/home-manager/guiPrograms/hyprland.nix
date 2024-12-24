@@ -1,19 +1,67 @@
 {
   lib,
-  # pkgs,
+  pkgs,
   ...
-}:
-# let
-#   startScript = pkgs.pkgs.writeShellScriptBin "start" ''
-#     ${pkgs.swww}/bin/swww init &
-#     sleep 1
-#     ${pkgs.swww}/bin/swww img ~/Wallpapers/current.png &
-#     nm-applet --indicator &
-#     ${pkgs.mako}/bin/mako
-#     ${pkgs.hypridle}/bin/hypridle &
-#   '';
-# in
-{
+}: let
+  startScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.swww}/bin/swww init &
+    sleep 1
+    ${pkgs.swww}/bin/swww img ~/Wallpapers/current.png &
+    nm-applet --indicator &
+    ${pkgs.mako}/bin/mako
+    ${pkgs.hypridle}/bin/hypridle &
+  '';
+
+  screenshotPartScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    flameshot gui -r | wl-copy
+    sleep 1
+    pkill flameshot
+  '';
+
+  screenshotScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    FILENAME="screenshot_$(date +%Y%m%d_%H%M%S)"
+    flameshot screen -p ~/Pictures/Screenshots/"$FILENAME"
+    sleep 1
+    pkill flameshot
+  '';
+
+  relaunchTopbarScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    pkill waybar
+    sleep 1
+    hyprctl dispatch exec waybar &
+  '';
+
+  restartDefNetScript = pkgs.pkgs.writeShellScriptBin "start" ''sudo virsh net-start default'';
+
+  evaluatePackagesScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    # Error Control
+    error_exit() {
+        echo "Error: $1"
+        zenity --info --text="Error$1" --title="Command Output" --no-wrap
+        exit 1
+    }
+
+    # Prompt the user for input using a zenity entry dialog
+    input=$(zenity --entry --title="Input Required" --text="Please enter the package name (e.g., bibata-cursors):")
+
+    # Check if the user provided input or canceled the dialog
+    if [ $? -eq 0 ]; then
+
+        # Execute Commands
+        cd ~/temporaryFiles || error_exit "No directory temporaryFiles in ~/"
+        nix build nixpkgs#$input || error_exit "error fetching pkg(not found?)"
+        cd result || error_exit "no result directory found after building"
+        output=$(nix run nixpkgs#eza -- --tree --level 3 2>&1) || error_exit "Error creating tree structure"
+        cd .. || error_exit "how did this happen?"
+        rm result
+
+        zenity --info --text="$output" --title="Command Output" --no-wrap || error_exit "zenity error"
+
+    else
+        echo "Input was canceled."
+    fi
+  '';
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -22,8 +70,8 @@
       "$fileManager" = lib.mkForce "nautilus";
       "$menu" = lib.mkForce "rofi -show drun -show-icons";
 
-      exec-once = ''bash $FLAKE/scripts/start.sh'';
-      # exec-once = ''${startScript}/bin/start'';
+      # exec-once = ''bash $FLAKE/scripts/start.sh'';
+      exec-once = ''${startScript}/bin/start'';
 
       #env = [
       #  "XCURSOR_SIZE,12"
@@ -115,12 +163,17 @@
 
       bind = [
         #Custom Binds
-        "$mainMod and CTRL, P, exec, bash $FLAKE/scripts/relaunchTopBar.sh"
-        "$mainMod and CTRL, E, exec, bash $FLAKE/scripts/evaluatePkgs.sh"
-        "SHIFT, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
-        #"CTRL, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
-        ", Print, exec, bash $FLAKE/scripts/screenshot.sh"
+        # "$mainMod and CTRL, P, exec, bash $FLAKE/scripts/relaunchTopBar.sh"
+        # "$mainMod and CTRL, E, exec, bash $FLAKE/scripts/evaluatePkgs.sh"
+        # "SHIFT, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
+        # #"CTRL, Print, exec, bash $FLAKE/scripts/screenshotPart.sh"
+        # ", Print, exec, bash $FLAKE/scripts/screenshot.sh"
+        "$mainMod and CTRL, P, exec, ${relaunchTopbarScript}/bin/start"
+        "$mainMod and CTRL, E, exec, ${evaluatePackagesScript}/bin/start"
+        "SHIFT, Print, exec, ${screenshotPartScript}/bin/start"
+        ", Print, exec, ${screenshotScript}/bin/start"
         "$mainMod and SHIFT, L, exec, hyprlock"
+        "$mainMod and CTRL, N, exec, ${restartDefNetScript}/bin/start"
 
         #Example binds
         "$mainMod, Q, exec, $terminal"
