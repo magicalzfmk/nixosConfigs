@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stablepkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     stylix.url = "github:danth/stylix";
 
@@ -31,6 +32,7 @@
 
   outputs = {
     nixpkgs,
+    stablepkgs,
     home-manager,
     stylix,
     ...
@@ -43,9 +45,15 @@
         allowUnfree = true;
       };
     };
+    pkgsStable = import stablepkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
+    };
   in {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs pkgs system;};
+      specialArgs = {inherit inputs pkgs pkgsStable system;};
       modules = [
         ./hosts/default/configuration.nix
         ./modules/nixos
@@ -72,5 +80,8 @@
 
     devShells.x86_64-linux.test =
       import ./shells/test.nix {inherit pkgs;};
+
+    devShells.x86_64-linux.flashpoint =
+      import ./shells/flashpoint.nix {inherit pkgs;};
   };
 }

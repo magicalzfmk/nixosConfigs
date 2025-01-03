@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgsStable,
   lib,
   ...
 }: {
@@ -43,12 +44,15 @@
     # Other Stuff
     protonup-qt
     mangohud
-    bottles
+    pkgsStable.bottles
     lutris
 
     # Wine Stuff
     wineWowPackages.waylandFull
     winetricks
+
+    # Actual Games
+    osu-lazer-bin
   ];
 
   environment.sessionVariables = {
