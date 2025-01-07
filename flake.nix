@@ -75,13 +75,10 @@
       ];
     };
 
-    devShells.x86_64-linux.android =
-      import ./shells/androidDev.nix {inherit pkgs;};
-
-    devShells.x86_64-linux.test =
-      import ./shells/test.nix {inherit pkgs;};
-
-    devShells.x86_64-linux.flashpoint =
-      import ./shells/flashpoint.nix {inherit pkgs;};
+    devShells.x86_64-linux = {
+      android = import ./shells/androidDev.nix {inherit pkgs;};
+      test = import ./shells/test.nix {inherit pkgs;};
+      flashpoint = import ./shells/flashpoint.nix {inherit pkgs;};
+    };
   };
 }

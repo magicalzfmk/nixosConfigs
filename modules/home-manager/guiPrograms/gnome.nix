@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   # gtk = {
   # enable = true;
   # theme.name = lib.mkForce "Dracula";
@@ -6,18 +6,18 @@
   # iconTheme.name = lib.mkForce "Dracula";
   # };
 
-  # dconf = {
-  #   enable = false;
-  #   settings = {
-  #     "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
-  #     "org/gnome/shell" = {
-  #       disable-user-extensions = false;
-  #       enabled-extensions = with pkgs.gnomeExtensions; [
-  #         blur-my-shell.extensionUuid
-  #         gsconnect.extensionUuid
-  #       ];
-  #     };
-  #   };
-  # };
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = with pkgs.gnomeExtensions; [
+          blur-my-shell.extensionUuid
+          gsconnect.extensionUuid
+        ];
+      };
+    };
+  };
 }

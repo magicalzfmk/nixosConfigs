@@ -57,10 +57,12 @@ in {
   networking.firewall.allowedTCPPorts = [2234 2242];
 
   environment.systemPackages = with pkgs; [
+    youtube-music
     spotify
+
     spicetify-cli
     nicotine-plus
     lrcget
-    youtube-music
+    picard
   ];
 }
