@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgsStable,
   lib,
   ...
 }: {
@@ -44,7 +43,7 @@
     # Other Stuff
     protonup-qt
     mangohud
-    pkgsStable.bottles
+    bottles
     lutris
 
     # Wine Stuff

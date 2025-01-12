@@ -13,23 +13,27 @@
   environment.systemPackages = with pkgs; [
     # System
     celluloid
+    flatpak
     gnome-software
 
     # Others
-    freetube #Youtube for Chads
     obsidian #Best Note Taking App
     syncthing #Sync between each app
     anki #Cool flashcard app
-    thunderbird #Best mail client .
+    thunderbird #Best mail client.
     chromium #For Uni stuff
     qbittorrent #Awesome torrent app
-    stremio #Easy to implement (You know what)
     localsend #Cool one time share software
+
+    # Video
+    freetube #Youtube for Chads
+    stremio #Easy to implement (You know what)
+    miru
 
     # Office
     libreoffice
 
-    # Calibre
+    # Book
     calibre
     # (oldPkgs.calibre.override {
     #   unrarSupport = true;

@@ -1,7 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -150,6 +154,11 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     FLAKE = "$HOME/Configs";
+
+    XDG_DATA_DIRS = lib.mkForce [
+      "/var/lib/flatpak/exports/share"
+      "$HOME/.local/share/flatpak/exports/share"
+    ];
 
     NIXPKGS_ALLOW_UNFREE = 1;
   };

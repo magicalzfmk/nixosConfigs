@@ -53,12 +53,12 @@
         #   on-resume = "hyprctl dispatch dpms on";
         # }
         {
-          timeout = 300; #5
+          timeout = 600; #10
           on-timeout = "pidof hyprlock || hyprlock";
           on-resume = "hyprctl dispatch dpms on";
         }
         {
-          timeout = 600; #10
+          timeout = 1200; #20
           on-timeout = "systemctl suspend";
         }
       ];

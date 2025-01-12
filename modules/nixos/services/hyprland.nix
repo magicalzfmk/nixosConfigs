@@ -13,6 +13,6 @@
     # Hyprland Ecosystem
     hyprlock
     hypridle
-    hyprpaper
+    # hyprpaper
   ];
 }
