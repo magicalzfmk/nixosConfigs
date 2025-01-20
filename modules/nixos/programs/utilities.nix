@@ -26,12 +26,7 @@
     localsend #Cool one time share software
 
     # Video
-    freetube #Youtube for Chads
-    stremio #Easy to implement (You know what)
     miru
-
-    # Office
-    libreoffice
 
     # Book
     calibre

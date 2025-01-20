@@ -59,6 +59,7 @@ in {
   environment.systemPackages = with pkgs; [
     youtube-music
     spotify
+    tauon
 
     spicetify-cli
     nicotine-plus
