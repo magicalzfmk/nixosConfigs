@@ -12,8 +12,14 @@
   networking.firewall.allowedUDPPorts = [5037];
 
   environment.systemPackages = with pkgs; [
-    vscode
+    # vscode
+    vscodium
     android-tools
     unzip
+
+    # Game Dev
+    aseprite
+    famistudio
+    godot_4
   ];
 }
