@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  # ports: localsend ? syncthing ? gopeed
-  networking.firewall.allowedUDPPorts = [53317 8080 8384 587 4342];
-  networking.firewall.allowedTCPPorts = [53317 8080 8384 587 4342];
+  # ports: localsend calibre1 calibre2 syncthing ? gopeed
+  networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 4342];
+  networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 4342];
 
   programs.localsend = {
     enable = true;
@@ -15,6 +15,7 @@
     celluloid
     flatpak
     gnome-software
+    librewolf
 
     # Others
     obsidian #Best Note Taking App
@@ -24,9 +25,8 @@
     chromium #For Uni stuff
     qbittorrent #Awesome torrent app
     localsend #Cool one time share software
-
-    # Video
-    miru
+    pdfarranger
+    zapzap
 
     # Book
     calibre

@@ -16,7 +16,7 @@
       #   vscode-extensions.kamadorueda.alejandra
       # ];
 
-      userSettings = {
+      profiles.default.userSettings = {
         "workbench.colorTheme" = lib.mkForce "Dracula Theme";
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;

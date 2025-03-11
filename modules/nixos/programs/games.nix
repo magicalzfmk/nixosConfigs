@@ -45,6 +45,10 @@
     mangohud
     bottles
     lutris
+    ludusavi
+
+    # Emulation
+    retroarch
 
     # Wine Stuff
     wineWowPackages.waylandFull

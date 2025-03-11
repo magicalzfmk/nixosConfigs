@@ -17,7 +17,7 @@
 
   services = {
     flameshot = {
-      enable = true;
+      enable = false;
       settings.General = {
         disabledTrayIcon = true;
         showStartupLaunchMessage = false;

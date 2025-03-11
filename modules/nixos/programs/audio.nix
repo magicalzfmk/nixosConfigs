@@ -65,5 +65,6 @@ in {
     nicotine-plus
     lrcget
     picard
+    spek
   ];
 }

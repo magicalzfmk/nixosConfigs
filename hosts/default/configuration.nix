@@ -134,7 +134,14 @@
 
   # Install firefox.
   programs = {
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      package = pkgs.librewolf;
+      policies = {
+        DisableTelemetry = true;
+        DisableFirefoxStudies = true;
+      };
+    };
 
     # Fix for external binaries (by noBoilerplate)
     nix-ld = {

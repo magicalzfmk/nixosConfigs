@@ -1,5 +1,4 @@
 # Installed Flatpaks
-- com.github.jeromerobert.pdfarranger
 - io.github.ciromattia.kcc
 - io.github.peazip.PeaZip
 - com.google.AndroidStudio
