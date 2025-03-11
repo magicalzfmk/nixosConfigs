@@ -1,0 +1,732 @@
+{
+  "default": [
+    {
+      "expression": "*.accounts.digitallocker.gov.in",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "wKCL6z52rG"
+    },
+    {
+      "expression": "*.anilist.co",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "2MA4FoYYX"
+    },
+    {
+      "expression": "*.backlinkrepository.live",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "q789aeCj5"
+    },
+    {
+      "expression": "*.coursera.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "O4_v2R7ni2"
+    },
+    {
+      "expression": "*.cs.rin.ru",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "_qzdFki1x"
+    },
+    {
+      "expression": "*.daijob.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "zeFcFQQ4q"
+    },
+    {
+      "expression": "*.devfolio.co",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "btMJAGI1bx"
+    },
+    {
+      "expression": "*.digitallocker.gov.in",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "GRS_TvtHe"
+    },
+    {
+      "expression": "*.discord.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "cwO2KMv6g"
+    },
+    {
+      "expression": "*.dseu.samarth.edu.in",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "iownbxxw9b"
+    },
+    {
+      "expression": "*.epicgames.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "ooh3x1Jnj"
+    },
+    {
+      "expression": "*.forum.mobilism.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "y8eyFJr4qV"
+    },
+    {
+      "expression": "*.freecodecamp.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "4YvD2_4Rt"
+    },
+    {
+      "expression": "*.freshers.hcltech.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "tAKbdtnipe"
+    },
+    {
+      "expression": "*.gg.deals",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "T1UoKKZqMd"
+    },
+    {
+      "expression": "*.github.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "XFX4xqyeMP"
+    },
+    {
+      "expression": "*.gog.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Pj2dCcIyU"
+    },
+    {
+      "expression": "*.google.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "pXLjSDaqdj"
+    },
+    {
+      "expression": "*.hcltech.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "e-Bp2uj9b"
+    },
+    {
+      "expression": "*.isthereanydeal.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "_hvOqaDnrf"
+    },
+    {
+      "expression": "*.itch.io",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "FtQFobc6Qh"
+    },
+    {
+      "expression": "*.jobs.careers.microsoft.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "EYJBQto-l"
+    },
+    {
+      "expression": "*.last.fm",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "aIJ_juH8d"
+    },
+    {
+      "expression": "*.leetcode.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "alf9dgVf0T"
+    },
+    {
+      "expression": "*.linkedin.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "XVC7Xq1Z9d"
+    },
+    {
+      "expression": "*.listenbrainz.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "w_V8gBZAwS"
+    },
+    {
+      "expression": "*.live.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "QPMBiyxFL"
+    },
+    {
+      "expression": "*.login.live.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "FIYnriRQhY"
+    },
+    {
+      "expression": "*.madokami.al",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "YpIIGxHKg"
+    },
+    {
+      "expression": "*.manga.madokami.al",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "ZqNNJxeHt"
+    },
+    {
+      "expression": "*.microsoft.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "7FhNJV6Ae"
+    },
+    {
+      "expression": "*.mobilism.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Rps2f6TbWg"
+    },
+    {
+      "expression": "*.morganstanley.tal.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "7pyurBCKYP"
+    },
+    {
+      "expression": "*.musicbrainz.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "OVaWJtU6ww"
+    },
+    {
+      "expression": "*.myanimelist.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "7WmebvjhK"
+    },
+    {
+      "expression": "*.novelupdates.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "rY4nKw8aUd"
+    },
+    {
+      "expression": "*.old.reddit.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "hg_mSnOLc9"
+    },
+    {
+      "expression": "*.onehack.us",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "2ZDxu0CrE"
+    },
+    {
+      "expression": "*.open.spotify.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "UuV0svnZ1-"
+    },
+    {
+      "expression": "*.paypal.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "1pRGERuz8X"
+    },
+    {
+      "expression": "*.pokerogue.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "KOxF3wlAyy"
+    },
+    {
+      "expression": "*.reddit.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "gMT3sLQARB"
+    },
+    {
+      "expression": "*.rin.ru",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "OmtrVAAFn"
+    },
+    {
+      "expression": "*.samarth.edu.in",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "j7JwGsjeD"
+    },
+    {
+      "expression": "*.spotify.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "HuXtkCv2c"
+    },
+    {
+      "expression": "*.steamcommunity.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "F-Ftw38nh"
+    },
+    {
+      "expression": "*.steampowered.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "oi00LpWBT"
+    },
+    {
+      "expression": "*.store.steampowered.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "OrXJUmPyiU"
+    },
+    {
+      "expression": "*.tal.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "02TkndiHWg"
+    },
+    {
+      "expression": "*.unacademy.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "TTZtmPa7K"
+    },
+    {
+      "expression": "*.xdaforums.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "vB3w_hT27"
+    },
+    {
+      "expression": "127.0.0.1",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "cvIw7_dWt"
+    },
+    {
+      "expression": "accounts.digitallocker.gov.in",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "fr82tAlCO"
+    },
+    {
+      "expression": "anilist.co",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "iCrPFZkp9B"
+    },
+    {
+      "expression": "backlinkrepository.live",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "moE9KeBNu"
+    },
+    {
+      "expression": "coursera.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "l0K4-SHkc"
+    },
+    {
+      "expression": "cs.rin.ru",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "ZxFzD9YbtN"
+    },
+    {
+      "expression": "daijob.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "GWZ8IbxO1"
+    },
+    {
+      "expression": "devfolio.co",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "OnWPkAybX"
+    },
+    {
+      "expression": "discord.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "lvZ_6_sKu"
+    },
+    {
+      "expression": "dseu.samarth.edu.in",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "La_M7Ai4a"
+    },
+    {
+      "expression": "epicgames.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "SXJCCiRNs"
+    },
+    {
+      "expression": "forum.mobilism.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "2TrYUo3eTi"
+    },
+    {
+      "expression": "freecodecamp.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "DntVywq6L"
+    },
+    {
+      "expression": "freshers.hcltech.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "jSCplURGEW"
+    },
+    {
+      "expression": "gg.deals",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "9Do20Xbip"
+    },
+    {
+      "expression": "github.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "sXiqK5yCc"
+    },
+    {
+      "expression": "gog.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "iDwp937Lf"
+    },
+    {
+      "expression": "google.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "MvKUCoYnUG"
+    },
+    {
+      "expression": "isthereanydeal.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "cSRyzvgwQ"
+    },
+    {
+      "expression": "itch.io",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "ftYfyIILl"
+    },
+    {
+      "expression": "jobs.careers.microsoft.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Q35ILLewt4"
+    },
+    {
+      "expression": "last.fm",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "CkDu8ynSj"
+    },
+    {
+      "expression": "leetcode.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "MmFv58w6bq"
+    },
+    {
+      "expression": "linkedin.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "0dGchN12hG"
+    },
+    {
+      "expression": "listenbrainz.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "YQzs82a37"
+    },
+    {
+      "expression": "login.live.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Lxlg_guf7m"
+    },
+    {
+      "expression": "manga.madokami.al",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "3W4RWJ1eT5"
+    },
+    {
+      "expression": "morganstanley.tal.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "PQYpgVl17Ot"
+    },
+    {
+      "expression": "musicbrainz.org",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "9bq3pZoNI"
+    },
+    {
+      "expression": "myanimelist.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "JHqOHp7W7"
+    },
+    {
+      "expression": "novelupdates.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "aOAN_3CRkbw"
+    },
+    {
+      "expression": "old.reddit.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Lq3ARHuTYLr"
+    },
+    {
+      "expression": "onehack.us",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Utvv3D5Dg"
+    },
+    {
+      "expression": "open.spotify.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "VhoklAIvj"
+    },
+    {
+      "expression": "paypal.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "Z8nqbVVIJ"
+    },
+    {
+      "expression": "pokerogue.net",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "TgqwpCsp_"
+    },
+    {
+      "expression": "steamcommunity.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "f-N9io27y"
+    },
+    {
+      "expression": "store.steampowered.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "DysRcntkn"
+    },
+    {
+      "expression": "unacademy.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "mkbyPOGr9"
+    },
+    {
+      "expression": "xdaforums.com",
+      "listType": "WHITE",
+      "storeId": "default",
+      "cleanSiteData": [],
+      "cookieNames": [],
+      "id": "LcciDZhtc"
+    }
+  ]
+}
