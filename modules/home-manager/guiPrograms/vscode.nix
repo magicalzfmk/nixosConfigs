@@ -17,7 +17,7 @@
       # ];
 
       profiles.default.userSettings = {
-        "workbench.colorTheme" = lib.mkForce "Dracula Theme";
+        # "workbench.colorTheme" = lib.mkForce "Dracula Theme";
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;
         "nix.serverSettings" = {

@@ -11,7 +11,7 @@
 
       background = [
         {
-          path = "$FLAKE/images/current.png";
+          path = "$HOME/Configs/images/current.png";
           blur_passes = 1;
           blur_size = 2;
         }

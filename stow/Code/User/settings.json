@@ -1,16 +1,22 @@
 {
-  "editor.fontFamily": "'Cascadia Mono'",
-  "nix.enableLanguageServer": true,
+  "workbench.colorTheme": "Dracula Theme",
   "nix.serverPath": "nixd",
+  "nix.enableLanguageServer": true,
   "nix.serverSettings": {
     "nixd": {
       "formatting": {
         "command": [
           "alejandra"
-        ]
-      }
-    }
+        ],
+      },
+      "options": {
+        "nixos": {
+          "expr": "(builtins.getFlake \"/home/zfmk/Configs\").nixosConfigurations.laptop.options",
+        },
+        "home_manager": {
+          "expr": "(builtins.getFlake \"/home/zfmk/Configs\").homeConfigurations.laptop.options",
+        },
+      },
+    },
   },
-  "terminal.integrated.fontFamily": "'Cascadia Mono'",
-  "workbench.colorTheme": "Dracula Theme"
 }

@@ -164,6 +164,7 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     FLAKE = "$HOME/Configs";
+    NH_FLAKE = "$HOME/Configs";
 
     XDG_DATA_DIRS = lib.mkForce [
       "/var/lib/flatpak/exports/share"

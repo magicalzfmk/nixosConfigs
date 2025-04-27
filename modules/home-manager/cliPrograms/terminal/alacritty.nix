@@ -4,7 +4,7 @@
       enable = true;
       settings = {
         general.import = [
-          "$FLAKE/otherConfigs/alacritty/dracula.toml"
+          "$HOME/Configs/otherConfigs/alacritty/dracula.toml"
         ];
       };
     };

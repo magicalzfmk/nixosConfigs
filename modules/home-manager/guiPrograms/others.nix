@@ -1,29 +1,36 @@
 {
   #git
-  programs.git = {
-    enable = true;
-    userName = "magicalzfmk";
-    userEmail = "mitanshkataria73@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
+  programs = {
+    git = {
+      enable = true;
+      userName = "magicalzfmk";
+      userEmail = "mitanshkataria73@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
+      aliases = {
+        pm = "push github main";
+        po = "push origin main";
+        co = "checkout";
+        cm = "commit -a";
+      };
     };
-    aliases = {
-      pm = "push github main";
-      po = "push origin main";
-      co = "checkout";
-      cm = "commit -a";
+
+    rofi = {
+      enable = true;
+      theme = "Arc-Dark";
     };
   };
 
   services = {
-    flameshot = {
-      enable = false;
-      settings.General = {
-        disabledTrayIcon = true;
-        showStartupLaunchMessage = false;
-        showDesktopNotification = false;
-      };
-    };
+    # flameshot = {
+    #   enable = false;
+    #   settings.General = {
+    #     disabledTrayIcon = true;
+    #     showStartupLaunchMessage = false;
+    #     showDesktopNotification = false;
+    #   };
+    # };
 
     mako = {
       enable = true;

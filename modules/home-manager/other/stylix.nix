@@ -4,32 +4,34 @@
   ...
 }: {
   #lib.mkDefault
-  #lib.mkForce
+  #lib.mkDefault
 
   stylix = {
     enable = true;
-    autoEnable = true;
+    autoEnable = false;
     targets.vscode = {
       # enable = true;
       profileNames = ["Default"];
     };
 
-    base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+    base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     #config.base16Scheme.base0E  To use somewhere
 
-    image = ../../../images/current.png;
+    # image = /Configs/images/current.png;a
 
     cursor = {
-      package = lib.mkForce pkgs.nordzy-cursor-theme;
-      name = lib.mkForce "Nordzy-cursors";
-      size = lib.mkForce 12;
+      package = lib.mkDefault pkgs.nordzy-cursor-theme;
+      name = lib.mkDefault "Nordzy-cursors";
+      size = lib.mkDefault 12;
     };
 
-    #targets.pkgs.waybar.enable = false;
-    #targets.rofi.enable = true;
-
-    #targets.gtk.enable = true;
-    #targets.gnome.enable = true;
+    targets = {
+      alacritty.enable = true;
+      # rofi.enable = true;
+      gtk.enable = true;
+      gnome.enable = true;
+      neovim.enable = true;
+    };
 
     fonts = {
       sizes = {
