@@ -9,7 +9,7 @@
         spacing = 5;
         output = ["eDP-1" "HDMI-A-1"];
         modules-left = [
-          "hyprland/workspaces"
+          # "hyprland/workspaces"
           "clock"
           # "hyprland/language"
           "backlight"
@@ -19,10 +19,11 @@
           "idle_inhibitor"
           "bluetooth"
           "custom/media"
+          "tray"
         ];
         modules-center = [
-          "hyprland/window"
-          # "hyprland/workspaces"
+          # "hyprland/window"
+          "hyprland/workspaces"
         ];
         modules-right = [
           "custom/cpugovernor"
@@ -32,7 +33,6 @@
           "custom/gpu"
           "battery"
           "network"
-          "tray"
         ];
 
         "hyprland/workspaces" = {

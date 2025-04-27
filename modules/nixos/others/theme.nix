@@ -7,6 +7,8 @@
   ];
 
   fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-emoji
     dejavu_fonts
     cascadia-code
   ];

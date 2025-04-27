@@ -40,17 +40,25 @@
         popups = 10;
         terminal = 10;
       };
-      monospace = {
-        package = pkgs.cascadia-code;
-        name = "Cascadia Mono";
-      };
+
       sansSerif = {
         package = pkgs.dejavu_fonts;
         name = "DejaVu Sans";
       };
+
       serif = {
         package = pkgs.dejavu_fonts;
         name = "DejaVu Serif";
+      };
+
+      monospace = {
+        package = pkgs.cascadia-code;
+        name = "Cascadia Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
       };
     };
 

@@ -6,7 +6,7 @@
   startScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.swww}/bin/swww init &
     sleep 1
-    ${pkgs.swww}/bin/swww img ~/Wallpapers/current.png &
+    ${pkgs.swww}/bin/swww img ~/Configs/images/current.png &
     nm-applet --indicator &
     ${pkgs.mako}/bin/mako
     ${pkgs.hypridle}/bin/hypridle &
