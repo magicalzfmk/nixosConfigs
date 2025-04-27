@@ -9,6 +9,10 @@
   stylix = {
     enable = true;
     autoEnable = true;
+    targets.vscode = {
+      # enable = true;
+      profileNames = ["Default"];
+    };
 
     base16Scheme = lib.mkForce "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     #config.base16Scheme.base0E  To use somewhere

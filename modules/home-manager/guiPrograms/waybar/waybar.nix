@@ -9,7 +9,7 @@
         spacing = 5;
         output = ["eDP-1" "HDMI-A-1"];
         modules-left = [
-          # "hyprland/workspaces"
+          "hyprland/workspaces"
           "clock"
           # "hyprland/language"
           "backlight"
@@ -21,8 +21,8 @@
           "custom/media"
         ];
         modules-center = [
-          # "hyprland/window"
-          "hyprland/workspaces"
+          "hyprland/window"
+          # "hyprland/workspaces"
         ];
         modules-right = [
           "custom/cpugovernor"

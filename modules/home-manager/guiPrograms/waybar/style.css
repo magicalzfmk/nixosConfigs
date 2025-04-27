@@ -229,6 +229,7 @@ button {
 }
 #custom-cpugovernor {
   background-color: @dracula_light;
+  min-width: 50px;
   color: @dracula_dark_font;
 }
 #custom-cpugovernor.perf {

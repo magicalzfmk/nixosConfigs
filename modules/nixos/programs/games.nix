@@ -48,7 +48,8 @@
     ludusavi
 
     # Emulation
-    retroarch
+    # retroarch
+    # rpcs3
 
     # Wine Stuff
     wineWowPackages.waylandFull

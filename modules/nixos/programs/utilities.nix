@@ -27,6 +27,7 @@
     localsend #Cool one time share software
     pdfarranger
     zapzap
+    materialgram
 
     # Book
     calibre

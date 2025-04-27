@@ -5,10 +5,10 @@
 }: {
   programs = {
     vscode = {
-      enable = true;
+      enable = false;
       package = pkgs.vscodium;
 
-      # extensions = with pkgs; [
+      # profiles.default.extensions = with pkgs; [
       #   vscode-extensions.jnoortheen.nix-ide
       #   vscode-extensions.dracula-theme.theme-dracula
       #   # vscode-extensions.csstools.postcss

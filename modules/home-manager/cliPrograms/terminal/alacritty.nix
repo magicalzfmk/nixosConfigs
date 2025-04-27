@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   programs = {
     alacritty = {
       enable = true;
@@ -9,7 +9,7 @@
       };
     };
 
-    starship = {
+    starship = lib.mkForce {
       enable = true;
       settings = builtins.fromTOML (builtins.readFile ./starship.toml);
     };

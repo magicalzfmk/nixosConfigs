@@ -16,7 +16,12 @@
       availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
       kernelModules = [];
     };
-    kernelModules = ["kvm-intel"];
+    kernelModules = ["kvm-intel" "intel_pstate"];
+    kernelParams = [
+      "intel_pstate=active"
+      "i915.enable_fbc=1"
+      "i915.enable_psr=2"
+    ];
     extraModulePackages = [];
   };
 
