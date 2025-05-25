@@ -34,10 +34,12 @@
 
     mako = {
       enable = true;
-      anchor = "top-right";
       # backgroundColor = "#285577FF";
       # borderColor = "#4C7899FF";
-      defaultTimeout = 600;
+      settings = {
+        anchor = "top-right";
+        defaultTimeout = 600;
+      };
     };
   };
 }

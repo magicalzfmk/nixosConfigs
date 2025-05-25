@@ -63,7 +63,7 @@
       modules = [
         ./hosts/default/home.nix
         ./modules/home-manager/default.nix
-        stylix.homeManagerModules.stylix
+        stylix.homeModules.stylix
       ];
     };
 
