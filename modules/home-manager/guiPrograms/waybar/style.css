@@ -27,7 +27,7 @@
 /* COLORS */
 
 /* dracula */
-@define-color bg #282a36;
+@define-color bg rgba(40, 42, 54, 0);
 @define-color light #f8f8f2;
 /*@define-color dark @dracula_dark_font;*/
 @define-color warning #ffb86c;
