@@ -124,6 +124,8 @@
   users.users.zfmk = {
     isNormalUser = true;
     description = "Mitansh";
+    home = "/home/zfmk";
+    createHome = true;
     extraGroups = ["networkmanager" "wheel" "storage"];
     packages = [];
   };

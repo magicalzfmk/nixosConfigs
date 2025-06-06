@@ -4,11 +4,12 @@
   ...
 }: let
   startScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.swww}/bin/swww-daemon
+    ${pkgs.swww}/bin/swww-daemon &
     sleep 1
     ${pkgs.swww}/bin/swww img ~/Configs/images/current.png &
-    nm-applet --indicator &
-    ${pkgs.mako}/bin/mako
+    sleep 1
+    nm-applet &
+    ${pkgs.mako}/bin/mako &
     ${pkgs.hypridle}/bin/hypridle &
   '';
 
