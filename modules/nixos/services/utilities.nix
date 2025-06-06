@@ -44,6 +44,7 @@
     blueberry # Bluetooth GUI App
     statix # Check antipattern in code
     zenity # Window Prompt Input Creator
+    swww
 
     # Neovim and modules
     neovim # Best? Based AF

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  # ports: localsend calibre1 calibre2 syncthing ?
-  networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587];
-  networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587];
+  # ports: localsend calibre1 calibre2 syncthing ? qbittorrent
+  networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197];
+  networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197];
 
   programs.localsend = {
     enable = true;

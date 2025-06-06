@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  programs.hyprland.withUWSM = true;
+
   environment.systemPackages = with pkgs; [
     # Most of stuff is from vimjoyer's video
     wget

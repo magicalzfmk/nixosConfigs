@@ -4,7 +4,7 @@
   ...
 }: let
   startScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.swww}/bin/swww init &
+    ${pkgs.swww}/bin/swww-daemon
     sleep 1
     ${pkgs.swww}/bin/swww img ~/Configs/images/current.png &
     nm-applet --indicator &
