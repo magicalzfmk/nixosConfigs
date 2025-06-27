@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stablepkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     stylix.url = "github:danth/stylix";
 
@@ -31,12 +32,20 @@
 
   outputs = {
     nixpkgs,
+    stablepkgs,
     home-manager,
     stylix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        android_sdk.accept_license = true;
+        allowUnfree = true;
+      };
+    };
+    pkgsStable = import stablepkgs {
       inherit system;
       config = {
         android_sdk.accept_license = true;

@@ -8,7 +8,11 @@
     steam = {
       enable = true;
       # Missing Dependencies
-      #package = pkgs.steam.override { withJava = true; };
+      # package = pkgs.steam.override {
+      #   withJava = true;
+      #   withPrimus = true;
+      #   extraPkgs = pkgs: [bumblebee glxinfo];
+      # };
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
@@ -24,6 +28,7 @@
     builtins.elem (lib.getName pkg) [
       "steam"
       "steam-original"
+      "steam-unwrapped"
       "steam-run"
     ];
 

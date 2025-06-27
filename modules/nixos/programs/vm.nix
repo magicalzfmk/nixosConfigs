@@ -18,7 +18,7 @@
 
   # Manage the virtualisation services
   virtualisation = {
-    waydroid.enable = true;
+    waydroid.enable = false;
     libvirtd = {
       enable = true;
       qemu = {
