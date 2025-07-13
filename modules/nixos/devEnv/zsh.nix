@@ -9,6 +9,9 @@
     shellAliases = {
       ll = "ls -l";
       update = "nh os test";
+      osSwitch = "nh os switch";
+      homeSwitch = "nh home switch";
+      cleanAll = "nh clean all";
     };
   };
   users.defaultUserShell = pkgs.zsh;

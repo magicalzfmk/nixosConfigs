@@ -48,7 +48,7 @@
     # Other Stuff
     protonup-qt
     mangohud
-    bottles
+    (pkgs.bottles.override {removeWarningPopup = true;})
     lutris
     ludusavi
 

@@ -28,6 +28,7 @@
     pdfarranger
     zapzap
     materialgram
+    krita
 
     # Book
     calibre
