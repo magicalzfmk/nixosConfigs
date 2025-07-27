@@ -1,6 +1,6 @@
 {
-  #git
   programs = {
+    #git
     git = {
       enable = true;
       userName = "magicalzfmk";

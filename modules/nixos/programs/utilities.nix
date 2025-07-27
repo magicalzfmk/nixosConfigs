@@ -32,8 +32,5 @@
 
     # Book
     calibre
-    # (oldPkgs.calibre.override {
-    #   unrarSupport = true;
-    # })
   ];
 }

@@ -2,7 +2,6 @@
   imports = [
     ./autoActions.nix
     #./homeManager.nix # Used for home-manager as a module
-    ./hyprland.nix
     ./nh.nix
     ./utilities.nix
   ];

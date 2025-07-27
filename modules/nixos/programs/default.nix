@@ -5,6 +5,7 @@
     ./ui.nix
     ./utilities.nix
     ./vm.nix
+    # ./spotify.nix
   ];
 
   #  module2.enable = lib.mkDefault true;

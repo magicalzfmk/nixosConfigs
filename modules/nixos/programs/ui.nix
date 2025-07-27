@@ -7,19 +7,27 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
   # Waybar
   programs.waybar.enable = true;
 
   environment.systemPackages = with pkgs; [
-    waybar
-    (
-      waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-      })
-    )
     font-awesome
+
+    # Most of stuff is from vimjoyer's video
+    wget
+    mako
+    dunst
+    libnotify
+    swww
+    rofi-wayland
+    networkmanagerapplet
+    ags
+
+    # Hyprland Ecosystem
+    hyprlock
+    hypridle
+    # hyprpaper
   ];
 }

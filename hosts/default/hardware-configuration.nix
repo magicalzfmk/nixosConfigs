@@ -5,6 +5,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -23,6 +24,7 @@
       "i915.enable_psr=2"
     ];
     extraModulePackages = [];
+    kernelPackages = pkgs.linuxPackages;
   };
 
   fileSystems."/" = {
