@@ -81,8 +81,11 @@
     ];
   };
 
-  #display manager
-  services.displayManager.gdm.enable = true;
+  # Gnome Stuff
+  services = {
+    displayManager.gdm.enable = true;
+    gvfs.enable = true;
+  };
 
   programs.dconf.enable = true;
 

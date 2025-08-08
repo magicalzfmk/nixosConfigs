@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  programs.adb.enable = true;
-  programs.java.enable = true;
+  programs = {
+    adb.enable = true;
+    java.enable = true;
+  };
 
   users.users.zfmk = {
     extraGroups = [

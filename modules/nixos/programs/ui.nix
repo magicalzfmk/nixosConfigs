@@ -10,9 +10,9 @@
   };
 
   # Niri
-  # programs.niri.enable = true;
-  # security.polkit.enable = true; # polkit
-  # services.gnome.gnome-keyring.enable = true; # secret service
+  programs.niri.enable = true;
+  security.polkit.enable = true; # polkit
+  services.gnome.gnome-keyring.enable = true; # secret service
 
   # Waybar
   programs.waybar.enable = true;
@@ -36,6 +36,6 @@
     # hyprpaper
 
     # Niri Stuff
-    # fuzzel
+    fuzzel
   ];
 }

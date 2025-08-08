@@ -66,10 +66,12 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = lib.mkForce ",preferred,auto,1.0";
-      "$terminal" = lib.mkForce "alacritty";
-      "$fileManager" = lib.mkForce "nautilus";
-      "$menu" = lib.mkForce "rofi -show drun -show-icons";
+      monitor = lib.mkDefault ",preferred,auto,1.0";
+      "$terminal" = lib.mkDefault "alacritty";
+      "$fileManager" = lib.mkDefault "nautilus";
+      "$menu" = lib.mkDefault "rofi -show drun -show-icons";
+      "$browser" = lib.mkDefault "librewolf";
+      "$code" = lib.mkDefault "codium";
 
       # exec-once = ''bash $FLAKE/scripts/start.sh'';
       exec-once = ''${startScript}/bin/start'';
@@ -84,12 +86,12 @@ in {
         gaps_out = 2;
         border_size = 1;
 
-        "col.active_border" = lib.mkForce "rgb(bd93f9)";
-        "col.inactive_border" = lib.mkForce "rgba(44475aaa)";
-        "col.nogroup_border" = lib.mkForce "rgba(282a36dd)";
-        "col.nogroup_border_active" = lib.mkForce "rgb(bd93f9)";
+        "col.active_border" = lib.mkDefault "rgb(bd93f9)";
+        "col.inactive_border" = lib.mkDefault "rgba(44475aaa)";
+        "col.nogroup_border" = lib.mkDefault "rgba(282a36dd)";
+        "col.nogroup_border_active" = lib.mkDefault "rgb(bd93f9)";
 
-        layout = lib.mkForce "dwindle";
+        layout = lib.mkDefault "dwindle";
 
         resize_on_border = true;
       };
@@ -177,6 +179,8 @@ in {
         "$mainMod and CTRL, N, exec, ${restartDefNetScript}/bin/start"
 
         #Example binds
+        "$mainMod, B, exec, $browser"
+        "$mainMod, X, exec, $code"
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
