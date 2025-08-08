@@ -17,7 +17,6 @@
     baobab #Disk usage
     loupe #Image viewer
     papers #Document viewer
-
     celluloid
     flatpak
     gnome-software

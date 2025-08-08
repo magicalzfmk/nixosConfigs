@@ -9,6 +9,11 @@
     xwayland.enable = true;
   };
 
+  # Niri
+  # programs.niri.enable = true;
+  # security.polkit.enable = true; # polkit
+  # services.gnome.gnome-keyring.enable = true; # secret service
+
   # Waybar
   programs.waybar.enable = true;
 
@@ -29,5 +34,8 @@
     hyprlock
     hypridle
     # hyprpaper
+
+    # Niri Stuff
+    # fuzzel
   ];
 }
