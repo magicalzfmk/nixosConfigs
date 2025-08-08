@@ -8,10 +8,11 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "nh os test";
-      osSwitch = "nh os switch";
-      homeSwitch = "nh home switch";
-      cleanAll = "nh clean all";
+      flup = "nix flake update";
+      oste = "nh os test";
+      ossw = "nh os switch";
+      hosw = "nh home switch";
+      clal = "nh clean all";
     };
   };
   users.defaultUserShell = pkgs.zsh;

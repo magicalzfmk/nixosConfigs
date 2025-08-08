@@ -47,7 +47,7 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs system;};
       modules = [
-        ./hosts/default/configuration.nix
+        ./modules/default/configuration.nix
         ./modules/nixos
 
         # Home-Manager Modules
@@ -61,7 +61,7 @@
     homeConfigurations.zfmk = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ./hosts/default/home.nix
+        ./modules/default/home.nix
         ./modules/home-manager/default.nix
         stylix.homeModules.stylix
       ];

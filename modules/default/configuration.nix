@@ -81,21 +81,10 @@
     ];
   };
 
-  # Enable KDE
-  #services.displayManager = {
-  #  sddm.enable = true;
-  #  defaultSession = "plasma";
-  #  sddm.wayland.enable = true;
-  #};
-  #services.desktopManager.plasma6.enable = true;
-  programs.dconf.enable = true;
+  #display manager
+  services.displayManager.gdm.enable = true;
 
-  # Excluding some KDE Plasma applications from the default install
-  #environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #  plasma-browser-integration
-  #  konsole
-  #  oxygen
-  #];
+  programs.dconf.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -123,7 +112,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.zfmk = {
     isNormalUser = true;
-    description = "Mitansh";
+    description = "zfmk";
     home = "/home/zfmk";
     createHome = true;
     extraGroups = ["networkmanager" "wheel" "storage"];

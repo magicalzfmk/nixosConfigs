@@ -29,6 +29,11 @@
       alacritty.enable = true;
       # rofi.enable = true;
       gtk.enable = true;
+      # kde.enable = true;
+      # qt = {
+      #   enable = true;
+      #   platform = "dracula";
+      # };
       gnome.enable = true;
       neovim.enable = true;
     };

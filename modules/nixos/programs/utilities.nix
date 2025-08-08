@@ -12,6 +12,12 @@
 
   environment.systemPackages = with pkgs; [
     # System
+    nautilus #File Manager
+    spaceFM #File Manager
+    baobab #Disk usage
+    loupe #Image viewer
+    papers #Document viewer
+
     celluloid
     flatpak
     gnome-software

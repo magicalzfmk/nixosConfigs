@@ -1,4 +1,11 @@
 {
+  #kde
+  # qt = {
+  #   enable = true;
+  #   platformTheme.name = "dracula";
+  #   style.name = "dracula";
+  # };
+
   programs = {
     #git
     git = {
