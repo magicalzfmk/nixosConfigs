@@ -75,6 +75,8 @@
     #
     sessionVariables = {
       EDITOR = "nvim";
+      FLAKE = "$HOME/Configs";
+      HOME = "/home/zfmk";
     };
   };
 

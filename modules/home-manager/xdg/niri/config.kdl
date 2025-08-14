@@ -255,7 +255,9 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "sh" "$FLAKE/scripts/start.sh"
+spawn-at-startup "waybar"
+spawn-at-startup "nm-applet"
+spawn-at-startup "swww img ~/Configs/images/current.png"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.

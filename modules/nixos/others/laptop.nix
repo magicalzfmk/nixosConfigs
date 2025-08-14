@@ -62,7 +62,7 @@
       package = pkgs.bluez;
       input = {
         General = {
-          #ClassicBondedOnly = false;
+          IdleTimeout = 120;
         };
       };
     };

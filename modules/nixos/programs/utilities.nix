@@ -3,9 +3,20 @@
   networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197];
   networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197];
 
-  programs.localsend = {
-    enable = true;
-    openFirewall = true;
+  programs = {
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
+
+    nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "alacritty";
+    };
+
+    # spacefm = {
+    #   enable = true;
+    # };
   };
 
   services.udisks2.enable = true;
@@ -13,7 +24,6 @@
   environment.systemPackages = with pkgs; [
     # System
     nautilus #File Manager
-    spaceFM #File Manager
     baobab #Disk usage
     loupe #Image viewer
     papers #Document viewer
