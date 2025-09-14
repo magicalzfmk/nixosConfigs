@@ -158,9 +158,15 @@ in {
         };
       };
 
-      gestures = {
-        workspace_swipe = true;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+        "3, up, move"
+
+        "4, up, fullscreen"
+        "4, down, close"
+        "4, left, resize"
+        "4, right, float"
+      ];
 
       "$mainMod" = "SUPER";
 
