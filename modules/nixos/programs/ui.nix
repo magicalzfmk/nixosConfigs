@@ -26,13 +26,14 @@
     dunst
     libnotify
     swww
-    rofi-wayland
+    rofi
     networkmanagerapplet
     ags
 
     # Hyprland Ecosystem
     hyprlock
     hypridle
+    hyprshot
     # hyprpaper
 
     # Niri Stuff

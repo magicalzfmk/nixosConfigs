@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  # ports: localsend calibre1 calibre2 syncthing ? qbittorrent
-  networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197];
-  networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197];
+  # ports: localsend calibre1 calibre2 syncthing ? qbittorrent simplex
+  networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197 44879];
+  networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197 44879];
 
   programs = {
     localsend = {
@@ -31,11 +31,12 @@
     flatpak
     gnome-software
     librewolf
+    onlyoffice-desktopeditors
 
     # Others
     obsidian #Best Note Taking App
     syncthing #Sync between each app
-    anki #Cool flashcard app
+    # anki #Cool flashcard app
     thunderbird #Best mail client.
     chromium #For Uni stuff
     qbittorrent #Awesome torrent app

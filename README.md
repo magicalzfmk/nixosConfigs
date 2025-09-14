@@ -15,7 +15,7 @@ The No Nonsense dotFiles for NixOs
 - Hyprland
 
 ## Screenshots
-![Screenshot](https://github.com/magicalzfmk/nixosConfigs/blob/ee0010701f5e9064c0426fbf7b5b232c1deb0117/images/main.png?raw=true)
+![Screenshot](https://github.com/magicalzfmk/nixosConfigs/blob/64fd07f326023e0928e6423f1568198fccc003b0/images/main.png)
 
 - **Note**:- Designs may be old as Design is not fixed
   (Changes made to Design may take a while to be updated here)

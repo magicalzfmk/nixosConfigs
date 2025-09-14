@@ -56,7 +56,7 @@
     slurp
     wl-clipboard
     textsnatcher
-    (flameshot.override {enableWlrSupport = true;})
+    flameshot
     wlroots
   ];
 }
