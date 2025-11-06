@@ -10,16 +10,19 @@
     #git
     git = {
       enable = true;
-      userName = "magicalzfmk";
-      userEmail = "mitanshkataria73@gmail.com";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "magicalzfmk";
+          email = "mitanshkataria73@gmail.com";
+        };
+
         init.defaultBranch = "main";
-      };
-      aliases = {
-        pm = "push github main";
-        po = "push origin main";
-        co = "checkout";
-        cm = "commit -a";
+        alias = {
+          pm = "push github main";
+          po = "push origin main";
+          co = "checkout";
+          cm = "commit -a";
+        };
       };
     };
 

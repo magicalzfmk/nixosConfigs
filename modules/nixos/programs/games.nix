@@ -43,7 +43,7 @@
     steam-run
 
     # Other Stuff
-    protonup-qt
+    protonplus
     mangohud
     (pkgs.bottles.override {removeWarningPopup = true;})
     lutris
@@ -54,8 +54,8 @@
     # rpcs3
 
     # Wine Stuff
-    wineWowPackages.waylandFull
     winetricks
+    wine-wayland
 
     # Actual Games
     osu-lazer-bin
