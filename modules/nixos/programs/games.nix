@@ -47,6 +47,7 @@
     mangohud
     (pkgs.bottles.override {removeWarningPopup = true;})
     lutris
+    heroic
     ludusavi
 
     # Emulation

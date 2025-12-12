@@ -32,6 +32,7 @@
     gnome-software
     librewolf
     onlyoffice-desktopeditors
+    gparted
 
     # Others
     obsidian #Best Note Taking App

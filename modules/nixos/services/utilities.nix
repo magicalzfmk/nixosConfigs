@@ -31,6 +31,7 @@
     # OS
     cmake
     clang-tools
+    polkit
 
     pandoc # Cool File Type Converter (Using with Obsidian)
     ffmpeg_6

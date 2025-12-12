@@ -183,13 +183,11 @@ in {
         ", Print, exec, ${screenshotScript}/bin/start"
         "$mainMod and SHIFT, L, exec, hyprlock"
         "$mainMod and CTRL, N, exec, ${restartDefNetScript}/bin/start"
-
-        #Example binds
         "$mainMod, B, exec, $browser"
         "$mainMod, X, exec, $code"
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod and CTRL, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, space, exec, $menu"

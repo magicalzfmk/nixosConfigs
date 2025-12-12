@@ -9,6 +9,7 @@
   stylix = {
     enable = true;
     autoEnable = false;
+    enableReleaseChecks = false;
     targets.vscode = {
       # enable = true;
       profileNames = ["Default"];
