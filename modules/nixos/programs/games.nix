@@ -46,8 +46,9 @@
     protonplus
     mangohud
     (pkgs.bottles.override {removeWarningPopup = true;})
-    lutris
-    heroic
+    # lutris
+    itch
+    # heroic
     ludusavi
 
     # Emulation

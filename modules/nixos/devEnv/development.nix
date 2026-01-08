@@ -1,8 +1,5 @@
 {pkgs, ...}: {
-  programs = {
-    adb.enable = true;
-    java.enable = true;
-  };
+  programs.java.enable = true;
 
   users.users.zfmk = {
     extraGroups = [
@@ -18,6 +15,7 @@
     vscodium
     android-tools
     unzip
+    android-tools
 
     # Game Dev
     # aseprite
