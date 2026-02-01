@@ -37,43 +37,33 @@ in {
         plugin = nvim-lspconfig;
         config = toLuaFile ./nvim/plugin/lsp.lua;
       }
-
       {
         plugin = comment-nvim;
         config = toLua "require(\"Comment\").setup()";
       }
-
       {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        plugin = dracula-nvim;
+        config = "colorscheme dracula";
       }
-
-      neodev-nvim
-
-      nvim-cmp
+      lazydev-nvim
       {
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugin/cmp.lua;
       }
-
+      plenary-nvim
       {
         plugin = telescope-nvim;
         config = toLuaFile ./nvim/plugin/telescope.lua;
       }
-
       telescope-fzf-native-nvim
-
       cmp_luasnip
       cmp-nvim-lsp
-
       luasnip
       friendly-snippets
-
       lualine-nvim
       nvim-web-devicons
-
       {
-        plugin = nvim-treesitter.withPlugins (p: [
+        plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
           p.tree-sitter-vim
           p.tree-sitter-bash
@@ -81,21 +71,15 @@ in {
           p.tree-sitter-python
           p.tree-sitter-json
         ]);
-        config = toLuaFile ./nvim/plugin/treesitter.lua;
+        # config = toLuaFile ./nvim/plugin/treesitter.lua;
       }
-
       vim-nix
-
-      #{
-      #  plugin = vimPlugins.own-dracula-nvim;
-      #  config = "colorscheme dracula";
-      #}
     ];
 
     extraPackages = with pkgs; [
       lua-language-server
-      #rnix-lsp
-
+      nixd
+      alejandra
       xclip
       wl-clipboard
     ];
