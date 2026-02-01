@@ -46,5 +46,6 @@
     zapzap
     materialgram
     krita
+    czkawka
   ];
 }

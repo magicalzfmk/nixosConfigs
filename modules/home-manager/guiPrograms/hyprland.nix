@@ -143,9 +143,9 @@ in {
         };
       };
 
-      windowrulev2 = [
-        "bordercolor rgb(ffb86c),xwayland:1"
-        "suppressevent maximize, class:.*"
+      windowrule = [
+        "border_color rgb(ffb86c), match:xwayland 1"
+        "suppress_event maximize, match:class .*"
       ];
 
       input = {

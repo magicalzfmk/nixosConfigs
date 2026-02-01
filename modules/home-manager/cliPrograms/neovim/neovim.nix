@@ -28,7 +28,7 @@ in {
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraLuaConfig = ''
+    initLua = ''
       ${builtins.readFile ./nvim/options.lua}
     '';
 
