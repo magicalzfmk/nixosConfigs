@@ -27,6 +27,9 @@
       nm-applet &
       ${pkgs.mako}/bin/mako &
       ${pkgs.hypridle}/bin/hypridle &
+      pkill waybar &
+      sleep 1
+      hyprctl dispatch exec waybar &
     '';
 
     screenshotPartScript = pkgs.writeShellScriptBin "start" ''
@@ -43,7 +46,7 @@
     '';
 
     relaunchTopbarScript = pkgs.writeShellScriptBin "start" ''
-      pkill waybar
+      pkill waybar &
       sleep 1
       hyprctl dispatch exec waybar &
     '';
