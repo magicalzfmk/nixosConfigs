@@ -2,7 +2,11 @@
 # configured as a Home-Manager service with Dracula-friendly defaults.
 {config, ...}: {
   flake.modules.nixos.notifications = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [mako dunst libnotify];
+    environment.systemPackages = with pkgs; [
+      mako
+      dunst
+      libnotify
+    ];
   };
 
   flake.modules.homeManager.notifications = {

@@ -36,16 +36,15 @@
       # Desktop / apps
       nautilus
       baobab
-      loupe
-      papers
+      nomacs
+      kdePackages.okular
       celluloid
       flatpak
       gnome-software
       librewolf
-      onlyoffice-desktopeditors
-      gparted
       obsidian
       syncthing
+      syncthingtray
       thunderbird
       chromium
       qbittorrent

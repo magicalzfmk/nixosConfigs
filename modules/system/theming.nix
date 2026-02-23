@@ -25,7 +25,7 @@
   }: {
     stylix = {
       enable = true;
-      autoEnable = false;
+      autoEnable = true;
       enableReleaseChecks = false;
 
       base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/dracula.yaml";
@@ -42,6 +42,9 @@
         gtk.enable = true;
         gnome.enable = true;
         neovim.enable = true;
+
+        hyprland.enable = false;
+        waybar.enable = false;
         vscode.profileNames = ["Default"];
       };
 
@@ -66,7 +69,7 @@
           name = "Cascadia Mono";
         };
         emoji = {
-          package = pkgs.noto-fonts-emoji;
+          package = pkgs.noto-fonts-color-emoji;
           name = "Noto Color Emoji";
         };
       };
