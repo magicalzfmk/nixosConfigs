@@ -8,7 +8,6 @@
       enableCompletion = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
-      ohMyZsh.enable = true;
       shellAliases = {
         ll = "ls -l";
         flup = "nix flake update";
@@ -46,18 +45,14 @@
     };
 
     # Enable Starship for bash as fallback
-    programs.bash = {
-      enable = true;
-      bashrcExtra = ''eval "$(starship init bash)"'';
-    };
+    # programs.bash = {
+    #   enable = true;
+    #   bashrcExtra = ''eval "$(starship init bash)"'';
+    # };
 
     programs.zsh = {
       enable = true;
-      initContent = ''eval "$(starship init zsh)"'';
-      oh-my-zsh = {
-        enable = true;
-        plugins = ["git"];
-      };
+      # initContent = ''eval "$(starship init zsh)"'';
     };
   };
 }
