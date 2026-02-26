@@ -52,7 +52,7 @@
       pdfarranger
       zapzap
       materialgram
-      krita
+      # krita
       czkawka
 
       # Wayland / Display

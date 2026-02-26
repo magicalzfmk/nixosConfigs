@@ -16,32 +16,24 @@
         mainBar = {
           layer = "top";
           position = "top";
-          height = 10;
+          # height = 10;
           spacing = 5;
           output = ["eDP-1" "HDMI-A-1"];
           modules-left = [
-            # "hyprland/workspaces"
             "clock"
-            # "hyprland/language"
             "backlight"
             "pulseaudio"
-            "custom/scratchpad-indicator"
-            "hyprland/mode"
             "idle_inhibitor"
             "bluetooth"
-            "custom/media"
             "tray"
           ];
           modules-center = [
-            # "hyprland/window"
             "hyprland/workspaces"
           ];
           modules-right = [
-            "custom/cpugovernor"
             "cpu"
             "memory"
             "temperature"
-            "custom/gpu"
             "battery"
             "network"
           ];
@@ -179,35 +171,6 @@
             min-length = 7;
           };
 
-          "custom/weather" = {
-            exec = "curl 'https://wttr.in/?format=1'";
-            interval = 3600;
-          };
-
-          "custom/gpu" = {
-            exec = "$HOME/.config/waybar/custom_modules/custom-gpu.sh";
-            return-type = "json";
-            format = "  {}";
-            interval = 2;
-            tooltip = "{tooltip}";
-            max-length = 19;
-            min-length = 19;
-            on-click = "powerupp";
-          };
-
-          "custom/cpugovernor" = {
-            format = "{icon}";
-            interval = "30";
-            return-type = "json";
-            exec = "$HOME/.config/waybar/custom_modules/cpugovernor.sh";
-            min-length = 2;
-            max-length = 2;
-            format-icons = {
-              perf = "";
-              sched = "";
-            };
-          };
-
           "backlight" = {
             device = "intel_backlight";
             format = "{percent}% {icon}";
@@ -252,40 +215,6 @@
             family = "ipv4";
             tooltip-format-wifi = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}";
             tooltip-format-ethernet = " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}";
-          };
-
-          "custom/media" = {
-            format = "{icon} {text}";
-            return-type = "json";
-            max-length = 40;
-            format-icons = {
-              spotify = "";
-              default = "🎜";
-            };
-            escape = true;
-            exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
-          };
-
-          "custom/scratchpad-indicator" = {
-            interval = 3;
-            return-type = "json";
-            exec = "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\"; tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'";
-            format = "{} 􏠜";
-            on-click = "exec swaymsg 'scratchpad show'";
-            on-click-right = "exec swaymsg 'move scratchpad'";
-          };
-
-          "custom/power" = {
-            format = "⏻";
-            tooltip = false;
-            menu = "on-click";
-            #menu-file = "$HOME/.config/waybar/power_menu.xml"; # Menu file in resources folder
-            menu-actions = {
-              shutdown = "shutdown";
-              reboot = "reboot";
-              suspend = "systemctl suspend";
-              hibernate = "systemctl hibernate";
-            };
           };
         };
       };
