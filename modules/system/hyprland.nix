@@ -25,6 +25,7 @@
       ${pkgs.swww}/bin/swww img ~/Configs/images/current.png &
       sleep 1
       nm-applet &
+      blueman-applet &
       ${pkgs.mako}/bin/mako &
       ${pkgs.hypridle}/bin/hypridle &
       pkill waybar &

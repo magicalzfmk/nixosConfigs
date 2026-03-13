@@ -18,12 +18,15 @@
       };
     };
 
-    services.udisks2.enable = true;
+    services = {
+      udisks2.enable = true;
+      blueman.enable = true;
+    };
 
     environment.systemPackages = with pkgs; [
       # CLI
       git
-      neofetch
+      fastfetch
       lf
       cmake
       clang-tools
@@ -61,7 +64,6 @@
       networkmanagerapplet
       brightnessctl
       gvfs
-      blueberry
       ags
 
       # Screenshot

@@ -24,7 +24,7 @@
             "backlight"
             "pulseaudio"
             "idle_inhibitor"
-            "bluetooth"
+            # "bluetooth"
             "tray"
           ];
           modules-center = [
@@ -82,7 +82,7 @@
               enabled = "";
               disabled = "";
             };
-            on-click = "blueberry";
+            on-click = "blueman";
           };
 
           "hyprland/language" = {
