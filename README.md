@@ -11,11 +11,12 @@ The No Nonsense dotFiles for NixOs
 ## Features
 - Home-Manager as a module
 - Stylix Theming
-- Waybar
-- Hyprland
+- Noctalia
+- Niri
+- Dendritic Pattern
 
 ## Screenshots
-![Screenshot](https://github.com/magicalzfmk/nixosConfigs/blob/64fd07f326023e0928e6423f1568198fccc003b0/images/main.png)
+![Screenshot](https://github.com/magicalzfmk/nixosConfigs/blob/0c531201e57dcebbb5a46bcfd2a3400b1a3c5ded/images/main.png)
 
 - **Note**:- Designs may be old as Design is not fixed
   (Changes made to Design may take a while to be updated here)
@@ -23,6 +24,8 @@ The No Nonsense dotFiles for NixOs
 ## Getting Started
 
 To get started with my dotFiles, simply download the source code and run as a flake.
+
+MAKE SURE TO CHANGE USER AS PER YOUR HOME (learned the hard way)
 
 ### Prerequisites
 
@@ -36,10 +39,9 @@ To get started with my dotFiles, simply download the source code and run as a fl
 2. Open the project in terminal
    ```cd nixosConfigs/```
 3. P.S. Change the imported hardware config with your personal one
-   ```cd /hosts/default```
-   ```sudo cp /etc/nixos/hardware-configuration.nix ./hardware-configuration.nix```
+   ```Just copy the hardware conf and paste after flake.nixosModules.hardware = (paste here);```(same with configuration.nix or **just change the username in users**(**IMPORTANT**))
 4. run as a flake
-   ```sudo nixos-rebuild switch --flake ./#laptop```
+   ```sudo nixos-rebuild switch --flake .#laptopHP```
 
 ## Contributing
 
