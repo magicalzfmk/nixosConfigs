@@ -1,6 +1,5 @@
-# Git version control: user identity, default branch, and convenience aliases.
-{config, ...}: {
-  flake.modules.homeManager.git = {
+{
+  flake.homeModules.git = {
     programs.git = {
       enable = true;
       settings = {
@@ -17,10 +16,5 @@
         };
       };
     };
-  };
-
-  # Also needed system-wide for root / scripts
-  flake.modules.nixos.git = {pkgs, ...}: {
-    environment.systemPackages = [pkgs.git];
   };
 }

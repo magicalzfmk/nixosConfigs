@@ -1,7 +1,5 @@
-# Gaming setup: Steam with remote play and dedicated server firewall rules,
-# Gamescope + Gamemode for performance, and a curated set of gaming tools.
-{config, ...}: {
-  flake.modules.nixos.games = {
+{
+  flake.nixosModules.games = {
     pkgs,
     lib,
     ...

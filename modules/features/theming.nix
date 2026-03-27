@@ -1,8 +1,5 @@
-# Visual theming closure: system fonts & icon packages (NixOS) and
-# Stylix declarative theming (Home-Manager). Both sides share the Dracula palette.
 {config, ...}: {
-  # ── NixOS side: install theme + font packages system-wide ────────
-  flake.modules.nixos.theming = {pkgs, ...}: {
+  flake.nixosModules.theming = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       dracula-theme
       nordzy-cursor-theme
@@ -17,8 +14,7 @@
     ];
   };
 
-  # ── Home-Manager side: Stylix declarative theming ─────────────────
-  flake.modules.homeManager.theming = {
+  flake.homeModules.theming = {
     pkgs,
     lib,
     ...
@@ -45,6 +41,7 @@
 
         hyprland.enable = false;
         waybar.enable = false;
+        starship.enable = false;
         vscode.profileNames = ["Default"];
       };
 

@@ -1,11 +1,8 @@
-# General-purpose utilities: CLI tools, file managers, productivity apps,
-# screenshot tools, and misc system packages. Also opens ports used by
-# Localsend, Calibre, Syncthing, etc.
 {config, ...}: {
-  flake.modules.nixos.utilities = {pkgs, ...}: {
+  flake.nixosModules.utilities = {pkgs, ...}: {
     # Misc firewall ports (localsend, calibre, syncthing, qbittorrent, simplex)
-    networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197 44879];
-    networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197 44879];
+    # networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197 44879];
+    # networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197 44879];
 
     programs = {
       localsend = {
@@ -24,17 +21,19 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # CLI
+      # Coding
+      vscodium
+      alejandra
       git
+      android-tools
       fastfetch
       lf
-      cmake
-      clang-tools
-      polkit
-      pandoc
-      ffmpeg_6
-      statix
-      zenity
+
+      # Audio
+      nicotine-plus
+      lrcget
+      picard
+      pavucontrol
 
       # Desktop / apps
       nautilus
@@ -42,37 +41,32 @@
       nomacs
       kdePackages.okular
       celluloid
-      flatpak
       gnome-software
+      flatpak
       librewolf
       obsidian
       syncthing
-      syncthingtray
       thunderbird
       chromium
       qbittorrent
-      localsend
       pdfarranger
       zapzap
       materialgram
-      # krita
+      krita
       czkawka
+      brightnessctl
 
       # Wayland / Display
-      swww
       rofi
-      networkmanagerapplet
-      brightnessctl
       gvfs
-      ags
 
       # Screenshot
-      grim
-      slurp
-      wl-clipboard
       textsnatcher
       flameshot
-      wlroots
+      grim
+      wl-clipboard
+      swappy
+      slurp
     ];
   };
 }

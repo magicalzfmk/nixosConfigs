@@ -1,6 +1,5 @@
-# Flatpak support: enables the service and adds the Flathub remote on boot.
 {config, ...}: {
-  flake.modules.nixos.flatpak = {pkgs, ...}: {
+  flake.nixosModules.flatpak = {pkgs, ...}: {
     services.flatpak.enable = true;
 
     systemd.services.flatpak-repo = {

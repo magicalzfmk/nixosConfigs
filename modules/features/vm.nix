@@ -1,10 +1,8 @@
-# Virtualisation: QEMU/KVM via libvirtd, virt-manager GUI, SPICE guest support.
-# Adds zfmk to the libvirtd group.
 let
   userName = "zfmk";
 in
   {config, ...}: {
-    flake.modules.nixos.vm = {pkgs, ...}: {
+    flake.nixosModules.vm = {pkgs, ...}: {
       programs.dconf.enable = true;
 
       users.users.${userName}.extraGroups = ["libvirtd"];
