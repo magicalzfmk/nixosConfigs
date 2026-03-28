@@ -1,5 +1,22 @@
-{config, ...}: {
-  flake.nixosModules.utilities = {pkgs, ...}: {
+{
+  flake.nixosModules.codingUtils = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      vscodium
+      alejandra
+      git
+      android-tools
+    ];
+  };
+
+  flake.nixosModules.gnomeExtra = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      gvfs
+      nautilus
+      baobab
+    ];
+  };
+
+  flake.nixosModules.desktopUtils = {pkgs, ...}: {
     # Misc firewall ports (localsend, calibre, syncthing, qbittorrent, simplex)
     # networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197 44879];
     # networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197 44879];
@@ -21,14 +38,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      # Coding
-      vscodium
-      alejandra
-      git
-      android-tools
-      fastfetch
-      lf
-
       # Audio
       nicotine-plus
       lrcget
@@ -36,8 +45,6 @@
       pavucontrol
 
       # Desktop / apps
-      nautilus
-      baobab
       nomacs
       kdePackages.okular
       celluloid
@@ -54,19 +61,30 @@
       materialgram
       krita
       czkawka
-      brightnessctl
+      imgbrd-grabber
+    ];
+  };
 
-      # Wayland / Display
-      rofi
-      gvfs
+  flake.nixosModules.extraUtils = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      fastfetch
+      lf
+      flameshot
+    ];
+  };
 
+  flake.nixosModules.niriUtils = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
       # Screenshot
       textsnatcher
-      flameshot
       grim
       wl-clipboard
       swappy
       slurp
+
+      # apps/services
+      brightnessctl
+      xwayland-satellite
     ];
   };
 }

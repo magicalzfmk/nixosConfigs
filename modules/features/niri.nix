@@ -56,7 +56,7 @@
         };
 
         window-rule = {
-          geometry-corner-radius = 10;
+          geometry-corner-radius = 20;
           clip-to-geometry = true;
         };
 
@@ -86,8 +86,7 @@
 
         binds = {
           "Mod+Return".spawn-sh = lib.getExe pkgs.alacritty;
-          "Mod+S".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
-          "Mod+Space".spawn-sh = "${lib.getExe pkgs.rofi} -show drun -show-icons";
+          "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
           "Mod+B".spawn-sh = lib.getExe pkgs.librewolf;
           "Mod+X".spawn-sh = lib.getExe pkgs.vscodium;

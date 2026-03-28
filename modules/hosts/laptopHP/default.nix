@@ -10,7 +10,6 @@
       laptopHPHardware
       zfmk
       niri
-      utilities
       flatpak
       games
       neovim
@@ -18,6 +17,12 @@
       theming
       terminal
       # vm
+
+      # Utilities
+      desktopUtils
+      codingUtils
+      extraUtils
+      niriUtils
 
       # Home Modules
       inputs.home-manager.nixosModules.home-manager

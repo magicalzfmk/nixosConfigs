@@ -1,18 +1,5 @@
 {inputs, ...}: {
   flake.nixosModules.neovim = {
-    # nixpkgs.overlays = [
-    #   (final: prev: {
-    #     vimPlugins =
-    #       prev.vimPlugins
-    #       // {
-    #         own-dracula-nvim = prev.vimUtils.buildVimPlugin {
-    #           name = "dracula";
-    #           src = inputs.plugin-dracula;
-    #         };
-    #       };
-    #   })
-    # ];
-
     programs.neovim = {
       enable = true;
       defaultEditor = true;
@@ -25,6 +12,18 @@
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
   in {
+    nixpkgs.overlays = [
+      (final: prev: {
+        vimPlugins =
+          prev.vimPlugins
+          // {
+            own-dracula-nvim = prev.vimUtils.buildVimPlugin {
+              name = "dracula";
+              src = inputs.plugin-dracula;
+            };
+          };
+      })
+    ];
     programs.neovim = {
       enable = true;
       viAlias = true;

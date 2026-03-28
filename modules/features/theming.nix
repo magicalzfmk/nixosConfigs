@@ -1,4 +1,4 @@
-{config, ...}: {
+{
   flake.nixosModules.theming = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
       dracula-theme

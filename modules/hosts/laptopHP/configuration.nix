@@ -75,7 +75,7 @@
       LC_TIME = "en_IN";
     };
 
-    # services.desktopManager.gnome.enable = true;
+    services.desktopManager.gnome.enable = true;
 
     services = {
       xserver = {

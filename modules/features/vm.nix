@@ -1,30 +1,27 @@
-let
-  userName = "zfmk";
-in
-  {config, ...}: {
-    flake.nixosModules.vm = {pkgs, ...}: {
-      programs.dconf.enable = true;
+{
+  flake.nixosModules.vm = {pkgs, ...}: {
+    programs.dconf.enable = true;
 
-      users.users.${userName}.extraGroups = ["libvirtd"];
+    users.users.zfmk.extraGroups = ["libvirtd"];
 
-      environment.systemPackages = with pkgs; [
-        virt-manager
-        virt-viewer
-        spice
-        spice-gtk
-        spice-protocol
-        virtio-win
-        win-spice
-      ];
+    environment.systemPackages = with pkgs; [
+      virt-manager
+      virt-viewer
+      spice
+      spice-gtk
+      spice-protocol
+      virtio-win
+      win-spice
+    ];
 
-      virtualisation = {
-        libvirtd = {
-          enable = true;
-          qemu.swtpm.enable = true;
-        };
-        spiceUSBRedirection.enable = true;
+    virtualisation = {
+      libvirtd = {
+        enable = true;
+        qemu.swtpm.enable = true;
       };
-
-      services.spice-vdagentd.enable = true;
+      spiceUSBRedirection.enable = true;
     };
-  }
+
+    services.spice-vdagentd.enable = true;
+  };
+}

@@ -1,4 +1,4 @@
-{config, ...}: {
+{
   flake.nixosModules.terminal = {pkgs, ...}: {
     programs.zsh = {
       enable = true;
