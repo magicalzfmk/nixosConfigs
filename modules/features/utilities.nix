@@ -8,18 +8,25 @@
     ];
   };
 
-  flake.nixosModules.gnomeExtra = {pkgs, ...}: {
+  flake.nixosModules.otherExtra = {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
+      # Gnome
       gvfs
       nautilus
       baobab
+
+      # KDE
+      nomacs
     ];
   };
 
   flake.nixosModules.desktopUtils = {pkgs, ...}: {
-    # Misc firewall ports (localsend, calibre, syncthing, qbittorrent, simplex)
-    # networking.firewall.allowedTCPPorts = [53317 8080 8081 8384 587 63197 44879];
-    # networking.firewall.allowedUDPPorts = [53317 8080 8081 8384 587 63197 44879];
+    # firewall ports: calibre1, calibre2
+    networking.firewall.allowedTCPPorts = [8080 8081];
+    networking.firewall.allowedUDPPorts = [8080 8081];
+
+    # networking.firewall.allowedTCPPorts = [53317 8384 587 63197 44879];
+    # networking.firewall.allowedUDPPorts = [53317 8384 587 63197 44879];
 
     programs = {
       localsend = {
@@ -45,12 +52,13 @@
       pavucontrol
 
       # Desktop / apps
-      nomacs
-      kdePackages.okular
+      ## System
       celluloid
       gnome-software
       flatpak
       librewolf
+
+      ## User
       obsidian
       syncthing
       thunderbird
@@ -62,6 +70,7 @@
       krita
       czkawka
       imgbrd-grabber
+      calibre
     ];
   };
 
@@ -70,6 +79,7 @@
       fastfetch
       lf
       flameshot
+      kdePackages.okular
     ];
   };
 
