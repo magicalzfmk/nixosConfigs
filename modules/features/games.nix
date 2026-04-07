@@ -33,6 +33,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      heroic
       steam-run
       protonplus
       mangohud

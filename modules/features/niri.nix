@@ -24,6 +24,8 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
+        overview.backdrop-color = "#282a36";
+
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
         ];
@@ -49,10 +51,6 @@
             natural-scroll = {};
             tap = {};
           };
-
-          # mouse = {
-          #   accel-profile = "flat";
-          # };
         };
 
         window-rule = {
@@ -68,21 +66,6 @@
             active-color = "#bd93f9";
           };
         };
-
-        # workspaces = let
-        #   settings = {layout.gaps = 5;};
-        # in {
-        #   "w0" = settings;
-        #   "w1" = settings;
-        #   "w2" = settings;
-        #   "w3" = settings;
-        #   "w4" = settings;
-        #   "w5" = settings;
-        #   "w6" = settings;
-        #   "w7" = settings;
-        #   "w8" = settings;
-        #   "w9" = settings;
-        # };
 
         binds = {
           "Mod+T".spawn-sh = lib.getExe pkgs.alacritty;

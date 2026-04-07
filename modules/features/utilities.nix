@@ -21,9 +21,9 @@
   };
 
   flake.nixosModules.desktopUtils = {pkgs, ...}: {
-    # firewall ports: calibre1, calibre2
-    networking.firewall.allowedTCPPorts = [8080 8081];
-    networking.firewall.allowedUDPPorts = [8080 8081];
+    # firewall ports: calibre1, calibre2, qbittorrent
+    networking.firewall.allowedTCPPorts = [8080 8081 59973];
+    networking.firewall.allowedUDPPorts = [8080 8081 59973];
 
     # networking.firewall.allowedTCPPorts = [53317 8384 587 63197 44879];
     # networking.firewall.allowedUDPPorts = [53317 8384 587 63197 44879];
@@ -65,11 +65,9 @@
       chromium
       qbittorrent
       pdfarranger
-      zapzap
       materialgram
       krita
       czkawka
-      imgbrd-grabber
       calibre
     ];
   };
