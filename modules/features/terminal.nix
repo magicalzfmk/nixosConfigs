@@ -33,7 +33,7 @@
       enable = true;
       settings = {
         general.import = ["$HOME/Configs/otherConfigs/alacritty/dracula.toml"];
-        env.TERM = "xterm-256color";
+        env.TERM = "alacritty";
       };
     };
 

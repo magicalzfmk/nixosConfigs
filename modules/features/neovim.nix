@@ -28,11 +28,6 @@
           type = "lua";
           config = ''require("Comment").setup()'';
         }
-        {
-          plugin = dracula-nvim;
-          type = "lua";
-          config = ''vim.cmd.colorscheme("dracula")'';
-        }
         lazydev-nvim
         {
           plugin = nvim-cmp;

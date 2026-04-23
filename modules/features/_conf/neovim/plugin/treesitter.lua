@@ -1,7 +1,3 @@
-vim.treesitter.language.register("bash", "sh")  -- common alias needed by some filetypes
+vim.treesitter.language.register("bash", "sh") 
 
--- Enable highlight and indent for all installed parsers
-require("nvim-treesitter").setup({
-  highlight = { enable = true },
-  indent    = { enable = true },
-})
+require("nvim-treesitter").setup({})
