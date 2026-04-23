@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{
   flake.nixosModules.neovim = {
     programs.neovim = {
       enable = true;
@@ -8,22 +8,7 @@
     nix.settings.nix-path = ["nixpkgs=flake:nixpkgs"];
   };
 
-  flake.homeModules.neovim = {pkgs, ...}: let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  in {
-    nixpkgs.overlays = [
-      (final: prev: {
-        vimPlugins =
-          prev.vimPlugins
-          // {
-            own-dracula-nvim = prev.vimUtils.buildVimPlugin {
-              name = "dracula";
-              src = inputs.plugin-dracula;
-            };
-          };
-      })
-    ];
+  flake.homeModules.neovim = {pkgs, ...}: {
     programs.neovim = {
       enable = true;
       viAlias = true;
@@ -35,44 +20,47 @@
       plugins = with pkgs.vimPlugins; [
         {
           plugin = nvim-lspconfig;
-          config = toLuaFile ./_conf/neovim/plugin/lsp.lua;
+          type = "lua";
+          config = builtins.readFile ./_conf/neovim/plugin/lsp.lua;
         }
         {
           plugin = comment-nvim;
-          config = toLua ''require("Comment").setup()'';
+          type = "lua";
+          config = ''require("Comment").setup()'';
         }
         {
           plugin = dracula-nvim;
-          config = "colorscheme dracula";
+          type = "lua";
+          config = ''vim.cmd.colorscheme("dracula")'';
         }
         lazydev-nvim
         {
           plugin = nvim-cmp;
-          config = toLuaFile ./_conf/neovim/plugin/cmp.lua;
+          type = "lua";
+          config = builtins.readFile ./_conf/neovim/plugin/cmp.lua;
         }
         plenary-nvim
         {
           plugin = telescope-nvim;
-          config = toLuaFile ./_conf/neovim/plugin/telescope.lua;
+          type = "lua";
+          config = builtins.readFile ./_conf/neovim/plugin/telescope.lua;
         }
         telescope-fzf-native-nvim
         cmp_luasnip
         cmp-nvim-lsp
         luasnip
         friendly-snippets
-        lualine-nvim
+        {
+          plugin = lualine-nvim;
+          type = "lua";
+          config = ''require("lualine").setup()'';
+        }
         nvim-web-devicons
         {
-          plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
-            p.tree-sitter-nix
-            p.tree-sitter-vim
-            p.tree-sitter-bash
-            p.tree-sitter-lua
-            p.tree-sitter-python
-            p.tree-sitter-json
-          ]);
+          plugin = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+          type = "lua";
+          config = builtins.readFile ./_conf/neovim/plugin/treesitter.lua;
         }
-        vim-nix
       ];
 
       extraPackages = with pkgs; [

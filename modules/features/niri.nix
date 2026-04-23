@@ -39,7 +39,7 @@
 
         input = {
           focus-follows-mouse = {};
-          warp-mouse-to-focus = {};
+          # warp-mouse-to-focus = {};
 
           keyboard = {
             xkb = {
@@ -56,6 +56,7 @@
         window-rule = {
           geometry-corner-radius = 20;
           clip-to-geometry = true;
+          open-focused = false;
         };
 
         layout = {

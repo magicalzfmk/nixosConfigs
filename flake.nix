@@ -15,11 +15,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # plugin-dracula = {
-    #   url = "github:Mofiqul/dracula.nvim";
-    #   flake = false;
-    # };
   };
 
   outputs = inputs:

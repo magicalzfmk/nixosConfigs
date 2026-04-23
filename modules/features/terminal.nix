@@ -23,17 +23,18 @@
     };
 
     environment.systemPackages = with pkgs; [
-      alacritty
-      starship
+      # alacritty
+      # starship
     ];
   };
 
   flake.homeModules.terminal = {lib, ...}: {
     programs.alacritty = {
       enable = true;
-      settings.general.import = [
-        "$HOME/Configs/otherConfigs/alacritty/dracula.toml"
-      ];
+      settings = {
+        general.import = ["$HOME/Configs/otherConfigs/alacritty/dracula.toml"];
+        env.TERM = "xterm-256color";
+      };
     };
 
     programs.starship = {
@@ -43,7 +44,7 @@
 
     programs.zsh = {
       enable = true;
-      initContent = ''eval "$(starship init zsh)"'';
+      # initContent = ''eval "$(starship init zsh)"'';
     };
   };
 }

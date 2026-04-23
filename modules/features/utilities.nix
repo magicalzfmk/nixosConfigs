@@ -39,6 +39,13 @@
       };
     };
 
+    hardware = {
+      opentabletdriver.enable = true;
+      uinput.enable = true;
+    };
+
+    boot.kernelModules = ["uinput"];
+
     services = {
       udisks2.enable = true;
       blueman.enable = true;
