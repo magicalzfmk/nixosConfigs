@@ -52,7 +52,14 @@
         }
         nvim-web-devicons
         {
-          plugin = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+          plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+            p.lua
+            p.nix
+            p.bash
+            p.python
+            p.toml
+            p.java
+          ]);
           type = "lua";
           config = builtins.readFile ./_conf/neovim/plugin/treesitter.lua;
         }
