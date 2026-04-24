@@ -24,7 +24,14 @@
     packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
       inherit pkgs;
       settings = {
-        overview.backdrop-color = "#282a36";
+        prefer-no-csd = {};
+
+        overview = {
+          backdrop-color = "#282a36";
+          workspace-shadow = {
+            off = {};
+          };
+        };
 
         spawn-at-startup = [
           (lib.getExe self'.packages.myNoctalia)
@@ -59,13 +66,21 @@
           open-focused = false;
         };
 
-        layout = {
-          gaps = 5;
+        window-rules = [
+          {
+            matches = [{is-focused = false;}];
+            opacity = 0.6;
+          }
+        ];
 
+        layout = {
           focus-ring = {
             width = 1;
             active-color = "#bd93f9";
           };
+
+          gaps = 5;
+          empty-workspace-above-first = {};
         };
 
         binds = {
