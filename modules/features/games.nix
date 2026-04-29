@@ -37,7 +37,7 @@
       steam-run
       protonplus
       mangohud
-      (pkgs.bottles.override {removeWarningPopup = true;})
+      # (pkgs.bottles.override {removeWarningPopup = true;})
       itch
       ludusavi
 

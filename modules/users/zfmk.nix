@@ -9,6 +9,8 @@
   };
 
   flake.homeModules.zfmk = {
+    programs.home-manager.enable = true;
+
     home.username = "zfmk";
     home.homeDirectory = "/home/zfmk";
     home.stateVersion = "26.05";
@@ -17,8 +19,8 @@
       EDITOR = "nvim";
       NH_FLAKE = "$HOME/Configs";
       HOME = "/home/zfmk";
+      BROWSER = "librewolf";
+      DEFAULT_BROWSER = "librewolf";
     };
-
-    programs.home-manager.enable = true;
   };
 }

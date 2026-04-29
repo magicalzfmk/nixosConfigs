@@ -60,7 +60,7 @@
 
       # Desktop / apps
       ## System
-      celluloid
+      # celluloid
       gnome-software
       flatpak
       librewolf
