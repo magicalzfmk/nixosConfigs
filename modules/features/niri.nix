@@ -60,13 +60,12 @@
           };
         };
 
-        window-rule = {
-          geometry-corner-radius = 20;
-          clip-to-geometry = true;
-          open-focused = false;
-        };
-
         window-rules = [
+          {
+            geometry-corner-radius = 20;
+            clip-to-geometry = true;
+            open-focused = false;
+          }
           {
             matches = [{is-focused = false;}];
             opacity = 0.6;
