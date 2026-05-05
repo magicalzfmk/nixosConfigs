@@ -4,6 +4,12 @@
   ...
 }: {
   flake.nixosConfigurations.laptopHP = inputs.nixpkgs.lib.nixosSystem {
+    specialArgs = {
+      spkgs = import inputs.stablepkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+    };
     modules = with self.nixosModules; [
       # Modules
       laptopHPConfig
@@ -28,9 +34,14 @@
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
-          # useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = {inherit inputs self;};
+          extraSpecialArgs = {
+            inherit inputs self;
+            spkgs = import inputs.stablepkgs {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
+          };
           sharedModules = [inputs.stylix.homeModules.stylix];
           users.zfmk = {
             imports = with self.homeModules; [

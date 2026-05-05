@@ -1,6 +1,7 @@
 {
   flake.nixosModules.games = {
     pkgs,
+    spkgs,
     lib,
     ...
   }: {
@@ -19,14 +20,6 @@
       gamemode.enable = true;
     };
 
-    nixpkgs.config.allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "steam"
-        "steam-original"
-        "steam-unwrapped"
-        "steam-run"
-      ];
-
     networking.firewall = {
       allowedTCPPorts = [27015 27016];
       allowedUDPPorts = [3478 4379 4380];
@@ -37,7 +30,7 @@
       steam-run
       protonplus
       mangohud
-      # (pkgs.bottles.override {removeWarningPopup = true;})
+      (spkgs.bottles.override {removeWarningPopup = true;})
       itch
       ludusavi
 
@@ -47,6 +40,7 @@
 
       # Games
       osu-lazer-bin
+      ddnet
     ];
 
     environment.sessionVariables = {

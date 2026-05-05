@@ -72,6 +72,12 @@
           }
         ];
 
+        gestures = {
+          hot-corners = {
+            off = {};
+          };
+        };
+
         layout = {
           focus-ring = {
             width = 1;
