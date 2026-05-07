@@ -30,9 +30,6 @@
     networking.firewall.allowedTCPPorts = [8080 8081 59973];
     networking.firewall.allowedUDPPorts = [8080 8081 59973];
 
-    # networking.firewall.allowedTCPPorts = [53317 8384 587 63197 44879];
-    # networking.firewall.allowedUDPPorts = [53317 8384 587 63197 44879];
-
     programs = {
       localsend = {
         enable = true;
@@ -63,9 +60,8 @@
       picard
       pavucontrol
 
-      # Desktop / apps
       ## System
-      # celluloid
+      celluloid
       gnome-software
       flatpak
       librewolf
