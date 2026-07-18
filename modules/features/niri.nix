@@ -92,7 +92,7 @@
           "Mod+T".spawn-sh = lib.getExe pkgs.alacritty;
           "Mod+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
           "Mod+E".spawn-sh = lib.getExe pkgs.nautilus;
-          "Mod+B".spawn-sh = lib.getExe pkgs.librewolf;
+          "Mod+B".spawn-sh = lib.getExe pkgs.firefox;
           "Mod+X".spawn-sh = lib.getExe pkgs.vscodium;
 
           "Mod+Q".close-window = {};

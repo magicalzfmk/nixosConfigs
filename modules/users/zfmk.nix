@@ -19,8 +19,8 @@
       EDITOR = "nvim";
       NH_FLAKE = "$HOME/Configs";
       HOME = "/home/zfmk";
-      BROWSER = "librewolf";
-      DEFAULT_BROWSER = "librewolf";
+      BROWSER = "firefox";
+      DEFAULT_BROWSER = "firefox";
     };
   };
 }

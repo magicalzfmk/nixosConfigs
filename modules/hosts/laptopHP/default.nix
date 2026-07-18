@@ -22,7 +22,7 @@
       nh
       theming
       terminal
-      # vm
+      vm
 
       # Utilities
       desktopUtils

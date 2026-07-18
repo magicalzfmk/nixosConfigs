@@ -19,6 +19,7 @@
     lib,
     ...
   }: {
+    home.pointerCursor.enable = true;
     stylix = {
       enable = true;
       autoEnable = true;

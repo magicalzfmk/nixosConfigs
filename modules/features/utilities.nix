@@ -10,6 +10,14 @@
       alejandra
       git
       android-tools
+      devenv
+    ];
+  };
+
+  flake.nixosModules.gameDevUtils = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      godot
+      aseprite
     ];
   };
 
@@ -26,9 +34,9 @@
   };
 
   flake.nixosModules.desktopUtils = {pkgs, ...}: {
-    # firewall ports: calibre1, calibre2, qbittorrent
-    networking.firewall.allowedTCPPorts = [8080 8081 59973];
-    networking.firewall.allowedUDPPorts = [8080 8081 59973];
+    # firewall ports: calibre1, calibre2, qbittorrent, nicotine
+    networking.firewall.allowedTCPPorts = [8080 8081 59973 2234];
+    networking.firewall.allowedUDPPorts = [8080 8081 59973 2234];
 
     programs = {
       localsend = {
@@ -64,7 +72,6 @@
       celluloid
       gnome-software
       flatpak
-      librewolf
 
       ## User
       obsidian
